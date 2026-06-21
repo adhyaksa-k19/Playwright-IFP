@@ -14,10 +14,12 @@ export class DashboardPage {
 
 async verifyDashboardLoaded() {
     await expect(this.page).toHaveURL(/dashboard/);
-    await this.page.waitForLoadState('networkidle');
     await expect(
         this.page.getByRole('navigation', { name: 'breadcrumb' })
-            .getByText('Dashboard')
+            .getByText('Dashboard', { exact: true })
+    ).toBeVisible();
+    await expect(
+        this.page.getByRole('combobox', { name: 'Filter Koordinator' })
     ).toBeVisible();
 }
 
@@ -71,6 +73,7 @@ async clickSidebarMenu(menuName: string) {
             name: new RegExp(cardName, 'i'),
         });
         await expect(card).toBeVisible();
+        await expect(card).toContainText(/\d/, { timeout: 35_000 });
         return (await card.textContent()) ?? '';
     }
 
@@ -118,14 +121,11 @@ async verifyFilterCoordinator() {
 }
 
     async applyFilterCoordinator(coordinatorName: string) {
-        const filterSection = this.page.getByText('Filter Koordinator');
-        await filterSection.click();
-
-        // Adjust the locator below to match your app's filter input
-        const filterInput = this.page.getByPlaceholder(/koordinator/i);
+        const filterInput = this.page.getByRole('combobox', {
+            name: 'Filter Koordinator',
+        });
         await filterInput.fill(coordinatorName);
-        await filterInput.press('Enter');
-
-        await this.page.waitForLoadState('networkidle');
+        await this.page.getByRole('option', { name: coordinatorName, exact: true }).click();
+        await expect(filterInput).toHaveValue(coordinatorName);
     }
 }

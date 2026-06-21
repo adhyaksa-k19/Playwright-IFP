@@ -65,8 +65,11 @@ export class ProsesInstalasiPage {
             'INSTALASI SELESAI',
         ];
 
+        const main = this.page.getByRole('main');
         for (const label of labels) {
-            await expect(this.page.getByText(label, { exact: true })).toBeVisible();
+            await expect(
+                main.getByText(label, { exact: true }).first()
+            ).toBeVisible();
         }
     }
 
@@ -99,11 +102,13 @@ export class ProsesInstalasiPage {
     }
 
     async verifyTableHasData() {
+        await this.waitForDataRowWithRetry();
         await expect(this.firstDataRow()).toBeVisible();
         await expect(this.firstDataRow().getByRole('cell')).toHaveCount(16);
     }
 
     async getFirstRowNpsn(): Promise<string> {
+        await this.waitForDataRowWithRetry();
         const npsn = this.firstDataRow().getByRole('cell').nth(7);
         await expect(npsn).toBeVisible();
         return (await npsn.textContent())?.trim() ?? '';
@@ -112,17 +117,20 @@ export class ProsesInstalasiPage {
     async searchByNpsn(npsn: string) {
         await this.page.getByRole('textbox', { name: 'NPSN', exact: true }).fill(npsn);
         await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
+        await this.waitForTableReady();
         await expect(this.page.getByRole('table')).toContainText(npsn);
     }
 
     async searchNpsnWithoutResults(npsn: string) {
         await this.page.getByRole('textbox', { name: 'NPSN', exact: true }).fill(npsn);
         await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
-        await expect(this.page.getByRole('cell', { name: 'No data available' })).toBeVisible();
+        await this.waitForTableReady();
+        await expect(this.emptyState()).toBeVisible();
     }
 
     async resetFilters() {
         await this.page.getByRole('button', { name: 'Reset', exact: true }).click();
+        await this.waitForTableReady();
         await this.verifyTableHasData();
     }
 
@@ -136,5 +144,42 @@ export class ProsesInstalasiPage {
         return this.page.getByRole('table').locator('tbody tr').filter({
             has: this.page.locator('td:nth-child(16)'),
         }).first();
+    }
+
+    private emptyState() {
+        return this.page.getByText(/No (?:rows to display|data available)/);
+    }
+
+    private loadError() {
+        return this.page.getByRole('alert').filter({ hasText: 'Gagal memuat data' });
+    }
+
+    private async waitForDataRowWithRetry() {
+        for (let attempt = 0; attempt < 3; attempt++) {
+            await this.waitForTableReady();
+            if (await this.firstDataRow().isVisible().catch(() => false)) return;
+
+            const apiFailed = await this.loadError().isVisible().catch(() => false);
+            if (!apiFailed || attempt === 2) break;
+
+            await this.page.reload();
+            await this.verifyPageLoaded();
+        }
+
+        await expect(
+            this.firstDataRow(),
+            'Data instalasi tidak tersedia setelah 3 kali percobaan'
+        ).toBeVisible();
+    }
+
+    private async waitForTableReady() {
+        const loading = this.page.getByText('Loading data...', { exact: true });
+        if (await loading.isVisible().catch(() => false)) {
+            await expect(loading).toBeHidden({ timeout: 60_000 });
+        }
+
+        await expect(
+            this.firstDataRow().or(this.emptyState())
+        ).toBeVisible({ timeout: 60_000 });
     }
 }

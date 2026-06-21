@@ -6,6 +6,14 @@ export interface CoordinatorData {
     province: string;
 }
 
+export interface CoordinatorRowData {
+    code: string;
+    name: string;
+    phone: string;
+    province: string;
+    regency: string;
+}
+
 export class KoordinatorPage {
     private authorization?: string;
     private apiOrigin?: string;
@@ -77,6 +85,32 @@ export class KoordinatorPage {
         await this.search();
     }
 
+    async filterByFirstAvailableRegency(province: string): Promise<string> {
+        await this.ensureListPage();
+        await this.resetFilters();
+        await this.selectOption(this.provinceFilter(), province);
+        await expect(this.regencyFilter()).toBeEnabled();
+        await this.regencyFilter().click();
+
+        const options = this.page.getByRole('option');
+        await expect(options.first()).toBeVisible();
+
+        let selectedRegency = '';
+        for (let index = 0; index < await options.count(); index += 1) {
+            const option = options.nth(index);
+            const text = (await option.textContent())?.trim() ?? '';
+            if (text && !/semua kabupaten/i.test(text)) {
+                selectedRegency = text;
+                await option.click();
+                break;
+            }
+        }
+
+        expect(selectedRegency, 'Tidak ada opsi Kabupaten/Kota').toBeTruthy();
+        await this.search();
+        return selectedRegency;
+    }
+
     async expectCoordinatorVisible(value: string) {
         await expect(this.page.getByText(value, { exact: true })).toBeVisible();
         await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible();
@@ -84,6 +118,26 @@ export class KoordinatorPage {
 
     async expectTableHasData() {
         await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible();
+    }
+
+    async getCoordinatorDataOnRow(index: number): Promise<CoordinatorRowData> {
+        await this.ensureListPage();
+        await this.resetFilters();
+
+        const editButton = this.page.getByRole('button', { name: 'Edit' }).nth(index);
+        await expect(editButton).toBeVisible();
+
+        const row = editButton.locator('xpath=../../..');
+        const columns = await row.locator(':scope > *').allTextContents();
+        expect(columns.length, 'Struktur kolom koordinator berubah').toBeGreaterThanOrEqual(8);
+
+        return {
+            code: columns[1].trim(),
+            name: columns[2].trim(),
+            phone: columns[4].trim(),
+            province: columns[6].replace(/\+\d+\s*\.\.\.$/, '').trim(),
+            regency: columns[7].trim(),
+        };
     }
 
     async expectNoData() {

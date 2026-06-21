@@ -1,0 +1,275 @@
+[
+  {
+    "code": "DASHBOARD",
+    "parent": null,
+    "caption": "Dashboard",
+    "level": 1,
+    "route": "/dashboard"
+  },
+  {
+    "code": "REVISI",
+    "parent": "Monitoring",
+    "caption": "Revisi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "PERALIHAN_HANDLER",
+    "parent": "Transaksi",
+    "caption": "Peralihan Handler",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "RESET_ASSIGN",
+    "parent": "Transaksi",
+    "caption": "Reset Assign",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "DOUBLE_SN",
+    "parent": "Monitoring",
+    "caption": "Double SN",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REKAP_TERINSTAL",
+    "parent": "Report",
+    "caption": "Rekap Terinstal",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "CEK_STATUS_INSTALASI",
+    "parent": "Report",
+    "caption": "Cek Status Instalasi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "BATCH_STATUS_INSTALASI",
+    "parent": "Report",
+    "caption": "Batch Status Instalasi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "ALOKASI",
+    "parent": "Monitoring",
+    "caption": "Alokasi",
+    "level": 2,
+    "route": "/monitoring/list_alokasi"
+  },
+  {
+    "code": "PROSES_INSTALASI",
+    "parent": "Monitoring",
+    "caption": "Proses Instalasi",
+    "level": 2,
+    "route": "/monitoring/proses_instalasi"
+  },
+  {
+    "code": "UPLOAD_FOTO",
+    "parent": "Monitoring",
+    "caption": "Upload Foto",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "SEKOLAH",
+    "parent": "Master",
+    "caption": "Sekolah",
+    "level": 2,
+    "route": "/master/sekolah"
+  },
+  {
+    "code": "KOORDINATOR",
+    "parent": "Master",
+    "caption": "Koordinator",
+    "level": 2,
+    "route": "/master/koordinator"
+  },
+  {
+    "code": "TEKNISI",
+    "parent": "Master",
+    "caption": "Teknisi",
+    "level": 2,
+    "route": "/master/teknisi"
+  },
+  {
+    "code": "JADWAL",
+    "parent": "Transaksi",
+    "caption": "Deadline Instalasi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "CREATE_ALOKASI",
+    "parent": "Transaksi",
+    "caption": "Buat Alokasi",
+    "level": 2,
+    "route": "/transaksi/create_alokasi"
+  },
+  {
+    "code": "INSTALASI",
+    "parent": "Transaksi",
+    "caption": "Instalasi",
+    "level": 2,
+    "route": "/transaksi/list_instalasi"
+  },
+  {
+    "code": "PERBAIKAN",
+    "parent": "Transaksi",
+    "caption": "Perbaikan",
+    "level": 2,
+    "route": "/transaksi/list_perbaikan"
+  },
+  {
+    "code": "BULK_ASSIGN_KOORDINATOR",
+    "parent": "Transaksi",
+    "caption": "Bulk Assign Koordinator",
+    "level": 2,
+    "route": "/transaksi/bulk_assign_koordinator"
+  },
+  {
+    "code": "BULK_ASSIGN_TEKNISI",
+    "parent": "Transaksi",
+    "caption": "Bulk Assign Teknisi",
+    "level": 2,
+    "route": "/transaksi/bulk_assign_teknisi"
+  },
+  {
+    "code": "PENERIMAAN_BAPP_FISIK",
+    "parent": "Transaksi",
+    "caption": "Penerimaan BAPP Fisik",
+    "level": 2,
+    "route": "/transaksi/penerimaan_bapp_fisik"
+  },
+  {
+    "code": "BATCH_BAPP",
+    "parent": "Transaksi",
+    "caption": "Pengiriman Batch BAPP",
+    "level": 2,
+    "route": "/transaksi/batch_bapp"
+  },
+  {
+    "code": "REKAP_PROGRESS",
+    "parent": "Report",
+    "caption": "Rekap Progress",
+    "level": 2,
+    "route": "/report/rekap_progress"
+  },
+  {
+    "code": "REKAP_TEKNISI",
+    "parent": "Report",
+    "caption": "Rekap Teknisi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REKAP_PERFORMA_TEKNISI",
+    "parent": "Report",
+    "caption": "Rekap Performa Teknisi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REPORT_SLA_KOORDINATOR",
+    "parent": "Report",
+    "caption": "Report SLA Koordinator",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REPORT_SLA_TEKNISI",
+    "parent": "Report",
+    "caption": "Report SLA Teknisi",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REKAP_PERFORMA_KOORDINATOR",
+    "parent": "Report",
+    "caption": "Rekap Performa Koordinator",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REKAP_PER_PROPINSI",
+    "parent": "Report",
+    "caption": "Rekap per Propinsi",
+    "level": 2,
+    "route": "/report/rekap_per_propinsi"
+  },
+  {
+    "code": "REKAP_PER_KABUPATEN",
+    "parent": "Report",
+    "caption": "Rekap per Kabupaten",
+    "level": 2,
+    "route": "/report/rekap_per_kabupaten"
+  },
+  {
+    "code": "REKAP_PER_DIREKTORAT",
+    "parent": "Report",
+    "caption": "Rekap per Direktorat",
+    "level": 2,
+    "route": "/report/rekap_per_direktorat"
+  },
+  {
+    "code": "REPORT_PEMBAYARAN",
+    "parent": "Report",
+    "caption": "Report Pembayaran",
+    "level": 2,
+    "route": "/report/pembayaran"
+  },
+  {
+    "code": "CASH_ADVANCE",
+    "parent": "Finance",
+    "caption": "Cash Advance",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "STATUS_PEMBAYARAN",
+    "parent": "Finance",
+    "caption": "Status Pembayaran",
+    "level": 2,
+    "route": "/finance/status_pembayaran"
+  },
+  {
+    "code": "BULK_ASSIGN_INSTALASI_TEKNISI",
+    "parent": "Transaksi",
+    "caption": "Bulk Assign Instalasi",
+    "level": 2,
+    "route": "/transaksi/bulk_assign_instalasi"
+  },
+  {
+    "code": "USER_ACCOUNT",
+    "parent": "Menu Administrasi",
+    "caption": "Akun User",
+    "level": 2,
+    "route": "/admin/user_account"
+  },
+  {
+    "code": "USER_ROLE",
+    "parent": "Menu Administrasi",
+    "caption": "User Role",
+    "level": 2,
+    "route": "/admin/user_role"
+  },
+  {
+    "code": "SANDBOX",
+    "parent": "Menu Administrasi",
+    "caption": "Allocation Sandbox",
+    "level": 2,
+    "route": "/admin/sandbox"
+  },
+  {
+    "code": "AUDIT_BAPP_FISIK",
+    "parent": "PENERIMAAN_BAPP_FISIK",
+    "caption": "Audit Trail BAPP Fisik",
+    "level": 3,
+    "route": null
+  }
+]

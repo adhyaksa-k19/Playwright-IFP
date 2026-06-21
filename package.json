@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dump:aria": "node scripts/dump-aria.mjs",
+    "dump:aria:all": "playwright test tests/dump-all-aria.spec.ts --config=playwright.dump.config.ts",
+    "crawl:menus": "playwright test tests/crawl-menu.spec.ts --config=playwright.dump.config.ts",
+    "test:transaksi": "playwright test tests/create-alokasi.spec.ts tests/instalasi.spec.ts tests/perbaikan.spec.ts tests/penerimaan-bapp-fisik.spec.ts tests/batch-bapp.spec.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

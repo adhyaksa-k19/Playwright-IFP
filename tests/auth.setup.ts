@@ -2,7 +2,7 @@ import { test as setup, expect } from '@playwright/test';
 
 setup('authenticate', async ({ page }) => {
 
-    await page.goto('https://ifp-devel.zlpdigital.com/login');
+    await page.goto('/login');
 
     await page.getByRole('textbox', { name: 'Username' })
         .fill(process.env.IFP_USERNAME!);

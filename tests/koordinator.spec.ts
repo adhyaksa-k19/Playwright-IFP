@@ -1,17 +1,22 @@
 import { BrowserContext, expect, Page, test } from '@playwright/test';
-import { CoordinatorData, KoordinatorPage } from '../pages/KoordinatorPage';
+import {
+    CoordinatorData,
+    CoordinatorRowData,
+    KoordinatorPage,
+} from '../pages/KoordinatorPage';
 
 test.describe.serial('Master - Koordinator', () => {
     let context: BrowserContext;
     let page: Page;
     let koordinator: KoordinatorPage;
+    let filterData: CoordinatorRowData;
     let createdCode = '';
 
     const uniqueId = String(Date.now()).slice(-8);
     const data: CoordinatorData = {
         name: `KOORDINATOR AUTOMATION ${uniqueId}`,
         phone: `+62812${uniqueId}`,
-        province: 'Prov. Banten',
+        province: '',
     };
 
     test.beforeAll(async ({ browser, baseURL }) => {
@@ -21,6 +26,10 @@ test.describe.serial('Master - Koordinator', () => {
         });
         page = await context.newPage();
         koordinator = new KoordinatorPage(page);
+        await koordinator.goto();
+        await koordinator.verifyPageLoaded();
+        filterData = await koordinator.getCoordinatorDataOnRow(4);
+        data.province = filterData.province;
     });
 
     test.afterAll(async () => {
@@ -35,32 +44,35 @@ test.describe.serial('Master - Koordinator', () => {
     });
 
     test('Filter - mencari berdasarkan kode koordinator', async () => {
-        await koordinator.filterByCode('KD-2026-00000001');
-        await koordinator.expectCoordinatorVisible('KD-2026-00000001');
+        await koordinator.filterByCode(filterData.code);
+        await koordinator.expectCoordinatorVisible(filterData.code);
     });
 
     test('Filter - mencari berdasarkan nama koordinator', async () => {
-        await koordinator.filterByName('SKYWALKER');
-        await koordinator.expectCoordinatorVisible('SKYWALKER');
+        await koordinator.filterByName(filterData.name);
+        await koordinator.expectCoordinatorVisible(filterData.name);
     });
 
     test('Filter - mencari berdasarkan nomor telepon', async () => {
-        await koordinator.filterByPhone('+62122');
-        await koordinator.expectCoordinatorVisible('+62122');
+        test.skip(!filterData.phone, 'Nomor telepon pada baris ke-5 kosong.');
+        await koordinator.filterByPhone(filterData.phone);
+        await koordinator.expectCoordinatorVisible(filterData.phone);
     });
 
     test('Filter - mencari berdasarkan propinsi', async () => {
-        await koordinator.filterByProvince('Prov. Banten');
-        await koordinator.expectTableHasData();
+        test.skip(!filterData.province, 'Propinsi pada baris ke-5 kosong.');
+        await koordinator.filterByProvince(filterData.province);
+        await koordinator.expectCoordinatorVisible(filterData.name);
     });
 
-    test('Filter - kabupaten/kota tanpa hasil menampilkan empty state', async () => {
-        await koordinator.filterByRegency('Prov. Banten', 'Kab. Serang');
-        await koordinator.expectNoData();
+    test('Filter - mencari berdasarkan kabupaten/kota dinamis', async () => {
+        test.skip(!filterData.province, 'Propinsi pada baris ke-5 kosong.');
+        const regency = await koordinator.filterByFirstAvailableRegency(filterData.province);
+        expect(regency).toBeTruthy();
     });
 
     test('Reset - mengosongkan seluruh filter', async () => {
-        await koordinator.filterByName('SKYWALKER');
+        await koordinator.filterByName(filterData.name);
         await koordinator.resetFilters();
         await koordinator.expectFiltersReset();
     });

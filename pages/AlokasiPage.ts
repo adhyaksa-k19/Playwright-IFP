@@ -2,6 +2,9 @@ import { Page, expect } from '@playwright/test';
 
 export class AlokasiPage {
 
+    private selectedStatusProgress: string | null = null;
+    private selectedPayment: string | null = null;
+
     constructor(private page: Page) {}
 
     // ─── Navigation ──────────────────────────────────────────────
@@ -111,20 +114,30 @@ async verifyDropdowns() {
     // ─── Filter Actions ───────────────────────────────────────────
 
     async fillIdTransaksi(value: string) {
-        await this.page.getByRole('textbox', { name: 'ID Transaksi' }).fill(value);
+        const input = this.page.getByRole('textbox', { name: 'ID Transaksi' });
+        await input.fill(value);
+        await input.blur();
+        await expect(input).toHaveValue(value);
     }
 
     async fillNpsn(value: string) {
-        await this.page.getByRole('textbox', { name: 'NPSN' }).fill(value);
+        const input = this.page.getByRole('textbox', { name: 'NPSN' });
+        await input.fill(value);
+        await input.blur();
+        await expect(input).toHaveValue(value);
     }
 
     async fillNamaInstansi(value: string) {
-        await this.page.getByRole('textbox', { name: 'Nama Instansi' }).fill(value);
+        const input = this.page.getByRole('textbox', { name: 'Nama Instansi' });
+        await input.fill(value);
+        await input.blur();
+        await expect(input).toHaveValue(value);
     }
 
     async selectStatusProgress(value: string) {
         await this.page.getByRole('combobox').filter({ hasText: 'Semua Status Progress' }).click();
         await this.page.getByRole('option', { name: value }).click();
+        this.selectedStatusProgress = value;
     }
 
     async selectPembayaran(value: string) {
@@ -136,18 +149,51 @@ async verifyDropdowns() {
         await this.page
             .locator(`[role="option"][data-value="${value}"]`)
             .click();
+        this.selectedPayment = value;
     }
 
 async clickCariAlokasi() {
-    await this.page.getByRole('button', { name: 'Cari Alokasi' }).click();
+    const idTransaksi = await this.page
+        .getByRole('textbox', { name: 'ID Transaksi' })
+        .inputValue();
+    const npsn = await this.page
+        .getByRole('textbox', { name: 'NPSN' })
+        .inputValue();
+    const namaSekolah = await this.page
+        .getByRole('textbox', { name: 'Nama Instansi' })
+        .inputValue();
 
-    await this.page.waitForLoadState('networkidle');
+    const response = this.page.waitForResponse((item) => {
+        if (!item.url().includes('/api/transaksi/alokasi?')) {
+            return false;
+        }
+        const params = new URL(item.url()).searchParams;
+        return params.get('search') === 'true' &&
+            (!idTransaksi || params.get('id_transaksi') === idTransaksi) &&
+            (!npsn || params.get('npsn') === npsn) &&
+            (!namaSekolah || params.get('nama_sekolah') === namaSekolah) &&
+            (!this.selectedStatusProgress ||
+                params.get('kode_status_progress') === this.selectedStatusProgress) &&
+            (!this.selectedPayment ||
+                params.get('kode_status_pembayaran') === this.selectedPayment);
+    }, { timeout: 75_000 });
+
+    if (idTransaksi) {
+        await this.page.getByRole('textbox', { name: 'ID Transaksi' }).press('Enter');
+    } else if (npsn) {
+        await this.page.getByRole('textbox', { name: 'NPSN' }).press('Enter');
+    } else if (namaSekolah) {
+        await this.page.getByRole('textbox', { name: 'Nama Instansi' }).press('Enter');
+    } else {
+        await this.page.getByRole('button', { name: 'Cari Alokasi' }).click();
+    }
+
+    const result = await response;
+    expect(result.ok(), await result.text()).toBeTruthy();
 }
 
 async clickReset() {
     await this.page.getByRole('button', { name: 'Reset' }).click();
-
-    await this.page.waitForLoadState('networkidle');
 }
 
     async verifyInputIsEmpty(name: string) {
@@ -166,6 +212,21 @@ async clickReset() {
         await expect(this.getDataRows().first()).toBeVisible();
     }
 
+    async verifyTableIsEmpty() {
+        await expect(
+            this.emptyState()
+        ).toBeVisible({ timeout: 60_000 });
+    }
+
+    async verifyPaymentFilterResult(value: string) {
+        const firstRow = this.getDataRows().first();
+        await expect(firstRow.or(this.emptyState())).toBeVisible({ timeout: 60_000 });
+
+        if (await firstRow.isVisible().catch(() => false)) {
+            await expect(this.page.getByText(value, { exact: true }).first()).toBeVisible();
+        }
+    }
+
     async getIdTransaksiOnRow(index: number): Promise<string> {
         const idLocator = this.page
             .locator('p.css-f2u90h')
@@ -178,6 +239,9 @@ async clickReset() {
 
     async clickViewOnRow(index: number) {
         await this.getDataRows().nth(index).click();
-        await this.page.waitForLoadState('networkidle');
+    }
+
+    private emptyState() {
+        return this.page.getByText(/No (?:rows to display|data available)/);
     }
 }

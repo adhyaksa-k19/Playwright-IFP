@@ -72,15 +72,13 @@ test.describe('Monitoring - Alokasi', () => {
     test('Filter - Search by Pembayaran: PAID', async () => {
         await alokasi.selectPembayaran('PAID');
         await alokasi.clickCariAlokasi();
-        await alokasi.verifyTableHasRows();
+        await alokasi.verifyPaymentFilterResult('PAID');
     });
 
     test('Filter - Search with no matching results', async () => {
         await alokasi.fillIdTransaksi('ID_TIDAK_ADA_9999999');
         await alokasi.clickCariAlokasi();
-        await expect(
-            alokasi['page'].getByText('No rows to display')
-        ).toBeVisible();
+        await alokasi.verifyTableIsEmpty();
     }); 
 
     // ─── Row Actions ──────────────────────────────────────────────
