@@ -1,0 +1,96 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Rekap Progress"
+  - listitem:
+    - button "Ranking SLA Koordinator"
+  - listitem:
+    - button "Ranking SLA Teknisi"
+  - listitem:
+    - button "Rekap per Propinsi"
+  - listitem:
+    - button "Rekap per Kabupaten"
+  - listitem:
+    - button "Rekap per Direktorat"
+  - listitem:
+    - button "Report Pembayaran"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - paragraph: Rekap Per Kabupaten
+  - combobox: Semua Direktorat
+  - combobox: Semua Propinsi
+  - button "Tampilkan Report"
+  - button "Reset"
+  - button "Print"
+  - button "Excel" [disabled]
+  - button "CSV" [disabled]
+  - 'heading "Laporan Rekapitulasi Alokasi Per Kabupaten (Total: 0)" [level=6]'
+  - table:
+    - rowgroup:
+      - row "No Propinsi Kabupaten/Kota Total Barang Siap Menuju Alamat Belum Assign Koord Sudah Assign Koord Proses Selesai Kendala Gagal Revisi Setuju Reviu APIP Sesuai APIP Penarikan":
+        - columnheader "No"
+        - columnheader "Propinsi"
+        - columnheader "Kabupaten/Kota"
+        - columnheader "Total"
+        - columnheader "Barang Siap"
+        - columnheader "Menuju Alamat"
+        - columnheader "Belum Assign Koord"
+        - columnheader "Sudah Assign Koord"
+        - columnheader "Proses"
+        - columnheader "Selesai"
+        - columnheader "Kendala"
+        - columnheader "Gagal"
+        - columnheader "Revisi"
+        - columnheader "Setuju"
+        - columnheader "Reviu APIP"
+        - columnheader "Sesuai APIP"
+        - columnheader "Penarikan"
+    - rowgroup:
+      - row "Memuat Laporan...":
+        - cell "Memuat Laporan...":
+          - progressbar:
+            - img
+          - paragraph: Memuat Laporan...
+    - rowgroup:
+      - row "TOTAL KESELURUHAN 0 0 0 0 0 0 0 0 0 0 0 0 0 0":
+        - cell "TOTAL KESELURUHAN"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+        - cell "0"
+  - text: Copyright 2026 ZLP Digital Teknologi

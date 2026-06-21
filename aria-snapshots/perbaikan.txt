@@ -1,0 +1,106 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Buat Alokasi"
+  - listitem:
+    - button "Instalasi"
+  - listitem:
+    - button "Perbaikan"
+  - listitem:
+    - button "Bulk Assign Koordinator"
+  - listitem:
+    - button "Bulk Assign Teknisi"
+  - listitem:
+    - button "Bulk Assign Instalasi"
+  - listitem:
+    - button "Penerimaan BAPP Fisik"
+  - listitem:
+    - button "Pengiriman Batch BAPP"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Transaksi":
+          - /url: /transaksi/list_perbaikan
+      - listitem:
+        - paragraph: Perbaikan Kerusakan
+  - text: ID Transaksi
+  - textbox "ID Transaksi"
+  - text: NPSN
+  - textbox "NPSN"
+  - text: Status Approval
+  - combobox: Semua Status
+  - text: Tgl Mulai
+  - textbox "Tgl Mulai"
+  - text: Tgl Selesai
+  - textbox "Tgl Selesai"
+  - button "Cari Data"
+  - button "Reset"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Aksi ID Tiket ID Transaksi NPSN Nama Sekolah Status Kategori Kerusakan Tindakan Tgl Pengajuan Tgl Approval
+  - button "Evaluasi"
+  - paragraph: PRB-HI202600000000753-0006
+  - paragraph: HI202600000000753
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: MENUNGGU APPROVAL UNIT_RUSAK - 21/06/2026 14:36:15 -
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000000820-0005
+  - paragraph: HI202600000000820
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 19/06/2026 16:48:00 19/06/2026 16:48:28
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000000818-0004
+  - paragraph: HI202600000000818
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 19/06/2026 14:24:27 19/06/2026 14:24:51
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000000345-0003
+  - paragraph: HI202600000000345
+  - paragraph: "40302112"
+  - paragraph: UPTD SD NEGERI 104 BARRU
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 19/06/2026 11:11:56 19/06/2026 11:12:24
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000000616-0002
+  - paragraph: HI202600000000616
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 18/06/2026 21:05:17 18/06/2026 21:05:50
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000000617-0001
+  - paragraph: HI202600000000617
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 18/06/2026 16:39:55 18/06/2026 16:41:10
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–6 of 6
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - text: Copyright 2026 ZLP Digital Teknologi

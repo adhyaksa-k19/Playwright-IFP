@@ -1,0 +1,63 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Status Pembayaran"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - heading "Status Pembayaran" [level=5]
+  - alert:
+    - strong: "Aturan Finance:"
+    - text: Status KASBON digunakan untuk mencatat pencairan dana di awal sebesar 50%. Transaksi dapat langsung dilunasi 100% menggunakan status PAID (Lunas) tanpa harus melalui status Kasbon.
+  - text: ID Transaksi
+  - textbox "ID Transaksi"
+  - text: NPSN
+  - textbox "NPSN"
+  - text: Status Pembayaran
+  - combobox: Semua
+  - text: Propinsi
+  - combobox: Semua Propinsi
+  - text: Kabupaten/Kota
+  - combobox: Semua Kabupaten
+  - text: Koordinator
+  - combobox "Koordinator"
+  - button "Open"
+  - text: Teknisi
+  - combobox "Teknisi"
+  - button "Open"
+  - button "Cari Data"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Export CSV"
+  - paragraph: 0 Transaksi dipilih
+  - button "Tandai KASBON (50%)" [disabled]
+  - button "Tandai LUNAS (PAID)" [disabled]
+  - button "Atur Tampilan Kolom"
+  - separator
+  - checkbox
+  - text: Status Pembayaran Tanggal Lunas PIC Lunas Tanggal Kasbon PIC Kasbon Penalty SLA ID Transaksi NPSN Nama Sekolah Propinsi Kabupaten/Kota Status Progres Koordinator Teknisi NIK Teknisi
+  - paragraph: No rows to display
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 0–0 of 0
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - text: Copyright 2026 ZLP Digital Teknologi

@@ -1,0 +1,325 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Alokasi"
+  - listitem:
+    - button "Proses Instalasi"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Monitoring":
+          - /url: /monitoring/list_alokasi
+      - listitem:
+        - paragraph: Daftar Alokasi
+  - textbox "ID Transaksi"
+  - button "Scan QR Code"
+  - combobox: Semua Status Progress
+  - combobox: Semua Pembayaran
+  - textbox "NPSN"
+  - button "Scan Barcode"
+  - textbox "Nama Instansi"
+  - textbox "AWB"
+  - textbox "Serial Number"
+  - combobox: Semua Jenjang
+  - combobox: Semua Direktorat
+  - combobox: Semua Propinsi
+  - combobox: Semua Kabupaten Kota
+  - combobox: Semua Kecamatan
+  - combobox: Semua Kelurahan
+  - text: Koordinator
+  - combobox "Koordinator"
+  - button "Open"
+  - text: Teknisi
+  - combobox "Teknisi" [disabled]
+  - button "Open" [disabled]
+  - checkbox "SN Terisi" [checked]
+  - paragraph: SN Terisi
+  - checkbox "SN Kosong" [checked]
+  - paragraph: SN Kosong
+  - button "Cari Alokasi"
+  - button "Reset"
+  - button "Excel"
+  - button "CSV"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Aksi ID Transaksi Status Pembayaran NPSN Propinsi Kabupaten Nama Instansi Serial Number PIC / Telp Foto Koordinator Teknisi / Telp
+  - button "Edit"
+  - paragraph: HI202600000000001
+  - text: SIAP DIINSTAL
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: KD-2026-00000002 Nana Bauty +6289507099850 - - -
+  - button "Edit"
+  - paragraph: HI202600000000002
+  - text: PROSES INSTALASI
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: 1 IKA SRI WAHYUNI 089621048162
+  - paragraph: "10"
+  - text: KD-2026-00000031 Vidia Harun +6281234645258 TEK-2026-00001621 Sabdho Wijatmoko +628984855223
+  - button "Edit"
+  - paragraph: HI202600000000003
+  - text: SIAP DIINSTAL
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 - - -
+  - button "Edit"
+  - paragraph: HI202600000000004
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000005
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000006
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000007
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000008
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000009
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000010
+  - text: BARANG SIAP
+  - paragraph: "70006190"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: Kosong IKA SRI WAHYUNI 089621048162
+  - paragraph: "0"
+  - text: "- - - - - -"
+  - button "Edit"
+  - paragraph: HI202600000000011
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "10"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000012
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000013
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000014
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000015
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000016
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000017
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000018
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000019
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000020
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000021
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000022
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000023
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000024
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - button "Edit"
+  - paragraph: HI202600000000025
+  - text: PROSES INSTALASI
+  - paragraph: "69857209"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: KB AL HUSNA
+  - text: Kosong Rizqi Fitriyani 089629237183
+  - paragraph: "0"
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 TEK-2026-00091296 ZLP TEKNISI 1 +6281212121213
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 6522847
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - text: Copyright 2026 ZLP Digital Teknologi

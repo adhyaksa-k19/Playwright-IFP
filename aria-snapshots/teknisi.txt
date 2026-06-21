@@ -1,0 +1,428 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Sekolah"
+  - listitem:
+    - button "Koordinator"
+  - listitem:
+    - button "Teknisi"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Master":
+          - /url: /master/teknisi
+      - listitem:
+        - paragraph: Teknisi
+  - textbox "Kode Teknisi"
+  - textbox "Nama Teknisi"
+  - textbox "No Telepon"
+  - text: Koordinator
+  - combobox "Koordinator"
+  - button "Open"
+  - combobox: Semua Propinsi
+  - combobox [disabled]: Semua Kabupaten/Kota
+  - combobox: Semua Validasi
+  - button "Cari Teknisi"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Upload Bulk CSV"
+  - link "Download Template":
+    - /url: /assets/BULK_UPLOAD_TEKNISI-DBDUIag0.xlsx
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Edit Hapus Validasi Validated Validation Date Kode Teknisi Nama Teknisi Alamat Telp. 1 Propinsi Kabupaten Kode Koordinator Nama Koordinator
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 15 Jun 2026, 14.04
+  - paragraph: TEK-2026-00000001
+  - paragraph: Adrena Teknisi 01
+  - paragraph
+  - paragraph: "+62811978009"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Barat
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 15 Jun 2026, 14.04
+  - paragraph: TEK-2026-00000002
+  - paragraph: Adrena Teknisi 02
+  - paragraph
+  - paragraph: "+6281511403443"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Barat
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 15 Jun 2026, 14.04
+  - paragraph: TEK-2026-00000003
+  - paragraph: Adrena Teknisi 03
+  - paragraph
+  - paragraph: "+6281329171143"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Barat
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 15 Jun 2026, 14.04
+  - paragraph: TEK-2026-00000004
+  - paragraph: Adrena Teknisi 04
+  - paragraph
+  - paragraph: "+6282324234819"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Barat
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 15 Jun 2026, 14.04
+  - paragraph: TEK-2026-00000005
+  - paragraph: Adrena Teknisi 05
+  - paragraph
+  - paragraph: "+6285155177097"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Barat
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 09 Jun 2026, 10.45
+  - paragraph: TEK-2026-00000006
+  - paragraph: Zaky
+  - paragraph: Jalan seribu
+  - paragraph: "+6289638280391"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph
+  - paragraph
+  - button "Edit"
+  - button "Hapus"
+  - button "Validasi Manual"
+  - text: UNVERIFIED -
+  - paragraph: TEK-2026-00000007
+  - paragraph: apalah
+  - paragraph: Jalan sohaeto
+  - paragraph: "+6289638280392"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kab. Kepulauan Seribu
+  - paragraph
+  - paragraph
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 07 Jun 2026, 14.05
+  - paragraph: TEK-2026-00000010
+  - paragraph: Wandi Taufik
+  - paragraph: kp.Sukaluyu rt/rw 03/02 ds, parungserab kec, soreang
+  - paragraph: "+6283829286397"
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kab. Sukabumi
+  - paragraph: KD-2026-00000016
+  - paragraph: Dewie silvie
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 07 Jun 2026, 14.05
+  - paragraph: TEK-2026-00000118
+  - paragraph: Yogi lesmana
+  - paragraph: jl babakan hantap no 11 rt05/09 kec, kiaracondong kel, babakan
+  - paragraph: "+6285872303488"
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kab. Sukabumi
+  - paragraph: KD-2026-00000016
+  - paragraph: Dewie silvie
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 08 Jun 2026, 23.52
+  - paragraph: TEK-2026-00000119
+  - paragraph: MUHAMMAD RAFI
+  - paragraph: JL. GURU SULAIMAN. KEC. PAYUNG SEKAKI. PEKANBARU
+  - paragraph: "+6281263685628"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 09 Jun 2026, 10.56
+  - paragraph: TEK-2026-00000120
+  - paragraph: FATHIR ADITYA RISKI
+  - paragraph: JL. TANJUNG DATUK. GG PLN. KEC. LIMA PULUH. PEKANBARU. RIAU
+  - paragraph: "+6289521034742"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 08 Jun 2026, 20.44
+  - paragraph: TEK-2026-00000121
+  - paragraph: RIFAIZAL
+  - paragraph: JL. SAKURA. HANG TUAH. KEC. TENAYAN RAYA
+  - paragraph: "+6282172364520"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 08 Jun 2026, 20.42
+  - paragraph: TEK-2026-00000122
+  - paragraph: DESMAN ALBER LAIA
+  - paragraph: JL. MATOA. KEC. TENAYAN RAYA. PEKANBARU
+  - paragraph: "+6281537483593"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 09.51
+  - paragraph: TEK-2026-00000123
+  - paragraph: TENGKU PUTERA MAHENDRA
+  - paragraph: JL. BUDI LUHUR. PERUMAHAN BAFANDA. KEL. MENTANGOR. KEC. KULIM. PEKANBARU
+  - paragraph: "+6282386577779"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 06 Jun 2026, 22.22
+  - paragraph: TEK-2026-00000124
+  - paragraph: MEDIAN FRADERICK
+  - paragraph: JL. WIRA PURI NO. 69. REJOSARI. KEC. TENAYAN RAYA. PEKANBARU. RIAU 28242
+  - paragraph: "+6282299382348"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 09 Jun 2026, 10.45
+  - paragraph: TEK-2026-00000125
+  - paragraph: AZMI
+  - paragraph: RIMBO PANJANG. PERUMAHAN PERMATA FATIKA BLOK I NO. 1. KEC. TAMBANG
+  - paragraph: "+6281261691315"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 10.18
+  - paragraph: TEK-2026-00000126
+  - paragraph: BAMBANG ISMOYOJATI
+  - paragraph: JL. KIJANG PUTIH, PERUM MUTIARA GARUDA SAKTI KM 7, DESA KARYA INDAH
+  - paragraph: "+6282387289481"
+  - paragraph: Prov. Riau
+  - paragraph: Kab. Kampar
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 10.08
+  - paragraph: TEK-2026-00000127
+  - paragraph: HARAPAN MAHINSAT PANE
+  - paragraph: JL. BUDI LUHUR, PERUMAHAN VILLA AKASIA ASRI 2, KEL. TUAH NEGERI, KEC. TENAYAN RAYA
+  - paragraph: "+6285271453134"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 22.26
+  - paragraph: TEK-2026-00000128
+  - paragraph: RAHMAT HIDAYAT PRATAMA
+  - paragraph: JL. BUDI LUHUR, PERUMAHAN VILLA AKASIA ASRI 2, KEL. TUAH NEGERI, KEC. TENAYAN RAYA
+  - paragraph: "+6285182762285"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 14.34
+  - paragraph: TEK-2026-00000129
+  - paragraph: JULIAN SYAHPUTRA
+  - paragraph: JL. BUDI LUHUR, PERUMAHAN VILLA AKASIA ASRI 2, KEL. TUAH NEGERI, KEC. TENAYAN RAYA
+  - paragraph: "+6282287510515"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 14.27
+  - paragraph: TEK-2026-00000130
+  - paragraph: RICKY ADI SYAHPUTRA
+  - paragraph: JL. SUKA KARYA. KEC. TAMPAN. PEKANBARU
+  - paragraph: "+628984838579"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 07.05
+  - paragraph: TEK-2026-00000131
+  - paragraph: FIKY WILYA
+  - paragraph: JL. SARWO EDI NO. 26. RT 03/RW 02, KEL. SUKAMULYA, KEC. SAIL
+  - paragraph: "+6282170129704"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.08
+  - paragraph: TEK-2026-00000132
+  - paragraph: JOHAN
+  - paragraph: JL. SATRIA, KEL. BAMBU KUNING, KEC. TENAYAN RAYA
+  - paragraph: "+6281275595777"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.30
+  - paragraph: TEK-2026-00000133
+  - paragraph: ALBERT RIO FOURTH GALINGGING
+  - paragraph: JL. KUANSING KARTAMA, RT 04/RW02, KEL. PERHENTIAN MARPOYAN, KEC. MARPOYAN DAMAI
+  - paragraph: "+6281266940642"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.21
+  - paragraph: TEK-2026-00000136
+  - paragraph: CHRISTOPER SIMBOLON
+  - paragraph: PANAM, KEC. BINAWIDYA
+  - paragraph: "+6281372341398"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 11.25
+  - paragraph: TEK-2026-00000137
+  - paragraph: ZIELDO HIDAYAT
+  - paragraph: JL. JEND. AHMAD YANI NO. 78-88, PULAU KARAM, KEC. SUKAJADI, PEKANBARU
+  - paragraph: "+6282267546749"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.23
+  - paragraph: TEK-2026-00000138
+  - paragraph: HERMANTO
+  - paragraph: JL. KENANGAN, PERUM BMP II BLOK B NO. 26, RT 01/RW 02, KEL. MENTANGOR, KEC. TENAYAN RAYA
+  - paragraph: "+6285265364741"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.36
+  - paragraph: TEK-2026-00000139
+  - paragraph: SHOLAHUDDIN AFDHOL
+  - paragraph: JL. JEND. AHMAD YANI NO. 78-88, PULAU KARAM, KEC. SUKAJADI, PEKANBARU
+  - paragraph: "+6285252726664"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 11.48
+  - paragraph: TEK-2026-00000140
+  - paragraph: VIFI HAWANI
+  - paragraph: PERUM GRIYA MAYANG ASRI 1, KUBANG JAYA, KEC. SIAK HULU
+  - paragraph: "+6283175887428"
+  - paragraph: Prov. Riau
+  - paragraph: Kab. Kampar
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 10 Jun 2026, 22.41
+  - paragraph: TEK-2026-00000141
+  - paragraph: YOHANA ASNAWATI LAIA
+  - paragraph: JL. BENCAH PASUNG, KEL. BENCANG LESUNG, KEC. TENAYAN RAYA
+  - paragraph: "+6285362313026"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 11.55
+  - paragraph: TEK-2026-00000142
+  - paragraph: FERDI
+  - paragraph: JL. SUDIRMAN, KEC. BUKIT RAYA, PEKANBARU
+  - paragraph: "+6281224428869"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 07.31
+  - paragraph: TEK-2026-00000143
+  - paragraph: RAHMAD GUSTI MAULANA
+  - paragraph: JL. KAMPUNG BARU NO. 25, BAMBU KUNING, KEC. TENAYAN RAYA
+  - paragraph: "+6282169301114"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - button "Edit"
+  - button "Hapus"
+  - text: VERIFIED 11 Jun 2026, 08.26
+  - paragraph: TEK-2026-00000144
+  - paragraph: DESPERADO SARAGI
+  - paragraph: JL. PURWODADI/EKA TUNGGAL, PERUM FAUZAN HOUSE, KEL. SIDOMULYA BARAT, KEC. TAMPAN
+  - paragraph: "+6281314858455"
+  - paragraph: Prov. Riau
+  - paragraph: Kota Pekanbaru
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 79450
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - button "add": Tambah Teknisi
+  - text: Copyright 2026 ZLP Digital Teknologi

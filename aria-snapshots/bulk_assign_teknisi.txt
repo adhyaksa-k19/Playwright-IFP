@@ -1,0 +1,89 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Buat Alokasi"
+  - listitem:
+    - button "Instalasi"
+  - listitem:
+    - button "Perbaikan"
+  - listitem:
+    - button "Bulk Assign Koordinator"
+  - listitem:
+    - button "Bulk Assign Teknisi"
+  - listitem:
+    - button "Bulk Assign Instalasi"
+  - listitem:
+    - button "Penerimaan BAPP Fisik"
+  - listitem:
+    - button "Pengiriman Batch BAPP"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Transaksi":
+          - /url: /transaksi/bulk_assign_teknisi
+      - listitem:
+        - paragraph: Bulk Assign Teknisi
+  - heading "Target Assignment Koordinator" [level=6]
+  - text: Nama / Kode Koordinator
+  - combobox "Nama / Kode Koordinator"
+  - button "Open"
+  - button "Assign (0)" [disabled]
+  - button "Reset Tim" [disabled]
+  - textbox "Cari berdasarkan nama teknisi..."
+  - text: Propinsi
+  - combobox "Propinsi"
+  - button "Open"
+  - text: Kabupaten/Kota
+  - combobox "Kabupaten/Kota" [disabled]
+  - button "Open" [disabled]
+  - button "Atur Tampilan Kolom"
+  - separator
+  - progressbar:
+    - img
+  - checkbox
+  - text: ID Nama Teknisi Propinsi Kota/Kab
+  - checkbox
+  - paragraph: TEK-2026-00000006
+  - paragraph: Zaky
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - checkbox
+  - paragraph: TEK-2026-00000007
+  - paragraph: apalah
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kab. Kepulauan Seribu
+  - checkbox
+  - paragraph: TEK-2026-00005560
+  - paragraph: AGUS SUGENG
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Lamongan
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–3 of 3
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - text: Copyright 2026 ZLP Digital Teknologi

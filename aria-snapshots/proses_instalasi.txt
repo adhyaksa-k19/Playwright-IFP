@@ -1,0 +1,110 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Alokasi"
+  - listitem:
+    - button "Proses Instalasi"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Monitoring":
+          - /url: /monitoring/proses_instalasi
+      - listitem:
+        - paragraph: Proses Instalasi
+  - text: Mulai
+  - textbox "Mulai"
+  - text: Selesai
+  - textbox "Selesai"
+  - textbox "Nama Koordinator/Teknisi"
+  - text: Group By
+  - combobox "Teknisi"
+  - text: All Group
+  - combobox "All Group"
+  - combobox "SEMUA PROPINSI"
+  - combobox "SEMUA KABUPATEN" [disabled]
+  - combobox "SEMUA KECAMATAN" [disabled]
+  - textbox "Nama Sekolah"
+  - textbox "NPSN"
+  - combobox "SEMUA STATUS"
+  - button "Cari"
+  - button "Reset"
+  - button "Excel"
+  - button "CSV"
+  - text: TOTAL INSTALASI
+  - textbox: "0"
+  - text: PROSES INSTALASI
+  - textbox: "0"
+  - text: INSTALASI GAGAL
+  - textbox: "0"
+  - text: INSTALASI SELESAI
+  - textbox: "0"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - table:
+    - rowgroup:
+      - row "No Nama Teknisi Telp Teknisi Group No. Inst Jam Trans. ID NPSN Propinsi Kabupaten Kecamatan Nama Sekolah PIC Telp PIC Foto Status":
+        - columnheader "No":
+          - button "No"
+        - columnheader "Nama Teknisi"
+        - columnheader "Telp Teknisi"
+        - columnheader "Group"
+        - columnheader "No. Inst":
+          - button "No. Inst"
+        - columnheader "Jam":
+          - button "Jam"
+        - columnheader "Trans. ID":
+          - button "Trans. ID"
+        - columnheader "NPSN":
+          - button "NPSN"
+        - columnheader "Propinsi":
+          - button "Propinsi"
+        - columnheader "Kabupaten":
+          - button "Kabupaten"
+        - columnheader "Kecamatan":
+          - button "Kecamatan"
+        - columnheader "Nama Sekolah":
+          - button "Nama Sekolah"
+        - columnheader "PIC":
+          - button "PIC"
+        - columnheader "Telp PIC":
+          - button "Telp PIC"
+        - columnheader "Foto":
+          - button "Foto"
+        - columnheader "Status":
+          - button "Status"
+    - rowgroup:
+      - row "No data available":
+        - cell "No data available"
+  - paragraph: "Grup per halaman:"
+  - 'combobox "Grup per halaman: 10"': "10"
+  - paragraph: 0–0 of 0
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - alert:
+    - text: Gagal memuat data
+    - button "Close"
+  - text: Copyright 2026 ZLP Digital Teknologi

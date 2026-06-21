@@ -1,0 +1,96 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Rekap Progress"
+  - listitem:
+    - button "Ranking SLA Koordinator"
+  - listitem:
+    - button "Ranking SLA Teknisi"
+  - listitem:
+    - button "Rekap per Propinsi"
+  - listitem:
+    - button "Rekap per Kabupaten"
+  - listitem:
+    - button "Rekap per Direktorat"
+  - listitem:
+    - button "Report Pembayaran"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Report":
+          - /url: /report/rekap_progress
+      - listitem:
+        - paragraph: Rekap Progress Harian
+  - text: Dari Tanggal
+  - textbox "Dari Tanggal": 2026-05-22
+  - text: Sampai Tanggal
+  - textbox "Sampai Tanggal": 2026-06-21
+  - text: Direktorat
+  - combobox: Semua Direktorat
+  - text: Propinsi
+  - combobox: Semua Propinsi
+  - text: Kabupaten / Kota
+  - combobox [disabled]: Semua Kabupaten
+  - button "Tarik Data"
+  - button "Reset"
+  - button "Print"
+  - button "Excel" [disabled]
+  - heading "Trend Progress Harian" [level=6]
+  - list:
+    - listitem:
+      - img "Disetujui legend icon"
+      - text: Disetujui
+    - listitem:
+      - img "Gagal legend icon"
+      - text: Gagal
+    - listitem:
+      - img "Mulai Instalasi legend icon"
+      - text: Mulai Instalasi
+    - listitem:
+      - img "Revisi legend icon"
+      - text: Revisi
+    - listitem:
+      - img "Revisi Selesai legend icon"
+      - text: Revisi Selesai
+    - listitem:
+      - img "Selesai Instalasi legend icon"
+      - text: Selesai Instalasi
+    - listitem:
+      - img "Siap Diinstal legend icon"
+      - text: Siap Diinstal
+    - listitem:
+      - img "Terkendala legend icon"
+      - text: Terkendala
+  - application
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Tanggal Siap Diinstal Mulai Instalasi Selesai Instalasi Terkendala Gagal Direvisi Disetujui Dir. Revisi Selesai
+  - paragraph: No rows to display
+  - alert:
+    - text: Gagal memuat data rekap harian
+    - button "Close"
+  - text: Copyright 2026 ZLP Digital Teknologi

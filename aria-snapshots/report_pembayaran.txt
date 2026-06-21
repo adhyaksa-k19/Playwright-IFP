@@ -1,0 +1,107 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Rekap Progress"
+  - listitem:
+    - button "Ranking SLA Koordinator"
+  - listitem:
+    - button "Ranking SLA Teknisi"
+  - listitem:
+    - button "Rekap per Propinsi"
+  - listitem:
+    - button "Rekap per Kabupaten"
+  - listitem:
+    - button "Rekap per Direktorat"
+  - listitem:
+    - button "Report Pembayaran"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Report":
+          - /url: /report/pembayaran
+      - listitem:
+        - paragraph: Report Pembayaran
+  - checkbox "Filter Tanggal"
+  - paragraph: Filter Tanggal
+  - text: Dari Tanggal Bayar
+  - textbox "Dari Tanggal Bayar" [disabled]: 2026-05-22
+  - text: Sampai Tanggal Bayar
+  - textbox "Sampai Tanggal Bayar" [disabled]: 2026-06-21
+  - text: Direktorat
+  - combobox: Semua Direktorat
+  - text: Propinsi
+  - combobox: Semua Propinsi
+  - text: Kabupaten / Kota
+  - combobox [disabled]: Semua Kabupaten
+  - text: Koordinator
+  - combobox "Koordinator"
+  - button "Open"
+  - text: Teknisi
+  - combobox "Teknisi"
+  - button "Open"
+  - button "Tampilkan Report"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Export CSV"
+  - text: TOTAL KESELURUHAN
+  - heading "0" [level=6]
+  - text: TOTAL PAID
+  - heading "0" [level=6]
+  - text: TOTAL KASBON
+  - heading "0" [level=6]
+  - text: TOTAL UNPAID
+  - heading "0" [level=6]
+  - heading "Rasio Pembayaran" [level=6]
+  - button
+  - list:
+    - listitem:
+      - img "Kasbon legend icon"
+      - text: Kasbon
+    - listitem:
+      - img "Paid legend icon"
+      - text: Paid
+    - listitem:
+      - img "Unpaid legend icon"
+      - text: Unpaid
+  - application
+  - heading "Trend Pembayaran Harian (Paid)" [level=6]
+  - button
+  - list:
+    - listitem:
+      - img "Total Paid legend icon"
+      - text: Total Paid
+  - application
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Status Pembayaran Tanggal Lunas PIC Lunas Tanggal Kasbon PIC Kasbon Penalty SLA ID Transaksi NPSN Nama Sekolah Propinsi Kabupaten/Kota Status Progres Koordinator Teknisi
+  - paragraph: No rows to display
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–0 of 0
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - text: Copyright 2026 ZLP Digital Teknologi

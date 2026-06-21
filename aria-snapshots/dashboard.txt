@@ -1,0 +1,96 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - paragraph: Dashboard
+  - paragraph: Statistik Nasional
+  - text: Filter Koordinator
+  - combobox "Filter Koordinator"
+  - button "Open"
+  - button "Total Alokasi ...":
+    - text: Total Alokasi
+    - heading "..." [level=6]
+  - button "Barang Siap ...":
+    - text: Barang Siap
+    - heading "..." [level=6]
+  - button "Proses Pengiriman ...":
+    - text: Proses Pengiriman
+    - heading "..." [level=6]
+  - button "Menuju Alamat ...":
+    - text: Menuju Alamat
+    - heading "..." [level=6]
+  - button "Pengiriman Gagal ...":
+    - text: Pengiriman Gagal
+    - heading "..." [level=6]
+  - button "Siap Diinstal ...":
+    - text: Siap Diinstal
+    - heading "..." [level=6]
+  - text: Status Detail
+  - button "Sudah Assign Koordinator ...":
+    - text: Sudah Assign Koordinator
+    - heading "..." [level=6]
+  - button "Proses Instalasi ...":
+    - text: Proses Instalasi
+    - heading "..." [level=6]
+  - button "Instalasi Terkendala ...":
+    - text: Instalasi Terkendala
+    - heading "..." [level=6]
+  - button "Instalasi Gagal ...":
+    - text: Instalasi Gagal
+    - heading "..." [level=6]
+  - button "Instalasi Selesai ...":
+    - text: Instalasi Selesai
+    - heading "..." [level=6]
+  - button "Revisi ...":
+    - text: Revisi
+    - heading "..." [level=6]
+  - button "Disetujui ...":
+    - text: Disetujui
+    - heading "..." [level=6]
+  - button "Reviu APIP ...":
+    - text: Reviu APIP
+    - heading "..." [level=6]
+  - button "Sesuai APIP ...":
+    - text: Sesuai APIP
+    - heading "..." [level=6]
+  - button "Pengajuan Penarikan ...":
+    - text: Pengajuan Penarikan
+    - heading "..." [level=6]
+  - heading "Proporsi Status" [level=6]
+  - button
+  - heading "Progress per Propinsi" [level=6]
+  - button
+  - heading "Assignment Map (Sebaran Koordinator & Teknisi)" [level=6]
+  - progressbar:
+    - img
+  - table:
+    - rowgroup:
+      - row "Propinsi":
+        - columnheader "Propinsi"
+    - rowgroup
+  - text: Copyright 2026 ZLP Digital Teknologi

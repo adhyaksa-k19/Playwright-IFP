@@ -1,0 +1,214 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Buat Alokasi"
+  - listitem:
+    - button "Instalasi"
+  - listitem:
+    - button "Perbaikan"
+  - listitem:
+    - button "Bulk Assign Koordinator"
+  - listitem:
+    - button "Bulk Assign Teknisi"
+  - listitem:
+    - button "Bulk Assign Instalasi"
+  - listitem:
+    - button "Penerimaan BAPP Fisik"
+  - listitem:
+    - button "Pengiriman Batch BAPP"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - text: NPSN
+  - textbox "NPSN"
+  - text: Nama Sekolah
+  - textbox "Nama Sekolah"
+  - text: Propinsi
+  - combobox "Propinsi Semua Propinsi": Semua Propinsi
+  - text: Kabupaten
+  - combobox "Kabupaten Semua Kabupaten": Semua Kabupaten
+  - text: Min Alokasi
+  - spinbutton "Min Alokasi"
+  - text: Max Alokasi
+  - spinbutton "Max Alokasi"
+  - button "Cari"
+  - button "Reset"
+  - button "Tambah Alokasi (0 Sekolah)" [disabled]
+  - button "Atur Tampilan Kolom"
+  - separator
+  - checkbox
+  - text: NPSN Nama Sekolah Propinsi Kabupaten/Kota Current Units
+  - checkbox
+  - paragraph: P9959706
+  - paragraph: PKBM NURUL IMAN
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Luwu Timur
+  - paragraph: "3601"
+  - checkbox
+  - paragraph: "70036425"
+  - paragraph: TK. PERMATA BUNDA
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Banyuwangi
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69918390"
+  - paragraph: TK.NURHALIFAH
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kota Parepare
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "20361190"
+  - paragraph: DHARMA WANITA III
+  - paragraph: Prov. Jawa Tengah
+  - paragraph: Kab. Grobogan
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "70001584"
+  - paragraph: KB AL - HIKAM
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kota Depok
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69895405"
+  - paragraph: KB AMANAH
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Jember
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69988945"
+  - paragraph: KB DAHLIA
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kab. Cianjur
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "70001305"
+  - paragraph: KB KHATARABUMI
+  - paragraph: Prov. Maluku Utara
+  - paragraph: Kab. Halmahera Barat
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: "3710"
+  - checkbox
+  - paragraph: "70042115"
+  - paragraph: KB PAUD ALIF MONTESSORI SCHOOL
+  - paragraph: Prov. Banten
+  - paragraph: Kota Tangerang Selatan
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69895407"
+  - paragraph: KB PELITA BANGSA
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Jember
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69802144"
+  - paragraph: PAUD AL FAJRI
+  - paragraph: Prov. Lampung
+  - paragraph: Kab. Lampung Utara
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69870510"
+  - paragraph: PAUD AT THOHIRIYAH
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kab. Cirebon
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69961123"
+  - paragraph: PAUD BUNGONG REUDEUP
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "40204731"
+  - paragraph: PAUD TERPADU MEKAR INDAH
+  - paragraph: Prov. Sulawesi Tengah
+  - paragraph: Kab. Tolitoli
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69989754"
+  - paragraph: PINEAPPLE
+  - paragraph: Prov. Sumatera Utara
+  - paragraph: Kota Medan
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: P2960380
+  - paragraph: PKBM BINA MANDIRI
+  - paragraph: Prov. Jambi
+  - paragraph: Kota Jambi
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: P2961295
+  - paragraph: PKBM DARUL ULUM
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Probolinggo
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: P2966145
+  - paragraph: PKBM KEJAR PRESTASI
+  - paragraph: Prov. Banten
+  - paragraph: Kota Tangerang
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: P9984539
+  - paragraph: PKBM SEKOLAH TAHFIZHUL QURAN TELAGA ILMU
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: Kab. Bantul
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: P9998951
+  - paragraph: PKBM. BHAKTI BAPAK EMAK
+  - paragraph: Prov. Jawa Timur
+  - paragraph: Kab. Jombang
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69995882"
+  - paragraph: SD ALAM KEBUN TUMBUH
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kota Depok
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "69975187"
+  - paragraph: SD INSAN NURUL FIKRI
+  - paragraph: Prov. Jawa Barat
+  - paragraph: Kota Depok
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "50205659"
+  - paragraph: SD ISLAM NW LINGKOK LALEM
+  - paragraph: Prov. Nusa Tenggara Barat
+  - paragraph: Kab. Lombok Timur
+  - paragraph: "3600"
+  - checkbox
+  - paragraph: "70001990"
+  - paragraph: SD ISLAM TERPADU AL-IZZAH
+  - paragraph: Prov. Banten
+  - paragraph: Kota Tangerang Selatan
+  - paragraph: "3600"
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 25"': "25"
+  - paragraph: 1–25 of 310742
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - text: Copyright 2026 ZLP Digital Teknologi

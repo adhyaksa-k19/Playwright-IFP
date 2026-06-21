@@ -1,0 +1,416 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Buat Alokasi"
+  - listitem:
+    - button "Instalasi"
+  - listitem:
+    - button "Perbaikan"
+  - listitem:
+    - button "Bulk Assign Koordinator"
+  - listitem:
+    - button "Bulk Assign Teknisi"
+  - listitem:
+    - button "Bulk Assign Instalasi"
+  - listitem:
+    - button "Penerimaan BAPP Fisik"
+  - listitem:
+    - button "Pengiriman Batch BAPP"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Transaksi":
+          - /url: /transaksi/bulk_assign_instalasi
+      - listitem:
+        - paragraph: Bulk Assign Instalasi ke Teknisi
+  - heading "Filter Alokasi" [level=6]
+  - textbox "ID Transaksi"
+  - textbox "NPSN"
+  - textbox "Nama Sekolah"
+  - text: Koordinator
+  - combobox "Koordinator"
+  - button "Open"
+  - text: Propinsi
+  - combobox: Semua Propinsi
+  - text: Kabupaten
+  - combobox [disabled]: Semua Kabupaten
+  - text: Kecamatan
+  - combobox [disabled]: Semua Kecamatan
+  - text: Kelurahan
+  - combobox [disabled]: Semua Kelurahan
+  - button "Cari Data"
+  - button "Reset"
+  - text: BELUM ASSIGN TEKNISI
+  - heading "0" [level=6]
+  - text: DATA NPSN
+  - heading "0" [level=6]
+  - heading "Target Assignment Teknisi" [level=6]
+  - text: Pilih Teknisi Tujuan
+  - combobox "Pilih Teknisi Tujuan" [disabled]
+  - button "Open" [disabled]
+  - paragraph: "* Pilih alokasi atau filter Kabupaten/Kota untuk melihat teknisi yang relevan."
+  - button "ASSIGN (0)" [disabled]
+  - button "Atur Tampilan Kolom"
+  - separator
+  - checkbox
+  - text: Trans. ID NPSN Nama Sekolah Koordinator Teknisi Propinsi Kabupaten Kecamatan Kelurahan Status Progress Jadwal
+  - checkbox
+  - paragraph: HI202600000000001
+  - paragraph: "70006190"
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: KD-2026-00000002 Nana Bauty +6289507099850 Belum Assign
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: Kec. Pulo Gadung
+  - paragraph: Cipinang
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000003
+  - paragraph: "70006190"
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Timur
+  - paragraph: Kec. Pulo Gadung
+  - paragraph: Cipinang
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000345
+  - paragraph: "40302112"
+  - paragraph: UPTD SD NEGERI 104 BARRU
+  - text: KD-2026-00000002 Nana Bauty +6289507099850 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Soppeng Riaja
+  - paragraph: Kiru-Kiru
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000619
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: KD-2026-00000007 Aripin +6285960646078 Belum Assign
+  - paragraph: Prov. Papua Selatan
+  - paragraph: Kab. Asmat
+  - paragraph: Kec. Agats
+  - paragraph: Uwus
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000620
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: KD-2026-00000007 Aripin +6285960646078 Belum Assign
+  - paragraph: Prov. Papua Selatan
+  - paragraph: Kab. Asmat
+  - paragraph: Kec. Agats
+  - paragraph: Uwus
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000621
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - text: KD-2026-00000006 PRICILIA WONGES +6285137357652 Belum Assign
+  - paragraph: Prov. Papua Selatan
+  - paragraph: Kab. Asmat
+  - paragraph: Kec. Agats
+  - paragraph: Uwus
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000811
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000002 Nana Bauty +6289507099850 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000816
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000006 PRICILIA WONGES +6285137357652 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000843
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000844
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000845
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000850
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000853
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000854
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000855
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000856
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000857
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000858
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000859
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000860
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000861
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000862
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000863
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000864
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000865
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000866
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000867
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000868
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000869
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000000870
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - paragraph: Kec. Barru
+  - paragraph: Sumpang Binangae
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600000003881
+  - paragraph: "20361190"
+  - paragraph: DHARMA WANITA III
+  - text: KD-2026-00000078 Timothy - Jawa Tengah +6281224477594 Belum Assign
+  - paragraph: Prov. Jawa Tengah
+  - paragraph: Kab. Grobogan
+  - paragraph: Kec. Brati
+  - paragraph: Karangsari
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600004022685
+  - paragraph: "69857178"
+  - paragraph: KB BINTANG TATA
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: Kec. Tanjung Priok
+  - paragraph: Kebon Bawang
+  - text: SIAP DIINSTAL -
+  - checkbox
+  - paragraph: HI202600004022914
+  - paragraph: "69966555"
+  - paragraph: KB BUNAYYA
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Belum Assign
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: Kota Jakarta Utara
+  - paragraph: Kec. Tanjung Priok
+  - paragraph: Sungai Bambu
+  - text: SIAP DIINSTAL -
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 4031
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - text: Copyright 2026 ZLP Digital Teknologi

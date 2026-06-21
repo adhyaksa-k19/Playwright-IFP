@@ -1,0 +1,341 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Sekolah"
+  - listitem:
+    - button "Koordinator"
+  - listitem:
+    - button "Teknisi"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Master":
+          - /url: /master/koordinator
+      - listitem:
+        - paragraph: Koordinator
+  - textbox "Kode Koordinator"
+  - textbox "Nama Koordinator"
+  - textbox "No Telepon"
+  - combobox: Semua Propinsi
+  - combobox [disabled]: Semua Kabupaten/Kota
+  - button "Cari Koordinator"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Edit Koor. ID Nama Koordinator Alamat Telp. 1 Telp. 2 Propinsi Area Kabupaten
+  - button "Edit"
+  - paragraph: KD-2026-00000001
+  - paragraph: Adrena Koordinator 1
+  - paragraph: test
+  - paragraph: "+6281234567890"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000002
+  - paragraph: Nana Bauty
+  - paragraph
+  - paragraph: "+6289507099850"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+25 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000003
+  - paragraph: Fifien Diastri
+  - paragraph
+  - paragraph: "+62895336315974"
+  - paragraph
+  - text: Prov. Jawa Timur
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000004
+  - paragraph: Angela Felicia
+  - paragraph
+  - paragraph: "+6285710468687"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+18 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000005
+  - paragraph: Angelia Hartawan
+  - paragraph
+  - paragraph: "+6281230989891"
+  - paragraph
+  - text: Prov. Kepulauan Riau
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000006
+  - paragraph: PRICILIA WONGES
+  - paragraph
+  - paragraph: "+6285137357652"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+37 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000007
+  - paragraph: Aripin
+  - paragraph
+  - paragraph: "+6285960646078"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+37 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000008
+  - paragraph: MELAWATI PUSAT 1
+  - paragraph
+  - paragraph: "+6289667751993"
+  - paragraph
+  - text: Prov. Jawa Tengah
+  - button "+8 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000009
+  - paragraph: Achi Harahap
+  - paragraph
+  - paragraph: "+6287886910788"
+  - paragraph
+  - text: Prov. Banten
+  - button "+21 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000010
+  - paragraph: Annatsaz Zahra
+  - paragraph
+  - paragraph: "+6289502627490"
+  - paragraph
+  - text: Prov. Banten
+  - button "+4 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000011
+  - paragraph: Indah Krisnawati
+  - paragraph
+  - paragraph: "+6282230411086"
+  - paragraph
+  - text: Prov. Jawa Timur
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000012
+  - paragraph: Lisa - Maluku
+  - paragraph
+  - paragraph: "+6288973404700"
+  - paragraph
+  - text: Prov. Maluku
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000013
+  - paragraph: ABY
+  - paragraph
+  - paragraph: "+6281280799648"
+  - paragraph
+  - text: Prov. Bali
+  - button "+3 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000014
+  - paragraph: Rizqi Arrasid Soeli
+  - paragraph
+  - paragraph: "+6285173218805"
+  - paragraph
+  - text: Prov. Gorontalo
+  - button "+8 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000015
+  - paragraph: Maulana Taqy
+  - paragraph
+  - paragraph: "+6289515671192"
+  - paragraph
+  - text: Prov. Banten
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000016
+  - paragraph: Dewie silvie
+  - paragraph
+  - paragraph: "+6281315888494"
+  - paragraph
+  - text: Prov. Jawa Barat
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000017
+  - paragraph: Haris Wicaksono
+  - paragraph
+  - paragraph: "+6282138571994"
+  - paragraph
+  - text: Prov. Jawa Timur
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000018
+  - paragraph: Resti Lovita
+  - paragraph
+  - paragraph: "+6281333208800"
+  - paragraph
+  - text: Prov. Nusa Tenggara Barat
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000019
+  - paragraph: Billa Vandewa
+  - paragraph
+  - paragraph: "+6282258738978"
+  - paragraph
+  - text: Prov. Banten
+  - button "+5 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000021
+  - paragraph: Billy Wonges
+  - paragraph
+  - paragraph: "+6281234515878"
+  - paragraph
+  - text: Prov. Kepulauan Riau
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000027
+  - paragraph: Danang Priyono
+  - paragraph
+  - paragraph: "+62895376855958"
+  - paragraph
+  - text: Prov. Maluku
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000028
+  - paragraph: Billy Wonges 2
+  - paragraph
+  - paragraph: "+6281337699990"
+  - paragraph
+  - text: Prov. Bali
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000029
+  - paragraph: Putri Ramadhanti
+  - paragraph
+  - paragraph: "+6281511562320"
+  - paragraph
+  - text: Prov. Banten
+  - button "+29 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000030
+  - paragraph: Lisa Pusat - Jawa Timur
+  - paragraph
+  - paragraph: "+6288973404746"
+  - paragraph
+  - text: Prov. Jawa Timur
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000031
+  - paragraph: Vidia Harun
+  - paragraph
+  - paragraph: "+6281234645258"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+37 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000033
+  - paragraph: Lisa - Banten
+  - paragraph
+  - paragraph: "+6288973404747"
+  - paragraph
+  - text: Prov. Banten
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000034
+  - paragraph: Lisa - DI Yogyakarta
+  - paragraph
+  - paragraph: "+6288973404748"
+  - paragraph
+  - text: Prov. D.I. Yogyakarta
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000035
+  - paragraph: Lisa - DKI Jakarta
+  - paragraph
+  - paragraph: "+6288973404749"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000037
+  - paragraph: Lisa - Jawa Barat
+  - paragraph
+  - paragraph: "+6288973404740"
+  - paragraph
+  - text: Prov. Jawa Barat
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000038
+  - paragraph: Lisa - Jawa Tengah
+  - paragraph
+  - paragraph: "+6288973404741"
+  - paragraph
+  - text: Prov. Jawa Tengah
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000040
+  - paragraph: Lisa - Sumatera Utara
+  - paragraph
+  - paragraph: "+6288973404742"
+  - paragraph
+  - text: Prov. Sumatera Utara
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000041
+  - paragraph: Stella Pusat - Lampung Kepulauan Riau
+  - paragraph
+  - paragraph: "+6281280787676"
+  - paragraph
+  - text: Prov. Bengkulu
+  - button "+5 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000042
+  - paragraph: ENAKIDA
+  - paragraph
+  - paragraph: "+628135111238"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+37 ..."
+  - paragraph
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 286
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - button "add": Tambah Koordinator
+  - text: Copyright 2026 ZLP Digital Teknologi

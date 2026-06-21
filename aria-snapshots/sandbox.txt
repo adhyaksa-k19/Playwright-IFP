@@ -1,0 +1,177 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+  - listitem:
+    - button "Akun User"
+  - listitem:
+    - button "User Role"
+  - listitem:
+    - button "Konfigurasi SLA"
+  - listitem:
+    - button "Allocation Sandbox"
+  - listitem:
+    - button "Log Mobile API"
+  - listitem:
+    - button "Log Sartrans API"
+  - listitem:
+    - button "Log Notifikasi Teknisi"
+  - listitem:
+    - button "Broadcast Pengumuman"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Admin":
+          - /url: /admin/sandbox
+      - listitem:
+        - paragraph: Allocation Sandbox
+  - heading "Batch Simulation Engine" [level=6]
+  - text: Add to Queue via ID Transaksi / NPSN (Comma / Enter separated)
+  - textbox "Add to Queue via ID Transaksi / NPSN (Comma / Enter separated)"
+  - button "Add Target" [disabled]
+  - heading "Simulation Queue (0)" [level=6]
+  - button "Clear Queue" [disabled]
+  - table:
+    - rowgroup:
+      - row "ID Transaksi Status Tim Koordinator SLA Start Time Pause (Hrs) SLA Score Pen. Days Remove":
+        - columnheader "ID Transaksi"
+        - columnheader "Status"
+        - columnheader "Tim Koordinator"
+        - columnheader "SLA Start Time"
+        - columnheader "Pause (Hrs)"
+        - columnheader "SLA Score"
+        - columnheader "Pen. Days"
+        - columnheader "Remove"
+    - rowgroup:
+      - row "Queue is empty. Add allocations via the search bar above.":
+        - cell "Queue is empty. Add allocations via the search bar above."
+  - heading "1. Logistic Triggers" [level=6]
+  - button "Order Pengiriman (Proses Kirim)" [disabled]
+  - button "Berangkat Crossdock" [disabled]
+  - button "Tiba di Transit (Menuju Alamat)" [disabled]
+  - button "Perjalanan ke Tujuan" [disabled]
+  - button "Diterima (Siap Instal)" [disabled]
+  - heading "2. Assignment Triggers" [level=6]
+  - button "Assign Random Koordinator" [disabled]
+  - button "Assign Random Teknisi" [disabled]
+  - button "Force Inter-Team Transfer (Penalty)" [disabled]
+  - button "Mulai Instalasi (Gen Waktu Mulai)" [disabled]
+  - heading "3. Execution & QA" [level=6]
+  - button "Auto-Upload & Selesai/Resubmit" [disabled]
+  - button "Tandai Terkendala (Auto-Upload)" [disabled]
+  - 'button "Simulate Mobile: Resume Instalasi" [disabled]'
+  - button "Tandai Gagal (Auto-Upload)" [disabled]
+  - separator
+  - 'button "QA: Disetujui (Direktorat)" [disabled]'
+  - 'button "QA: Reviu APIP" [disabled]'
+  - 'button "QA: Sesuai APIP (Final)" [disabled]'
+  - 'button "QA: Tolak & Revisi" [disabled]'
+  - button "Generate BAPP (Actual ArUco 12mm)" [disabled]
+  - heading "4. Perbaikan / Gagal" [level=6]
+  - 'button "Simulate PYX: Approve Ticket" [disabled]'
+  - 'button "Simulate Mobile: Resume Gagal" [disabled]'
+  - heading "5. SLA Time Machine" [level=6]
+  - text: Hours to Shift
+  - spinbutton "Hours to Shift": "-120"
+  - paragraph: Negative = Past, Positive = Future
+  - button "Shift Start SLA Timestamp" [disabled]
+  - separator
+  - button "Trigger SLA Cron Job"
+  - heading "6. Telegram Bot Integrasi" [level=6]
+  - text: Target Chat ID (Gunakan ID Asli Anda)
+  - textbox "Target Chat ID (Gunakan ID Asli Anda)"
+  - text: Teks Pesan
+  - textbox "Teks Pesan"
+  - paragraph: Gunakan fitur ini untuk mensimulasikan interaksi teknisi dengan bot.
+  - button "Kirim Chat (Simulate User)" [disabled]
+  - button "Push Queue (Bot Broadcast)" [disabled]
+  - heading "7. MQTT Broadcast" [level=6]
+  - text: MQTT Topic
+  - textbox "MQTT Topic": pyx/telegram/send
+  - text: JSON Payload / Teks Pesan
+  - textbox "JSON Payload / Teks Pesan"
+  - paragraph: Teks akan otomatis dikonversi menjadi JSON jika format sesuai.
+  - button "Publish to MQTT" [disabled]
+  - heading "8. Telemetry & Liveness" [level=6]
+  - button "Bulk Simulate Heartbeat (Online)" [disabled]
+  - button "Bulk Simulate Heartbeat (Offline)" [disabled]
+  - separator
+  - text: Spesifik Kode Teknisi
+  - textbox "Spesifik Kode Teknisi":
+    - /placeholder: "Contoh: TEK-2026-00000001"
+  - button "Set Online" [disabled]
+  - button "Set Offline" [disabled]
+  - text: "* Bulk akan mengirim ping telemetry untuk semua teknisi di antrean. Form spesifik akan mengirim untuk 1 teknisi saja."
+  - heading "9. JWT Token Generator" [level=6]
+  - text: Kode Teknisi / Username (No Telepon)
+  - textbox "Kode Teknisi / Username (No Telepon)"
+  - button "Generate Mobile Token" [disabled]
+  - heading "10. Push Notification Simulator (Bulk)" [level=6]
+  - text: Target Username / No Telepon / Kode Teknisi (Bisa Koma / Enter)
+  - textbox "Target Username / No Telepon / Kode Teknisi (Bisa Koma / Enter)"
+  - paragraph: "Contoh: 081234567, 081999999, TEK-2026-00000001"
+  - text: Judul Notifikasi
+  - textbox "Judul Notifikasi"
+  - text: Isi Pesan / Body
+  - textbox "Isi Pesan / Body"
+  - button "Kirim Push Notification" [disabled]
+  - heading "11. Sartrans Webhook API Simulator" [level=6]
+  - text: LOGISTICS METADATA
+  - button "Load First from Queue" [disabled]
+  - button "Generate Random AWB"
+  - text: No Resi (AWB)
+  - textbox "No Resi (AWB)"
+  - text: NPSN
+  - textbox "NPSN"
+  - text: Nama Sekolah
+  - textbox "Nama Sekolah"
+  - text: Direktorat
+  - combobox "Direktorat SD": SD
+  - text: Nama PIC
+  - textbox "Nama PIC"
+  - text: No Telp PIC
+  - textbox "No Telp PIC"
+  - text: ALAMAT SEKOLAH Provinsi
+  - textbox "Provinsi"
+  - text: Kota/Kabupaten
+  - textbox "Kota/Kabupaten"
+  - text: Kecamatan
+  - textbox "Kecamatan"
+  - text: Kelurahan
+  - textbox "Kelurahan"
+  - text: Kode Pos
+  - textbox "Kode Pos"
+  - text: STATUS UPDATE Sartrans Status
+  - combobox "Sartrans Status Berangkat dari Crossdock": Berangkat dari Crossdock
+  - text: Location
+  - textbox "Location": DC KARAWANG
+  - text: Description
+  - textbox "Description": Barang siap dikirim
+  - text: LIVE PAYLOAD PREVIEW & EDIT
+  - textbox: "{ \"resi\": \"SAR-1782040215283\", \"npsn\": \"NPSN-MOCK\", \"nama_sekolah\": \"Mock School Name\", \"provinsi\": \"Prov. DKI Jakarta\", \"kota_kabupaten\": \"Kota Jakarta Pusat\", \"kecamatan\": \"Kec. Gambir\", \"kelurahan\": \"Gambir\", \"kode_pos\": \"10110\", \"pic\": \"Budi Utomo\", \"no_telepon\": \"+628123456789\", \"direktorat\": \"SD\", \"tanggal\": \"2026-06-21 11:10:15\", \"process\": [ { \"time\": \"2026-06-21 11:10:15\", \"status\": \"Berangkat dari Crossdock\", \"location\": \"DC KARAWANG\", \"description\": \"Barang siap dikirim\" } ] }"
+  - paragraph: You can manually edit the JSON directly before sending to simulate specific payloads.
+  - button "Send as Webhook update"
+  - button "Send as Manual sync"
+  - text: Copyright 2026 ZLP Digital Teknologi
