@@ -178,18 +178,11 @@ async clickCariAlokasi() {
                 params.get('kode_status_pembayaran') === this.selectedPayment);
     }, { timeout: 75_000 });
 
-    if (idTransaksi) {
-        await this.page.getByRole('textbox', { name: 'ID Transaksi' }).press('Enter');
-    } else if (npsn) {
-        await this.page.getByRole('textbox', { name: 'NPSN' }).press('Enter');
-    } else if (namaSekolah) {
-        await this.page.getByRole('textbox', { name: 'Nama Instansi' }).press('Enter');
-    } else {
-        await this.page.getByRole('button', { name: 'Cari Alokasi' }).click();
-    }
+    await this.page.getByRole('button', { name: 'Cari Alokasi' }).click();
 
     const result = await response;
-    expect(result.ok(), await result.text()).toBeTruthy();
+    expect(result.ok(), `HTTP ${result.status()} saat mencari alokasi`).toBeTruthy();
+    await this.page.waitForTimeout(5_000);
 }
 
 async clickReset() {
