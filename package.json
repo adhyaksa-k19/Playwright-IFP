@@ -8,7 +8,8 @@
     "dump:aria:all": "playwright test tests/dump-all-aria.spec.ts --config=playwright.dump.config.ts",
     "crawl:menus": "playwright test tests/crawl-menu.spec.ts --config=playwright.dump.config.ts",
     "test:transaksi": "playwright test tests/create-alokasi.spec.ts tests/instalasi.spec.ts tests/perbaikan.spec.ts tests/penerimaan-bapp-fisik.spec.ts tests/batch-bapp.spec.ts",
-    "test:reports": "playwright test tests/report.spec.ts --workers=1"
+    "test:reports": "playwright test tests/report.spec.ts --workers=1",
+    "test:admin": "playwright test --grep \"Administrasi -\" --workers=1"
   },
   "keywords": [],
   "author": "",

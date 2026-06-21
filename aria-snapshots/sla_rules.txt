@@ -1,0 +1,294 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+  - listitem:
+    - button "Akun User"
+  - listitem:
+    - button "User Role"
+  - listitem:
+    - button "Konfigurasi SLA"
+  - listitem:
+    - button "Allocation Sandbox"
+  - listitem:
+    - button "Log Mobile API"
+  - listitem:
+    - button "Log Sartrans API"
+  - listitem:
+    - button "Log Notifikasi Teknisi"
+  - listitem:
+    - button "Broadcast Pengumuman"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Admin":
+          - /url: /admin/sla_rules
+      - listitem:
+        - paragraph: Konfigurasi Aturan SLA
+  - text: Cari Propinsi Area...
+  - textbox "Cari Propinsi Area..."
+  - button "Cari Data"
+  - button "Reset"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Aksi Propinsi Area Batas Bawah (Jam) Batas Atas (Jam) Skor yang Didapat Penalti Harian?
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Aceh
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Aceh
+  - paragraph: "6"
+  - text: "36"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Aceh
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Aceh
+  - paragraph: "48"
+  - text: "72"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Aceh
+  - paragraph: "72"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bali
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bali
+  - paragraph: "6"
+  - text: "36"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bali
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bali
+  - paragraph: "48"
+  - text: "72"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bali
+  - paragraph: "72"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Banten
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Banten
+  - paragraph: "6"
+  - text: "20"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Banten
+  - paragraph: "20"
+  - text: "36"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Banten
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Banten
+  - paragraph: "48"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bengkulu
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bengkulu
+  - paragraph: "6"
+  - text: "36"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bengkulu
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bengkulu
+  - paragraph: "48"
+  - text: "72"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Bengkulu
+  - paragraph: "72"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: "6"
+  - text: "20"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: "20"
+  - text: "36"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.I. Yogyakarta
+  - paragraph: "48"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: "-99999"
+  - text: "6"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: "6"
+  - text: "20"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: "20"
+  - text: "36"
+  - paragraph: "+1"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: "36"
+  - text: "48"
+  - paragraph: "-2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. D.K.I. Jakarta
+  - paragraph: "48"
+  - text: ∞ (Ke atas)
+  - paragraph: "-5"
+  - text: Ya
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Gorontalo
+  - paragraph: "-99999"
+  - text: "8"
+  - paragraph: "+3"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Gorontalo
+  - paragraph: "8"
+  - text: "48"
+  - paragraph: "+2"
+  - text: Tidak
+  - button "Edit Rule"
+  - button "Hapus Rule"
+  - paragraph: Prov. Gorontalo
+  - paragraph: "48"
+  - text: "72"
+  - paragraph: "+1"
+  - text: Tidak
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 190
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - button "Tambah Aturan SLA"
+  - text: Copyright 2026 ZLP Digital Teknologi

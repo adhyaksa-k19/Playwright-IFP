@@ -1,0 +1,119 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+  - listitem:
+    - button "Akun User"
+  - listitem:
+    - button "User Role"
+  - listitem:
+    - button "Konfigurasi SLA"
+  - listitem:
+    - button "Allocation Sandbox"
+  - listitem:
+    - button "Log Mobile API"
+  - listitem:
+    - button "Log Sartrans API"
+  - listitem:
+    - button "Log Notifikasi Teknisi"
+  - listitem:
+    - button "Broadcast Pengumuman"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Administrasi":
+          - /url: /admin/broadcast
+      - listitem:
+        - paragraph: Broadcast Pengumuman
+  - heading "Buat Pengumuman Baru" [level=6]
+  - text: Tipe Target
+  - combobox: Semua Teknisi (Nasional)
+  - paragraph: "* Perhatian: Pengumuman akan dikirim ke seluruh teknisi aktif secara nasional."
+  - separator
+  - text: Judul Pengumuman
+  - textbox "Judul Pengumuman"
+  - text: Isi Pesan
+  - textbox "Isi Pesan"
+  - paragraph: Pesan ini akan memicu Push Notification di HP teknisi.
+  - button "KIRIM PENGUMUMAN MASSAL" [disabled]
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Waktu Dikirim Penerima Judul Pesan Isi Pesan Aksi
+  - paragraph: 2026-06-19T09:53:47.346Z
+  - paragraph: MUHAMMAD RIZAL ASSHIDIQ TEK-2026-00081662
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.344Z
+  - paragraph: agung ismail TEK-2026-00080935
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.342Z
+  - paragraph: Muhammad Nurul Faiz TEK-2026-00080034
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.339Z
+  - paragraph: Dana Cahya Nugraha TEK-2026-00066830
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.338Z
+  - paragraph: Aprial Virnando TEK-2026-00041526
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.336Z
+  - paragraph: Wan Firan TEK-2026-00072949
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.334Z
+  - paragraph: Muh. Rian Syam TEK-2026-00062536
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.332Z
+  - paragraph: Arfandi TEK-2026-00062518
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.330Z
+  - paragraph: A. Fitra Nanda TEK-2026-00062517
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: 2026-06-19T09:53:47.328Z
+  - paragraph: A. Aldin Alfathayat TEK-2026-00062484
+  - paragraph: "123"
+  - paragraph: tes123
+  - button "Resend"
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 10"': "10"
+  - paragraph: 1–10 of 1438
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - text: Copyright 2026 ZLP Digital Teknologi

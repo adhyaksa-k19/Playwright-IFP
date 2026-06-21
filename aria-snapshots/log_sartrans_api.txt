@@ -1,0 +1,122 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+  - listitem:
+    - button "Akun User"
+  - listitem:
+    - button "User Role"
+  - listitem:
+    - button "Konfigurasi SLA"
+  - listitem:
+    - button "Allocation Sandbox"
+  - listitem:
+    - button "Log Mobile API"
+  - listitem:
+    - button "Log Sartrans API"
+  - listitem:
+    - button "Log Notifikasi Teknisi"
+  - listitem:
+    - button "Broadcast Pengumuman"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Administrasi":
+          - /url: /admin/log_sartrans_api
+      - listitem:
+        - paragraph: Log Sartrans API
+  - heading "Filter Log API" [level=6]
+  - textbox "Search JSON Payload/Response"
+  - textbox "Endpoint / Action"
+  - textbox "HTTP Code"
+  - text: Method
+  - combobox: Semua Method
+  - text: Status
+  - combobox: Semua Status
+  - text: Tanggal Mulai
+  - textbox "Tanggal Mulai"
+  - text: Tanggal Akhir
+  - textbox "Tanggal Akhir"
+  - button "Cari Log"
+  - button "Reset"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Aksi Waktu Method Endpoint / Action HTTP Code Waktu Respon Status
+  - button
+  - text: 19/6/2026, 23.06.18 SYNC
+  - paragraph: "[Worker] executeSartransPayload (system_sartrans_worker)"
+  - paragraph: "200"
+  - text: 119 ms Berhasil
+  - button
+  - text: 19/6/2026, 23.06.18 POST
+  - paragraph: /logistic/sartrans/update
+  - paragraph: "200"
+  - text: 2 ms Berhasil
+  - button
+  - text: 19/6/2026, 23.04.53 SYNC
+  - paragraph: "[Worker] executeSartransPayload (system_sartrans_worker)"
+  - paragraph: "200"
+  - text: 151 ms Berhasil
+  - button
+  - text: 19/6/2026, 23.04.53 POST
+  - paragraph: /logistic/sartrans/update
+  - paragraph: "200"
+  - text: 2 ms Berhasil
+  - button
+  - text: 19/6/2026, 23.04.31 SYNC
+  - paragraph: "[Worker] executeSartransPayload (system_sartrans_worker)"
+  - paragraph: "200"
+  - text: 289 ms Berhasil
+  - button
+  - text: 19/6/2026, 23.04.30 POST
+  - paragraph: /logistic/sartrans/update
+  - paragraph: "200"
+  - text: 18 ms Berhasil
+  - button
+  - text: 19/6/2026, 22.48.42 GET
+  - paragraph: /debug/test-log-write
+  - paragraph: "200"
+  - text: 123 ms Berhasil
+  - button
+  - text: 19/6/2026, 22.48.42 GET
+  - paragraph: /debug/test-log-write
+  - paragraph: "200"
+  - text: 123 ms Berhasil
+  - button
+  - text: 19/6/2026, 22.48.06 GET
+  - paragraph: /debug/test-log-write
+  - paragraph: "200"
+  - text: 123 ms Berhasil
+  - button
+  - text: 19/6/2026, 22.48.06 GET
+  - paragraph: /debug/test-log-write
+  - paragraph: "200"
+  - text: 123 ms Berhasil
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–10 of 10
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - text: Copyright 2026 ZLP Digital Teknologi
