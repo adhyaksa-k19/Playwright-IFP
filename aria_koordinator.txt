@@ -1,0 +1,336 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Sekolah"
+  - listitem:
+    - button "Koordinator"
+  - listitem:
+    - button "Teknisi"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Master":
+          - /url: /master/koordinator
+      - listitem:
+        - paragraph: Koordinator
+  - textbox "Kode Koordinator"
+  - textbox "Nama Koordinator"
+  - textbox "No Telepon"
+  - combobox: Semua Propinsi
+  - combobox [disabled]: Semua Kabupaten/Kota
+  - button "Cari Koordinator"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Edit Koor. ID Nama Koordinator Alamat Telp. 1 Telp. 2 Propinsi Area Kabupaten
+  - button "Edit"
+  - paragraph: KD-2026-00000001
+  - paragraph: TAMBAH KOORDINATOR
+  - paragraph
+  - paragraph: "09"
+  - paragraph
+  - text: "-"
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000002
+  - paragraph: sys generated
+  - paragraph
+  - paragraph: "1"
+  - paragraph
+  - text: "-"
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000003
+  - paragraph: SKYWALKER
+  - paragraph
+  - paragraph: "+62122"
+  - paragraph
+  - text: Prov. Banten
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000004
+  - paragraph: KABUPATEN
+  - paragraph
+  - paragraph: "1"
+  - paragraph
+  - text: "-"
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000005
+  - paragraph: Test Koordinator
+  - paragraph
+  - paragraph: "11111111"
+  - paragraph
+  - text: "-"
+  - paragraph: Kab. Pandeglang
+  - button "Edit"
+  - paragraph: KD-2026-00000006
+  - paragraph: ZLP KOORDINATOR 1
+  - paragraph
+  - paragraph: "+6285005050000"
+  - paragraph
+  - text: Prov. Banten
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000007
+  - paragraph: Adrena Koordinator 1
+  - paragraph: JAKARTA
+  - paragraph: "+62811978009"
+  - paragraph
+  - text: "-"
+  - paragraph: Kota Jakarta Barat
+  - button "Edit"
+  - paragraph: KD-2026-00000008
+  - paragraph: dino
+  - paragraph
+  - paragraph: "+62821552717176"
+  - paragraph
+  - text: "-"
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000009
+  - paragraph: angel
+  - paragraph
+  - paragraph: "+6285710468687"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+15 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000010
+  - paragraph: Maul
+  - paragraph
+  - paragraph: "+6281314340653"
+  - paragraph
+  - text: "-"
+  - paragraph: Kab. Serang
+  - button "Edit"
+  - paragraph: KD-2026-00000011
+  - paragraph: Angel
+  - paragraph
+  - paragraph: "+6282834823"
+  - paragraph
+  - text: "-"
+  - paragraph: Kota Serang
+  - button "Edit"
+  - paragraph: KD-2026-00000012
+  - paragraph: Gita
+  - paragraph: Panca Warna, Mesuji, Lampung
+  - paragraph: "+6282282422673"
+  - paragraph
+  - text: Prov. Lampung
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000013
+  - paragraph: Kor DNA
+  - paragraph
+  - paragraph: "+6281314340653"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - button "+4 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000014
+  - paragraph: vira
+  - paragraph: jl. In aja
+  - paragraph: "+6282386040000"
+  - paragraph
+  - text: Prov. Aceh
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000015
+  - paragraph: KR-Agus
+  - paragraph
+  - paragraph: "+6687785563114"
+  - paragraph: "+6687785563114"
+  - text: Prov. Aceh
+  - button "+37 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000016
+  - paragraph: Josephine - TEST KOOR
+  - paragraph
+  - paragraph: "+628122"
+  - paragraph
+  - text: Prov. Banten
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000017
+  - paragraph: Jos - 2
+  - paragraph
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000018
+  - paragraph: Jos -3
+  - paragraph
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. Banten
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000019
+  - paragraph: Eka
+  - paragraph
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000020
+  - paragraph: zacky ramadhan
+  - paragraph: Jl Iskandar muda 123
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. Banten
+  - button "+3 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000021
+  - paragraph: MOKONA VERSI PAPUA
+  - paragraph
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. Papua
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000022
+  - paragraph: MOKONA VERSI RIAU
+  - paragraph
+  - paragraph: "+62"
+  - paragraph
+  - text: Prov. Kepulauan Riau
+  - button "+2 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000023
+  - paragraph: Nana Bauty
+  - paragraph: Poris Jaya, Tanggerang
+  - paragraph: "+6289507099850"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+11 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000024
+  - paragraph: WDA
+  - paragraph: D.K.I Jakarta
+  - paragraph: "+6281288651664"
+  - paragraph
+  - text: Prov. Banten
+  - button "+14 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000025
+  - paragraph: Andri Krisbianto
+  - paragraph: Jl.Mayor Sujadi, Tulung Agung
+  - paragraph: "+6285956767023"
+  - paragraph
+  - text: Prov. Jawa Timur
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000026
+  - paragraph: Arifin
+  - paragraph: Pancoran
+  - paragraph: "+6285716651773"
+  - paragraph
+  - text: Prov. Aceh
+  - button "+32 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000027
+  - paragraph: Chris danan jaya
+  - paragraph: Jl.Duta 3 Blok A6 no.2 Pondok Duta 1 RT/3 RW/14 kel. Tugu Kec. Cimanggis, Depok
+  - paragraph: "+62811101771"
+  - paragraph
+  - text: Prov. D.K.I. Jakarta
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000028
+  - paragraph: Chris danan jaya
+  - paragraph: Jl. duta 3 blok.a6 no.23 pondok duta 1 RT/3 RW/14, KEL.TUGU, KEC. CIMANGGIS, DEPOK
+  - paragraph: "+62811101771"
+  - paragraph
+  - text: Prov. D.I. Yogyakarta
+  - button "+1 ..."
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000029
+  - paragraph: BILLA VANDEWA
+  - paragraph: Jl. Citra Vila mangunjaya Blok. k19 no.17
+  - paragraph: "+6282258738978"
+  - paragraph
+  - text: Prov. Jawa Barat
+  - paragraph
+  - button "Edit"
+  - paragraph: KD-2026-00000030
+  - paragraph: Sarmuliadin Sinaga
+  - paragraph: Jl. Jahe 7 NO.30, Medan
+  - paragraph: "+6281397909988"
+  - paragraph
+  - text: Prov. Sumatera Utara
+  - paragraph
+  - button "Edit"
+  - paragraph: T25H000197
+  - paragraph: TOPIK HIDAYAT
+  - paragraph
+  - paragraph: "82261088348"
+  - paragraph
+  - text: "-"
+  - paragraph: Kota Jakarta Barat
+  - button "Edit"
+  - paragraph: T25H000198
+  - paragraph: ZAENAL ARIFIN
+  - paragraph
+  - paragraph: "81324899649"
+  - paragraph
+  - text: "-"
+  - paragraph: Kota Jakarta Timur
+  - button "Edit"
+  - paragraph: T25H000230
+  - paragraph: SAMSURI
+  - paragraph
+  - paragraph: "82114076230"
+  - paragraph
+  - text: "-"
+  - paragraph: Kota Tangerang Selatan
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–37 of 37
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - button "add": Tambah Koordinator
+  - text: Copyright 2026 ZLP Digital Teknologi

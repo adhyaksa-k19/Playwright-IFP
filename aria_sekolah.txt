@@ -1,0 +1,489 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Sekolah"
+  - listitem:
+    - button "Koordinator"
+  - listitem:
+    - button "Teknisi"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Data Master":
+          - /url: /master/sekolah
+      - listitem:
+        - paragraph: Daftar Sekolah
+  - textbox "NPSN"
+  - textbox "Nama Sekolah"
+  - combobox: Semua Jenjang
+  - combobox: Semua Direktorat
+  - combobox: Semua Propinsi
+  - combobox: Semua Kabupaten Kota
+  - combobox: Semua Kecamatan
+  - combobox: Semua Kelurahan
+  - button "Cari Sekolah"
+  - button "Reset"
+  - button "Export Excel"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Aksi Hapus NPSN Nama Sekolah Propinsi Kabupaten Kecamatan Kelurahan Direktorat Jenjang Alamat PIC Telp.
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10001804"
+  - paragraph: SDN LUENG SA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Timur
+  - paragraph: Kec. Madat
+  - paragraph: Lueng Satu
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln Tanjung Minjei/Meunasah Asan Lueng Satu Kec. Madat Kab. Aceh Timur Prov. Aceh 24458
+  - paragraph: Badriyani
+  - paragraph: 85260984542FG
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10015000"
+  - paragraph: SD ABADI PERKASA 2
+  - paragraph: Prov. Lampung
+  - paragraph: Kab. Tulang Bawang
+  - paragraph: Kec. Gedung Meneng
+  - paragraph: Gedung Meneng
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: km 66 Gedung Meneng Gedung Meneng Kec. Gedung Meneng Kab. Tu lang Bawang Prov. Lampung
+  - paragraph: Dewi Arianti
+  - paragraph: "85313763261"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10040130"
+  - paragraph: SDN 19 BATHIN SOLAPAN
+  - paragraph: Prov. Riau
+  - paragraph: Kab. Bengkalis
+  - paragraph: Kec. Bathin Solapan
+  - paragraph: Desa Petani
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jl.Jurong Jembatan II Petani Desa Petani Kec. Bathin Solapan Kab. Bengkalis Prov. Riau 28784
+  - paragraph: SYAMSIDAR
+  - paragraph: "85271674038"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10050665"
+  - paragraph: SD NEGERI.No.82II DESA PANJANG
+  - paragraph: Prov. Jambi
+  - paragraph: Kab. Bungo
+  - paragraph: Kec. Tanah Tumbuh
+  - paragraph: Panjang
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Desa Panjang Panjang Kec. Tanah Tumbuh Kab. Bungo Prov. Jamb i 37255
+  - paragraph: iskandar
+  - paragraph: "82280300312"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100101"
+  - paragraph: SMP NEGERI 1 DARUL KAMAL
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Darul Kamal
+  - paragraph: Neusok
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jl. Teungku Fakinah Km.7 Neusok Kec. Darul Kamal Kab. Aceh B esar Prov. Aceh 23350
+  - paragraph: M. Kamal
+  - paragraph: "85277233736"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100102"
+  - paragraph: SMP NEGERI 2 MONTASIK
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Montasik
+  - paragraph: Lam Raya
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Seuneulop Lam Raya Kec. Montasik Kab. Aceh Besar Prov. Aceh 23362
+  - paragraph: Agusniar
+  - paragraph: "81360034422"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100103"
+  - paragraph: SMP N 2 LHOONG
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Lhoong
+  - paragraph: Seungko Mulat
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Banda Aceh Melaboh Seungko Mulat Kec. Lhoong Kab. Aceh Besar Prov. Aceh 23354
+  - paragraph: Sitti Nurbani
+  - paragraph: "81377119872"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100104"
+  - paragraph: SMP NEGERI 1 LEUPUNG
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Leupung
+  - paragraph: Pulot
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln,b,aceh-meulaboh Km.27 Pulot Kec. Leupung Kab. Aceh Besar Prov. Aceh 23353
+  - paragraph: Zulaikha
+  - paragraph: "81377083161"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100106"
+  - paragraph: SMP NEGERI 1 MONTASIK
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Montasik
+  - paragraph: Lamnga
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Montasik - Indrapuri Km. 2 Lamnga Kec. Montasik Kab. Aceh Besar Prov. Aceh 23362
+  - paragraph: Cut Nasriyati
+  - paragraph: "81360255755"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100107"
+  - paragraph: SMP N 1 LHOKNGA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Lhoknga
+  - paragraph: Mon Ikeun
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Banda Aceh Meulaboh Km, 14 Mon Ikeun Kec. Lhoknga Kab. Aceh Besar Prov. Aceh 23353
+  - paragraph: Indrawati
+  - paragraph: "8126900073"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100108"
+  - paragraph: SMP NEGERI 1 KUTA BARO
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kuta Baro
+  - paragraph: Seupeu
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jl. Blang Bintang Lama Km. 11,5 Aceh Besar Seupeu Kec. Kuta Baro Kab. Aceh Besar Prov. Aceh 23372
+  - paragraph: Erlina
+  - paragraph: "85359882330"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100109"
+  - paragraph: SMP NEGERI 1 INGIN JAYA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Ingin Jaya
+  - paragraph: Lubok Gapuy
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Tgk Cot Malem - Desa Lubuk Gapuy Lubok Gapuy Kec. Ingin Jaya Kab. Aceh Besar Prov. Aceh 23371
+  - paragraph: Zaidarsyah
+  - paragraph: "82120407067"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100112"
+  - paragraph: SMK NEGERI 1 MESJID RAYA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Mesjid Raya
+  - paragraph: Neuheun
+  - paragraph: SMK
+  - paragraph: SMK
+  - paragraph: JL. LAKSAMANA MALAHAYATI NEUHEUN Neuheun Kec. Mesjid Raya Ka b. Aceh Besar Prov. Aceh 23381
+  - paragraph: Muhammad Husin
+  - paragraph: "82297786359"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100113"
+  - paragraph: SMK NEGERI 1 KOTA JANTHO
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kota Jantho
+  - paragraph: BUKIT MEUSARA
+  - paragraph: SMK
+  - paragraph: SMK
+  - paragraph: JL. CUT MUTIA NO. 1 KOTA JANTHO BUKIT MEUSARA Kec. Kota Jant ho Kab. Aceh Besar Prov. Aceh 23918
+  - paragraph: Hasnawati
+  - paragraph: "81269554069"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100114"
+  - paragraph: SMP NEGERI 3 LHOONG
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Lhoong
+  - paragraph: Glee Bruek
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jalan Banda Aceh-Meulaboh Km.58 Glee Bruek Kec. Lhoong Kab. Aceh Besar Prov. Aceh 23354
+  - paragraph: Naufridawati
+  - paragraph: "81360913552"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100115"
+  - paragraph: SMP NEGERI 1 SIMPANG TIGA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Simpang Tiga
+  - paragraph: Krueng Mak
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Teungku Chieuk Empee Trieng Krueng Mak Kec. Simpang Tig a Kab. Aceh Besar Prov. Aceh 23371
+  - paragraph: Elvina Waty
+  - paragraph: "81377322645"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100119"
+  - paragraph: SMP NEGERI 1 LEMBAH SEULAWAH
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Lembah Seulawah
+  - paragraph: Sukadamai
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: JLN BANDA ACEH - MEDAN KM 70 Sukadamai Kec. Lembah Seulawah Kab. Aceh Besar Prov. Aceh 23952
+  - paragraph: Mulyadi. A
+  - paragraph: "8126938652"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100132"
+  - paragraph: SMPS MALEM PUTRA 1
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Darul Imarah
+  - paragraph: Leugeu
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln Syekh Abdullah Kan-An 2B Leugeu Kec. Darul Imarah Kab. A ceh Besar Prov. Aceh 23352
+  - paragraph: Cut Fitriyana
+  - paragraph: "81264015444"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100133"
+  - paragraph: SMP NEGERI 2 KUTA COT GLIE
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kuta Cot Glie
+  - paragraph: Keumireu
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Banda Aceh - Medan, Km. 30 Keumireu Kec. Kuta Cot Glie Kab. Aceh Besar Prov. Aceh 23363
+  - paragraph: Iskandar
+  - paragraph: "81360559525"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100134"
+  - paragraph: SMP SWASTA ISLAM AL-FALAH
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Ingin Jaya
+  - paragraph: LAM UE
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Jln. Lubuk - Seunelop Lamjampok Ingin Jaya LAM UE Kec. Ingin Jaya Kab. Aceh Besar Prov. Aceh 23371
+  - paragraph: Nurul Mahmudah
+  - paragraph: "85361751924"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100136"
+  - paragraph: SMP ABULYATAMA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kuta Baro
+  - paragraph: LAMPOH KEUDE
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Lampoh Keude LAMPOH KEUDE Kec. Kuta Baro Kab. Aceh Besar Pro v. Aceh 23372
+  - paragraph: Yan Muttaqin Sachlan
+  - paragraph: "8889033740"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100137"
+  - paragraph: SMP NEGERI 4 SEULIMEUM
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Seulimeum
+  - paragraph: Ujong Keupula
+  - paragraph: SMP
+  - paragraph: SMP
+  - paragraph: Desa Ujong Keupula Kecamatan Seulimeum Kabupaten Aceh Besar Ujong Keupula Kec. Seulimeum Kab. Aceh Besar Prov. Aceh 2395 1
+  - paragraph: Latifah Aini
+  - paragraph: "81260759700"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100139"
+  - paragraph: SMA NEGERI 1 LEMBAH SEULAWAH
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Lembah Seulawah
+  - paragraph: Lamtamot
+  - paragraph: SMA
+  - paragraph: SMA
+  - paragraph: JL. BANDA ACEH-MEDAN KM.57,5 Lamtamot Kec. Lembah Seulawah K ab. Aceh Besar Prov. Aceh 23952
+  - paragraph: Mustajab
+  - paragraph: "8116812574"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100141"
+  - paragraph: SD NEGERI LAMNGA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Mesjid Raya
+  - paragraph: Lamnga
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln.Laksamana Malahayati Km 12,5 Lamnga Kec. Mesjid Raya Kab . Aceh Besar Prov. Aceh 23381
+  - paragraph: Zulkifli
+  - paragraph: "85260721668"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100142"
+  - paragraph: SD NEGERI LAMLEUOT
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kuta Cot Glie
+  - paragraph: KEUREUWEUNG BLANG
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Desa Keuruweung Blang KEUREUWEUNG BLANG Kec. Kuta Cot Glie K ab. Aceh Besar Prov. Aceh 23363
+  - paragraph: Nur Afriani
+  - paragraph: "85260621616"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100143"
+  - paragraph: SD NEGERI LAMKLAT
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Darussalam
+  - paragraph: Li-Eue
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln. Lambaro Angan Desa Lieue Li-Eue Kec. Darussalam Kab. Ac eh Besar Prov. Aceh 23373
+  - paragraph: Zulfikar
+  - paragraph: "81360537773"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100144"
+  - paragraph: SD NEGERI LAM UJONG
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Krung Barona Jaya
+  - paragraph: MEUNASAH BAET
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln. T. Iskandar MEUNASAH BAET Kec. Krung Barona Jaya Kab. Aceh Besar Prov. Aceh 23371
+  - paragraph: Muhammad Ridha
+  - paragraph: "8126944046"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100145"
+  - paragraph: SD NEGERI LADONG
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Mesjid Raya
+  - paragraph: Ladong
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Desa Ladong Ladong Kec. Mesjid Raya Kab. Aceh Besar Prov. Ac eh 23381
+  - paragraph: Aidarus
+  - paragraph: "81360364784"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100146"
+  - paragraph: SD NEGERI LABUY
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Baitussalam
+  - paragraph: LABUY
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln. laksamana Mlahayati Km. 11,5 LABUY Kec. Baitussalam Ka b. Aceh Besar Prov. Aceh 23373
+  - paragraph: Afwadi
+  - paragraph: "81360040456"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100147"
+  - paragraph: SD NEGERI KRUENG RAYA
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Mesjid Raya
+  - paragraph: Meunasah Mon
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln.pel. Laksamana Malahayati KM 32 Meunasah Mon Kec. Mesjid Raya Kab. Aceh Besar Prov. Aceh 23381
+  - paragraph: Erniati
+  - paragraph: "82267830993"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100148"
+  - paragraph: SD NEGERI JRUEK
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Indrapuri
+  - paragraph: Jruek Bak Kreh
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jln.Tumbo Baro-Reukih Jruek Bak Kreh Kec. Indrapuri Kab. Ace h Besar Prov. Aceh 23363
+  - paragraph: Tamren
+  - paragraph: "81360949908"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100149"
+  - paragraph: SD NEGERI 2 JEUMPET
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Darul Imarah
+  - paragraph: Lampasi Engking
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Lampasi Engking Lampasi Engking Kec. Darul Imarah Kab. Aceh Besar Prov. Aceh 23352
+  - paragraph: Zuarni
+  - paragraph: "85358668273"
+  - button "Edit"
+  - button "Hapus"
+  - paragraph: "10100150"
+  - paragraph: SD N KEUMIREU
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Aceh Besar
+  - paragraph: Kec. Kuta Cot Glie
+  - paragraph: Keumireu
+  - paragraph: SD
+  - paragraph: SD
+  - paragraph: Jl. Banda Aceh-Medan Km.30,5 Desa Keumireu Keumireu Kec. Kut a Cot Glie Kab. Aceh Besar Prov. Aceh 23363
+  - paragraph: Deliyanti
+  - paragraph: "81362871922"
+  - paragraph: "Baris per halaman:"
+  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: 1–100 of 353398
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - button "Tambah Sekolah"
+  - text: Copyright 2026 ZLP Digital Teknologi

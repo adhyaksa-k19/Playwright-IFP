@@ -1,0 +1,1285 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Alokasi"
+  - listitem:
+    - button "Proses Instalasi"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Monitoring":
+          - /url: /monitoring/proses_instalasi
+      - listitem:
+        - paragraph: Proses Instalasi
+  - text: Mulai
+  - textbox "Mulai"
+  - text: Selesai
+  - textbox "Selesai"
+  - textbox "Nama Koordinator/Teknisi"
+  - text: Group By
+  - combobox "Teknisi"
+  - text: All Group
+  - combobox "All Group"
+  - combobox "SEMUA PROPINSI"
+  - combobox "SEMUA KABUPATEN" [disabled]
+  - combobox "SEMUA KECAMATAN" [disabled]
+  - textbox "Nama Sekolah"
+  - textbox "NPSN"
+  - combobox "SEMUA STATUS"
+  - button "Cari"
+  - button "Reset"
+  - button "Excel"
+  - button "CSV"
+  - text: TOTAL INSTALASI
+  - textbox: 1,000
+  - text: PROSES INSTALASI
+  - textbox: "3"
+  - text: INSTALASI GAGAL
+  - textbox: "23"
+  - text: INSTALASI SELESAI
+  - textbox: "939"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - table:
+    - rowgroup:
+      - row "No Nama Teknisi Telp Teknisi Group No. Inst Jam Trans. ID NPSN Propinsi Kabupaten Kecamatan Nama Sekolah PIC Telp PIC Foto Status":
+        - columnheader "No":
+          - button "No"
+        - columnheader "Nama Teknisi"
+        - columnheader "Telp Teknisi"
+        - columnheader "Group"
+        - columnheader "No. Inst":
+          - button "No. Inst"
+        - columnheader "Jam":
+          - button "Jam"
+        - columnheader "Trans. ID":
+          - button "Trans. ID"
+        - columnheader "NPSN":
+          - button "NPSN"
+        - columnheader "Propinsi":
+          - button "Propinsi"
+        - columnheader "Kabupaten":
+          - button "Kabupaten"
+        - columnheader "Kecamatan":
+          - button "Kecamatan"
+        - columnheader "Nama Sekolah":
+          - button "Nama Sekolah"
+        - columnheader "PIC":
+          - button "PIC"
+        - columnheader "Telp PIC":
+          - button "Telp PIC"
+        - columnheader "Foto":
+          - button "Foto"
+        - columnheader "Status":
+          - button "Status"
+    - rowgroup:
+      - row "1 .MOCH HADI HUMAEDI 83848966774 PYX 1 18/10/2025, 15.00.00 HI2510150006122 20615472 Prov. Banten Kab. Serang Kec. Binuang SMK BINA INSAN Saadatul Mumtakhinah 83848966774 0 SESUAI APIP":
+        - cell "1"
+        - cell ".MOCH HADI HUMAEDI"
+        - cell "83848966774"
+        - cell "PYX"
+        - cell "1"
+        - cell "18/10/2025, 15.00.00"
+        - cell "HI2510150006122":
+          - paragraph: HI2510150006122
+        - cell "20615472"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Binuang"
+        - cell "SMK BINA INSAN"
+        - cell "Saadatul Mumtakhinah"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 15/9/2025, 20.00.00 HI2509100001499 20615086 Prov. Banten Kab. Serang Kec. Lebak Wangi SD NEGERI CIDAHU Emi Suhaemi 83848966774 0 SESUAI APIP":
+        - cell "2"
+        - cell "15/9/2025, 20.00.00"
+        - cell "HI2509100001499":
+          - paragraph: HI2509100001499
+        - cell "20615086"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Lebak Wangi"
+        - cell "SD NEGERI CIDAHU"
+        - cell "Emi Suhaemi"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 15/9/2025, 17.00.00 HI2509100001127 20605281 Prov. Banten Kab. Serang Kec. Binuang SD NEGERI SUKAMAMPIR Ujang 83848966774 0 SESUAI APIP":
+        - cell "3"
+        - cell "15/9/2025, 17.00.00"
+        - cell "HI2509100001127":
+          - paragraph: HI2509100001127
+        - cell "20605281"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Binuang"
+        - cell "SD NEGERI SUKAMAMPIR"
+        - cell "Ujang"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 15/9/2025, 16.00.00 HI2509100001506 20615099 Prov. Banten Kab. Serang Kec. Binuang SD SWASTA NUSANTARA M. Kholik. S.pd.i 83848966774 0 SESUAI APIP":
+        - cell "4"
+        - cell "15/9/2025, 16.00.00"
+        - cell "HI2509100001506":
+          - paragraph: HI2509100001506
+        - cell "20615099"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Binuang"
+        - cell "SD SWASTA NUSANTARA"
+        - cell "M. Kholik. S.pd.i"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 15/9/2025, 15.00.00 HI2509100001332 20606069 Prov. Banten Kab. Serang Kec. Binuang SD NEGERI CEREME Jaya Rahmad 83848966774 0 SESUAI APIP":
+        - cell "5"
+        - cell "15/9/2025, 15.00.00"
+        - cell "HI2509100001332":
+          - paragraph: HI2509100001332
+        - cell "20606069"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Binuang"
+        - cell "SD NEGERI CEREME"
+        - cell "Jaya Rahmad"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "6 15/9/2025, 15.00.00 HI2509100001046 20604920 Prov. Banten Kab. Serang Kec. Lebak Wangi SD NEGERI KOSAMBI DALEM IIM MILDIYASARI 83848966774 0 SESUAI APIP":
+        - cell "6"
+        - cell "15/9/2025, 15.00.00"
+        - cell "HI2509100001046":
+          - paragraph: HI2509100001046
+        - cell "20604920"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Lebak Wangi"
+        - cell "SD NEGERI KOSAMBI DALEM"
+        - cell "IIM MILDIYASARI"
+        - cell "83848966774"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "2 ?Bambang W. 85334425610 PYX 1 6/10/2025, 20.00.00 HI2509300012674 20524105 Prov. Jawa Timur Kab. Jember Kec. Sumbersari UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN WIROLEGI 04 Erni Eksanti Mei Wulan 85334425610 0 SESUAI APIP":
+        - cell "2"
+        - cell "?Bambang W."
+        - cell "85334425610"
+        - cell "PYX"
+        - cell "1"
+        - cell "6/10/2025, 20.00.00"
+        - cell "HI2509300012674":
+          - paragraph: HI2509300012674
+        - cell "20524105"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Sumbersari"
+        - cell "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN WIROLEGI 04"
+        - cell "Erni Eksanti Mei Wulan"
+        - cell "85334425610"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 6/10/2025, 19.00.00 HI2509300012639 20523613 Prov. Jawa Timur Kab. Jember Kec. Kaliwates UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN KEPATIHAN 04 Langgeng Resminingsih 85334425610 0 SESUAI APIP":
+        - cell "2"
+        - cell "6/10/2025, 19.00.00"
+        - cell "HI2509300012639":
+          - paragraph: HI2509300012639
+        - cell "20523613"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN KEPATIHAN 04"
+        - cell "Langgeng Resminingsih"
+        - cell "85334425610"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 6/10/2025, 18.00.00 HI2509300013654 20553953 Prov. Jawa Timur Kab. Jember Kec. Kaliwates SDS AL FURQAN Entin Rusmartiningsih 85334425610 0 SESUAI APIP":
+        - cell "3"
+        - cell "6/10/2025, 18.00.00"
+        - cell "HI2509300013654":
+          - paragraph: HI2509300013654
+        - cell "20553953"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "SDS AL FURQAN"
+        - cell "Entin Rusmartiningsih"
+        - cell "85334425610"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 6/10/2025, 17.00.00 HI2509300012725 20524881 Prov. Jawa Timur Kab. Jember Kec. Kaliwates UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN JEMBER KIDUL 01 Luluk Herlin Kurniawati 85334425610 0 SESUAI APIP":
+        - cell "4"
+        - cell "6/10/2025, 17.00.00"
+        - cell "HI2509300012725":
+          - paragraph: HI2509300012725
+        - cell "20524881"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "UNIT PELAKSANA TEKNIS DAERAH (UPTD) SATUAN PENDIDIKAN SDN JEMBER KIDUL 01"
+        - cell "Luluk Herlin Kurniawati"
+        - cell "85334425610"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "3 ?Dava ega panji 8.9571E+11 PYX 1 25/9/2025, 19.00.00 HI2509170003333 69926840 Prov. Jawa Timur Kab. Tulungagung Kec. Pagerwojo TK DHARMA WANITA II SAMAR ENDANG ASTUTI 8.9571E+11 0 SESUAI APIP":
+        - cell "3"
+        - cell "?Dava ega panji"
+        - cell "8.9571E+11"
+        - cell "PYX"
+        - cell "1"
+        - cell "25/9/2025, 19.00.00"
+        - cell "HI2509170003333":
+          - paragraph: HI2509170003333
+        - cell "69926840"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Tulungagung"
+        - cell "Kec. Pagerwojo"
+        - cell "TK DHARMA WANITA II SAMAR"
+        - cell "ENDANG ASTUTI"
+        - cell "8.9571E+11"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 25/9/2025, 18.00.00 HI2509170003332 69926838 Prov. Jawa Timur Kab. Tulungagung Kec. Pagerwojo TK DHARMA WANITA PAGERWOJO RIALIS 8.9571E+11 0 SESUAI APIP":
+        - cell "2"
+        - cell "25/9/2025, 18.00.00"
+        - cell "HI2509170003332":
+          - paragraph: HI2509170003332
+        - cell "69926838"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Tulungagung"
+        - cell "Kec. Pagerwojo"
+        - cell "TK DHARMA WANITA PAGERWOJO"
+        - cell "RIALIS"
+        - cell "8.9571E+11"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 25/9/2025, 15.00.00 HI2509180001535 20537273 Prov. Jawa Timur Kab. Tulungagung Kec. Kauman SMP N 1 KAUMAN Siswoto 8.9571E+11 0 SESUAI APIP":
+        - cell "3"
+        - cell "25/9/2025, 15.00.00"
+        - cell "HI2509180001535":
+          - paragraph: HI2509180001535
+        - cell "20537273"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Tulungagung"
+        - cell "Kec. Kauman"
+        - cell "SMP N 1 KAUMAN"
+        - cell "Siswoto"
+        - cell "8.9571E+11"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 24/9/2025, 17.00.00 HI2509170003008 69838704 Prov. Jawa Timur Kab. Tulungagung Kec. Kauman TK ISLAM AL HIKMAH NINIK SULISTYOWATI 8.9571E+11 0 SESUAI APIP":
+        - cell "4"
+        - cell "24/9/2025, 17.00.00"
+        - cell "HI2509170003008":
+          - paragraph: HI2509170003008
+        - cell "69838704"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Tulungagung"
+        - cell "Kec. Kauman"
+        - cell "TK ISLAM AL HIKMAH"
+        - cell "NINIK SULISTYOWATI"
+        - cell "8.9571E+11"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 24/9/2025, 16.00.00 HI2509170003403 69944877 Prov. Jawa Timur Kab. Tulungagung Kec. Kauman PAUD SALAM THOLABUL ILMI ririn wulandari 8.9571E+11 0 SESUAI APIP":
+        - cell "5"
+        - cell "24/9/2025, 16.00.00"
+        - cell "HI2509170003403":
+          - paragraph: HI2509170003403
+        - cell "69944877"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Tulungagung"
+        - cell "Kec. Kauman"
+        - cell "PAUD SALAM THOLABUL ILMI"
+        - cell "ririn wulandari"
+        - cell "8.9571E+11"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "4 ?Fariz akmal ramadani 89512422051 NEXT 1 19/9/2025, 22.00.00 HI2509110002057 20257422 Prov. Jawa Barat Kota Bekasi Kec. Rawalumbu SMKS BINA KARYA MANDIRI 2 Ayung Sardi Dauly 89512422051 0 SESUAI APIP":
+        - cell "4"
+        - cell "?Fariz akmal ramadani"
+        - cell "89512422051"
+        - cell "NEXT"
+        - cell "1"
+        - cell "19/9/2025, 22.00.00"
+        - cell "HI2509110002057":
+          - paragraph: HI2509110002057
+        - cell "20257422"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Rawalumbu"
+        - cell "SMKS BINA KARYA MANDIRI 2"
+        - cell "Ayung Sardi Dauly"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 19/9/2025, 21.00.00 HI2509110002051 20254902 Prov. Jawa Barat Kota Bekasi Kec. Jatiasih SMKS GUNA BANGSA KOTA BEKASI MUTHIA INDRIANTY 89512422051 0 SESUAI APIP":
+        - cell "2"
+        - cell "19/9/2025, 21.00.00"
+        - cell "HI2509110002051":
+          - paragraph: HI2509110002051
+        - cell "20254902"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Jatiasih"
+        - cell "SMKS GUNA BANGSA KOTA BEKASI"
+        - cell "MUTHIA INDRIANTY"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 18/9/2025, 18.00.00 HI2509140004282 20231664 Prov. Jawa Barat Kota Bekasi Kec. Pondokgede SMP ISLAM TERPADU MIFTAHUL JANNAH Faisal 89512422051 0 SESUAI APIP":
+        - cell "3"
+        - cell "18/9/2025, 18.00.00"
+        - cell "HI2509140004282":
+          - paragraph: HI2509140004282
+        - cell "20231664"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Pondokgede"
+        - cell "SMP ISLAM TERPADU MIFTAHUL JANNAH"
+        - cell "Faisal"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 18/9/2025, 17.00.00 HI2509120000688 60726648 Prov. Jawa Barat Kota Bekasi Kec. Pondokgede SMP ISLAM AL IKHLAS Siti Munawaroh 89512422051 0 REVIU APIP":
+        - cell "4"
+        - cell "18/9/2025, 17.00.00"
+        - cell "HI2509120000688":
+          - paragraph: HI2509120000688
+        - cell "60726648"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Pondokgede"
+        - cell "SMP ISLAM AL IKHLAS"
+        - cell "Siti Munawaroh"
+        - cell "89512422051"
+        - cell "0"
+        - cell "REVIU APIP"
+      - row "5 18/9/2025, 16.00.00 HI2509110001580 20247208 Prov. Jawa Barat Kota Bekasi Kec. Pondokgede SMKS BHAKTI PERSADA Yusniar 89512422051 0 SESUAI APIP":
+        - cell "5"
+        - cell "18/9/2025, 16.00.00"
+        - cell "HI2509110001580":
+          - paragraph: HI2509110001580
+        - cell "20247208"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Pondokgede"
+        - cell "SMKS BHAKTI PERSADA"
+        - cell "Yusniar"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "6 18/9/2025, 15.00.00 HI2509120001123 20222941 Prov. Jawa Barat Kota Bekasi Kec. Pondok Melati SMP ISLAM TERPADU IQRO Hari Cahyadi 89512422051 0 SESUAI APIP":
+        - cell "6"
+        - cell "18/9/2025, 15.00.00"
+        - cell "HI2509120001123":
+          - paragraph: HI2509120001123
+        - cell "20222941"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Pondok Melati"
+        - cell "SMP ISLAM TERPADU IQRO"
+        - cell "Hari Cahyadi"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "7 16/9/2025, 21.00.00 HI2509060000710 69792076 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan TK KHARISMA chelsy rirgiyensi 89512422051 0 SESUAI APIP":
+        - cell "7"
+        - cell "16/9/2025, 21.00.00"
+        - cell "HI2509060000710":
+          - paragraph: HI2509060000710
+        - cell "69792076"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "TK KHARISMA"
+        - cell "chelsy rirgiyensi"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "8 16/9/2025, 20.00.00 HI2509060000645 20222940 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan SMP PUTRA HARAPAN Ratna Dewi 89512422051 0 SESUAI APIP":
+        - cell "8"
+        - cell "16/9/2025, 20.00.00"
+        - cell "HI2509060000645":
+          - paragraph: HI2509060000645
+        - cell "20222940"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "SMP PUTRA HARAPAN"
+        - cell "Ratna Dewi"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "9 16/9/2025, 19.00.00 HI2509060000664 20222975 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan SMP NEGERI 7 BEKASI Sukamto 89512422051 0 SESUAI APIP":
+        - cell "9"
+        - cell "16/9/2025, 19.00.00"
+        - cell "HI2509060000664":
+          - paragraph: HI2509060000664
+        - cell "20222975"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "SMP NEGERI 7 BEKASI"
+        - cell "Sukamto"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "10 16/9/2025, 18.00.00 HI2509060000666 20222978 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan SMP NEGERI 4 BEKASI Sungkawati Halimatus S. 89512422051 0 SESUAI APIP":
+        - cell "10"
+        - cell "16/9/2025, 18.00.00"
+        - cell "HI2509060000666":
+          - paragraph: HI2509060000666
+        - cell "20222978"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "SMP NEGERI 4 BEKASI"
+        - cell "Sungkawati Halimatus S."
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "11 16/9/2025, 16.00.00 HI2509060000639 20222922 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan SMP JAYA BEKASI Menie Elfiah Yaqin 89512422051 0 SESUAI APIP":
+        - cell "11"
+        - cell "16/9/2025, 16.00.00"
+        - cell "HI2509060000639":
+          - paragraph: HI2509060000639
+        - cell "20222922"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "SMP JAYA BEKASI"
+        - cell "Menie Elfiah Yaqin"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "12 16/9/2025, 15.00.00 HI2509060000723 69792141 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Selatan TK PIPIT SEJAHTERA Wilda Fhadilla M 89512422051 0 SESUAI APIP":
+        - cell "12"
+        - cell "16/9/2025, 15.00.00"
+        - cell "HI2509060000723":
+          - paragraph: HI2509060000723
+        - cell "69792141"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Selatan"
+        - cell "TK PIPIT SEJAHTERA"
+        - cell "Wilda Fhadilla M"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "13 15/9/2025, 20.00.00 HI2509060000222 20266309 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Utara TK WIDYA DUTA ELLY AFRIANSARI 89512422051 0 SESUAI APIP":
+        - cell "13"
+        - cell "15/9/2025, 20.00.00"
+        - cell "HI2509060000222":
+          - paragraph: HI2509060000222
+        - cell "20266309"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Utara"
+        - cell "TK WIDYA DUTA"
+        - cell "ELLY AFRIANSARI"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "14 15/9/2025, 19.00.00 HI2509060000214 20266254 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Timur TK SEJAHTERA DEDE SUHERMAH 89512422051 0 SESUAI APIP":
+        - cell "14"
+        - cell "15/9/2025, 19.00.00"
+        - cell "HI2509060000214":
+          - paragraph: HI2509060000214
+        - cell "20266254"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Timur"
+        - cell "TK SEJAHTERA"
+        - cell "DEDE SUHERMAH"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "15 15/9/2025, 18.00.00 HI2509060000176 20265947 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Timur TK DEWI SARTIKA Khatrin Ratriastuti 89512422051 0 SESUAI APIP":
+        - cell "15"
+        - cell "15/9/2025, 18.00.00"
+        - cell "HI2509060000176":
+          - paragraph: HI2509060000176
+        - cell "20265947"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Timur"
+        - cell "TK DEWI SARTIKA"
+        - cell "Khatrin Ratriastuti"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "16 15/9/2025, 17.00.00 HI2509060000001 70005028 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Timur TK NUSANTARA Yulianti Fransiska Spd.K 89512422051 0 SESUAI APIP":
+        - cell "16"
+        - cell "15/9/2025, 17.00.00"
+        - cell "HI2509060000001":
+          - paragraph: HI2509060000001
+        - cell "70005028"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Timur"
+        - cell "TK NUSANTARA"
+        - cell "Yulianti Fransiska Spd.K"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "17 15/9/2025, 16.00.00 HI2509060000538 69988429 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Timur TK ISLAM TERPADU AL HIKMAH NURHIKMAH 89512422051 0 SESUAI APIP":
+        - cell "17"
+        - cell "15/9/2025, 16.00.00"
+        - cell "HI2509060000538":
+          - paragraph: HI2509060000538
+        - cell "69988429"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Timur"
+        - cell "TK ISLAM TERPADU AL HIKMAH"
+        - cell "NURHIKMAH"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "18 15/9/2025, 15.00.00 HI2509060000079 70016015 Prov. Jawa Barat Kota Bekasi Kec. Bekasi Timur SMPIT SALSABILA Asep Sholihin 89512422051 0 SESUAI APIP":
+        - cell "18"
+        - cell "15/9/2025, 15.00.00"
+        - cell "HI2509060000079":
+          - paragraph: HI2509060000079
+        - cell "70016015"
+        - cell "Prov. Jawa Barat"
+        - cell "Kota Bekasi"
+        - cell "Kec. Bekasi Timur"
+        - cell "SMPIT SALSABILA"
+        - cell "Asep Sholihin"
+        - cell "89512422051"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "5 ?Muh Albani Darmawan (Internal PYX) 87752155063 PYX 1 9/11/2025, 14.30.00 HI2510240000321 69929789 Prov. Sulawesi Barat Kab. Mamasa Kec. Aralle SDS UHAIDAO ABD.GAFFAR 87752155063 0 SESUAI APIP":
+        - cell "5"
+        - cell "?Muh Albani Darmawan (Internal PYX)"
+        - cell "87752155063"
+        - cell "PYX"
+        - cell "1"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510240000321":
+          - paragraph: HI2510240000321
+        - cell "69929789"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Aralle"
+        - cell "SDS UHAIDAO"
+        - cell "ABD.GAFFAR"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 9/11/2025, 14.30.00 HI2510240000274 40601134 Prov. Sulawesi Barat Kab. Mamasa Kec. Buntumalangka SD NEGERI 003 SALUTAMBUN Siner, S.pd 87752155063 0 SESUAI APIP":
+        - cell "2"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510240000274":
+          - paragraph: HI2510240000274
+        - cell "40601134"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Buntumalangka"
+        - cell "SD NEGERI 003 SALUTAMBUN"
+        - cell "Siner, S.pd"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 9/11/2025, 14.30.00 HI2510240000266 40601089 Prov. Sulawesi Barat Kab. Mamasa Kec. Buntumalangka SD INPRES 006 SODANGAN Rosmida 87752155063 0 SESUAI APIP":
+        - cell "3"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510240000266":
+          - paragraph: HI2510240000266
+        - cell "40601089"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Buntumalangka"
+        - cell "SD INPRES 006 SODANGAN"
+        - cell "Rosmida"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 9/11/2025, 14.30.00 HI2510240000272 40601129 Prov. Sulawesi Barat Kab. Mamasa Kec. Buntumalangka SDS. PANDANGAN JAYA Ayub JT MAKATONAN 87752155063 0 SESUAI APIP":
+        - cell "4"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510240000272":
+          - paragraph: HI2510240000272
+        - cell "40601129"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Buntumalangka"
+        - cell "SDS. PANDANGAN JAYA"
+        - cell "Ayub JT MAKATONAN"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 9/11/2025, 14.30.00 HI2510220004326 69991092 Prov. Sulawesi Barat Kab. Mamasa Kec. Aralle PAUD AL PURQAN HANDAR 87752155063 0 SESUAI APIP":
+        - cell "5"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510220004326":
+          - paragraph: HI2510220004326
+        - cell "69991092"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Aralle"
+        - cell "PAUD AL PURQAN"
+        - cell "HANDAR"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "6 9/11/2025, 14.30.00 HI2510220003997 69830469 Prov. Sulawesi Barat Kab. Mamasa Kec. Aralle SDK SALU KAIYANG Syarifuddin. S.pd 87752155063 0 SESUAI APIP":
+        - cell "6"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510220003997":
+          - paragraph: HI2510220003997
+        - cell "69830469"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Aralle"
+        - cell "SDK SALU KAIYANG"
+        - cell "Syarifuddin. S.pd"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "7 9/11/2025, 14.30.00 HI2510220004040 69857913 Prov. Sulawesi Barat Kab. Mamasa Kec. Buntumalangka SMK AL-MARA (AL-GUNA DARMA NUSANTARA) YOSAFAT 87752155063 0 SESUAI APIP":
+        - cell "7"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510220004040":
+          - paragraph: HI2510220004040
+        - cell "69857913"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Buntumalangka"
+        - cell "SMK AL-MARA (AL-GUNA DARMA NUSANTARA)"
+        - cell "YOSAFAT"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "8 9/11/2025, 14.30.00 HI2510240000305 40604722 Prov. Sulawesi Barat Kab. Mamasa Kec. Buntumalangka SDK. 011 KEBANGA Ribka 87752155063 0 SESUAI APIP":
+        - cell "8"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510240000305":
+          - paragraph: HI2510240000305
+        - cell "40604722"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Buntumalangka"
+        - cell "SDK. 011 KEBANGA"
+        - cell "Ribka"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "9 9/11/2025, 14.30.00 HI2509300010432 69754230 Prov. Sulawesi Barat Kab. Mamasa Kec. Bambang SMP NEGERI 6 BAMBANG Hasto 87752155063 0 SESUAI APIP":
+        - cell "9"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2509300010432":
+          - paragraph: HI2509300010432
+        - cell "69754230"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Bambang"
+        - cell "SMP NEGERI 6 BAMBANG"
+        - cell "Hasto"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "10 9/11/2025, 14.30.00 HI2510170016595 40602649 Prov. Sulawesi Barat Kab. Mamasa Kec. Balla SDN 003 BALLA Diana Daturara 87752155063 0 SESUAI APIP":
+        - cell "10"
+        - cell "9/11/2025, 14.30.00"
+        - cell "HI2510170016595":
+          - paragraph: HI2510170016595
+        - cell "40602649"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Balla"
+        - cell "SDN 003 BALLA"
+        - cell "Diana Daturara"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "11 7/11/2025, 14.30.00 HI2509300008140 40601036 Prov. Sulawesi Barat Kab. Mamasa Kec. Tabang SMPN 1 TABANG Lai Arung 87752155063 0 SESUAI APIP":
+        - cell "11"
+        - cell "7/11/2025, 14.30.00"
+        - cell "HI2509300008140":
+          - paragraph: HI2509300008140
+        - cell "40601036"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Tabang"
+        - cell "SMPN 1 TABANG"
+        - cell "Lai Arung"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "12 7/11/2025, 14.30.00 HI2509300008298 40605583 Prov. Sulawesi Barat Kab. Mamasa Kec. Tabang SMP NEGERI 004 SATAP TABANG Ari Rapa 87752155063 0 SESUAI APIP":
+        - cell "12"
+        - cell "7/11/2025, 14.30.00"
+        - cell "HI2509300008298":
+          - paragraph: HI2509300008298
+        - cell "40605583"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Tabang"
+        - cell "SMP NEGERI 004 SATAP TABANG"
+        - cell "Ari Rapa"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "13 7/11/2025, 14.30.00 HI2510170022394 40604264 Prov. Sulawesi Barat Kab. Mamasa Kec. Tabang SMPN. 2 SATAP TABANG Agustinus K, S.pd 87752155063 0 SESUAI APIP":
+        - cell "13"
+        - cell "7/11/2025, 14.30.00"
+        - cell "HI2510170022394":
+          - paragraph: HI2510170022394
+        - cell "40604264"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Tabang"
+        - cell "SMPN. 2 SATAP TABANG"
+        - cell "Agustinus K, S.pd"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "14 7/11/2025, 14.30.00 HI2509300008297 40605582 Prov. Sulawesi Barat Kab. Mamasa Kec. Tabang SMP NEGERI 003 SATAPTABANG Paulus Palullungan 87752155063 0 SESUAI APIP":
+        - cell "14"
+        - cell "7/11/2025, 14.30.00"
+        - cell "HI2509300008297":
+          - paragraph: HI2509300008297
+        - cell "40605582"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Tabang"
+        - cell "SMP NEGERI 003 SATAPTABANG"
+        - cell "Paulus Palullungan"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "15 7/11/2025, 14.30.00 HI2509300008135 40601031 Prov. Sulawesi Barat Kab. Mamasa Kec. Sumarorong SMP NEGERI 1 SUMARORONG Herman 87752155063 0 SESUAI APIP":
+        - cell "15"
+        - cell "7/11/2025, 14.30.00"
+        - cell "HI2509300008135":
+          - paragraph: HI2509300008135
+        - cell "40601031"
+        - cell "Prov. Sulawesi Barat"
+        - cell "Kab. Mamasa"
+        - cell "Kec. Sumarorong"
+        - cell "SMP NEGERI 1 SUMARORONG"
+        - cell "Herman"
+        - cell "87752155063"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "6 ?Taufan Dwiaz 82330444486 PYX 1 26/9/2025, 19.00.00 HI2509180001950 20559344 Prov. Jawa Timur Kab. Jember Kec. Kaliwates TK AL HIDAYAH 5 SITI MUNAWAROH 82330444486 0 SESUAI APIP":
+        - cell "6"
+        - cell "?Taufan Dwiaz"
+        - cell "82330444486"
+        - cell "PYX"
+        - cell "1"
+        - cell "26/9/2025, 19.00.00"
+        - cell "HI2509180001950":
+          - paragraph: HI2509180001950
+        - cell "20559344"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "TK AL HIDAYAH 5"
+        - cell "SITI MUNAWAROH"
+        - cell "82330444486"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 26/9/2025, 18.00.00 HI2509180001948 20559336 Prov. Jawa Timur Kab. Jember Kec. Kaliwates TK AL FATH MAYA ROSIANA 82330444486 0 SESUAI APIP":
+        - cell "2"
+        - cell "26/9/2025, 18.00.00"
+        - cell "HI2509180001948":
+          - paragraph: HI2509180001948
+        - cell "20559336"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "TK AL FATH"
+        - cell "MAYA ROSIANA"
+        - cell "82330444486"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 26/9/2025, 17.00.00 HI2509180001997 20559715 Prov. Jawa Timur Kab. Jember Kec. Kaliwates TK SISWA RINI 1 Irmina Sulastri 82330444486 0 SESUAI APIP":
+        - cell "3"
+        - cell "26/9/2025, 17.00.00"
+        - cell "HI2509180001997":
+          - paragraph: HI2509180001997
+        - cell "20559715"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "TK SISWA RINI 1"
+        - cell "Irmina Sulastri"
+        - cell "82330444486"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 26/9/2025, 16.00.00 HI2509180001995 20559707 Prov. Jawa Timur Kab. Jember Kec. Kaliwates TK RUKUN HARAPAN ANGGUN PUSPITA RINI 82330444486 0 SESUAI APIP":
+        - cell "4"
+        - cell "26/9/2025, 16.00.00"
+        - cell "HI2509180001995":
+          - paragraph: HI2509180001995
+        - cell "20559707"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "TK RUKUN HARAPAN"
+        - cell "ANGGUN PUSPITA RINI"
+        - cell "82330444486"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 26/9/2025, 15.00.00 HI2509180001991 20559660 Prov. Jawa Timur Kab. Jember Kec. Kaliwates TK PERTIWI KABUPATEN ANIS SANIJAH 82330444486 0 REVIU APIP":
+        - cell "5"
+        - cell "26/9/2025, 15.00.00"
+        - cell "HI2509180001991":
+          - paragraph: HI2509180001991
+        - cell "20559660"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Jember"
+        - cell "Kec. Kaliwates"
+        - cell "TK PERTIWI KABUPATEN"
+        - cell "ANIS SANIJAH"
+        - cell "82330444486"
+        - cell "0"
+        - cell "REVIU APIP"
+      - row:
+        - cell
+      - row "7 A RIZAL 81234505767 PYX 1 24/10/2025, 15.00.00 HI2510180000794 70042731 Prov. Banten Kab. Serang Kec. Kramatwatu SMP BAITUL ULUM AL MUSAWWA Brin Hariman 81234505767 0 SESUAI APIP":
+        - cell "7"
+        - cell "A RIZAL"
+        - cell "81234505767"
+        - cell "PYX"
+        - cell "1"
+        - cell "24/10/2025, 15.00.00"
+        - cell "HI2510180000794":
+          - paragraph: HI2510180000794
+        - cell "70042731"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Kramatwatu"
+        - cell "SMP BAITUL ULUM AL MUSAWWA"
+        - cell "Brin Hariman"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 17/10/2025, 00.00.00 HI2510150004622 69727878 Prov. Banten Kab. Serang Kec. Tirtayasa SMPN 2 TIRTAYASA AKHMAD JAHARI SANTOSA. S.Pd 81234505767 0 SESUAI APIP":
+        - cell "2"
+        - cell "17/10/2025, 00.00.00"
+        - cell "HI2510150004622":
+          - paragraph: HI2510150004622
+        - cell "69727878"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Tirtayasa"
+        - cell "SMPN 2 TIRTAYASA"
+        - cell "AKHMAD JAHARI SANTOSA. S.Pd"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 16/10/2025, 15.00.00 HI2510150004505 20605102 Prov. Banten Kab. Serang Kec. Ciomas SMAN 1 CIOMAS Edi Kocowahono 81234505767 0 SESUAI APIP":
+        - cell "3"
+        - cell "16/10/2025, 15.00.00"
+        - cell "HI2510150004505":
+          - paragraph: HI2510150004505
+        - cell "20605102"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Ciomas"
+        - cell "SMAN 1 CIOMAS"
+        - cell "Edi Kocowahono"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 15/9/2025, 20.00.00 HI2509100001170 20605504 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI BANTARWARU Nining Elahayati 81234505767 0 SESUAI APIP":
+        - cell "4"
+        - cell "15/9/2025, 20.00.00"
+        - cell "HI2509100001170":
+          - paragraph: HI2509100001170
+        - cell "20605504"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI BANTARWARU"
+        - cell "Nining Elahayati"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 15/9/2025, 18.00.00 HI2509100001193 20605541 Prov. Banten Kab. Serang Kec. Anyar SD NEGERI BENGRAS Magfuroh 81234505767 0 SESUAI APIP":
+        - cell "5"
+        - cell "15/9/2025, 18.00.00"
+        - cell "HI2509100001193":
+          - paragraph: HI2509100001193
+        - cell "20605541"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Anyar"
+        - cell "SD NEGERI BENGRAS"
+        - cell "Magfuroh"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "6 15/9/2025, 17.00.00 HI2509100001510 20615103 Prov. Banten Kab. Serang Kec. Anyar SD NEGERI KAREO Rusmiyati 81234505767 0 SESUAI APIP":
+        - cell "6"
+        - cell "15/9/2025, 17.00.00"
+        - cell "HI2509100001510":
+          - paragraph: HI2509100001510
+        - cell "20615103"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Anyar"
+        - cell "SD NEGERI KAREO"
+        - cell "Rusmiyati"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "7 15/9/2025, 16.00.00 HI2509100001102 20605232 Prov. Banten Kab. Serang Kec. Anyar SD NEGERI TEGAL Roi 81234505767 0 SESUAI APIP":
+        - cell "7"
+        - cell "15/9/2025, 16.00.00"
+        - cell "HI2509100001102":
+          - paragraph: HI2509100001102
+        - cell "20605232"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Anyar"
+        - cell "SD NEGERI TEGAL"
+        - cell "Roi"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "8 15/9/2025, 15.00.00 HI2509100001212 20605596 Prov. Banten Kab. Serang Kec. Anyar SD NEGERI ANYAR 5 Holiludin 81234505767 0 SESUAI APIP":
+        - cell "8"
+        - cell "15/9/2025, 15.00.00"
+        - cell "HI2509100001212":
+          - paragraph: HI2509100001212
+        - cell "20605596"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Anyar"
+        - cell "SD NEGERI ANYAR 5"
+        - cell "Holiludin"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "9 12/9/2025, 19.00.00 HI2509100001517 20616099 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI CIPANAS Eliyah, S.pd 81234505767 0 SESUAI APIP":
+        - cell "9"
+        - cell "12/9/2025, 19.00.00"
+        - cell "HI2509100001517":
+          - paragraph: HI2509100001517
+        - cell "20616099"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI CIPANAS"
+        - cell "Eliyah, S.pd"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "10 12/9/2025, 18.00.00 HI2509100001088 20605019 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI NEGLASARI Drs. Ahmad Dana 81234505767 0 SESUAI APIP":
+        - cell "10"
+        - cell "12/9/2025, 18.00.00"
+        - cell "HI2509100001088":
+          - paragraph: HI2509100001088
+        - cell "20605019"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI NEGLASARI"
+        - cell "Drs. Ahmad Dana"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "11 12/9/2025, 18.00.00 HI2509100001079 20604996 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI PASAURAN 1 Gun Gun Guntara, S. Pd 81234505767 0 SESUAI APIP":
+        - cell "11"
+        - cell "12/9/2025, 18.00.00"
+        - cell "HI2509100001079":
+          - paragraph: HI2509100001079
+        - cell "20604996"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI PASAURAN 1"
+        - cell "Gun Gun Guntara, S. Pd"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "12 12/9/2025, 17.00.00 HI2509100001311 20606028 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI CIKOKOL Bustomi 81234505767 0 SESUAI APIP":
+        - cell "12"
+        - cell "12/9/2025, 17.00.00"
+        - cell "HI2509100001311":
+          - paragraph: HI2509100001311
+        - cell "20606028"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI CIKOKOL"
+        - cell "Bustomi"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "13 12/9/2025, 16.00.00 HI2509100001367 20606163 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI CIPARAY Dedi Supriadi,s.pd 81234505767 0 SESUAI APIP":
+        - cell "13"
+        - cell "12/9/2025, 16.00.00"
+        - cell "HI2509100001367":
+          - paragraph: HI2509100001367
+        - cell "20606163"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI CIPARAY"
+        - cell "Dedi Supriadi,s.pd"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "14 12/9/2025, 15.00.00 HI2509100001006 20604859 Prov. Banten Kab. Serang Kec. Cinangka SD NEGERI PASAURAN 2 Sarna 81234505767 0 SESUAI APIP":
+        - cell "14"
+        - cell "12/9/2025, 15.00.00"
+        - cell "HI2509100001006":
+          - paragraph: HI2509100001006
+        - cell "20604859"
+        - cell "Prov. Banten"
+        - cell "Kab. Serang"
+        - cell "Kec. Cinangka"
+        - cell "SD NEGERI PASAURAN 2"
+        - cell "Sarna"
+        - cell "81234505767"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "8 A Rayhan (GRAFIKA) 83815652508 PYX 1 15/9/2025, 17.00.00 HI2508280000261 20605334 Prov. Banten Kota Serang Kec. Serang SKH NEGERI 01 KOTA SERANG H.Eman Suherman 83815652508 0 SESUAI APIP":
+        - cell "8"
+        - cell "A Rayhan (GRAFIKA)"
+        - cell "83815652508"
+        - cell "PYX"
+        - cell "1"
+        - cell "15/9/2025, 17.00.00"
+        - cell "HI2508280000261":
+          - paragraph: HI2508280000261
+        - cell "20605334"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SKH NEGERI 01 KOTA SERANG"
+        - cell "H.Eman Suherman"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 15/9/2025, 16.00.00 HI2508270001109 20606152 Prov. Banten Kota Serang Kec. Cipocok Jaya SD NEGERI CIPOCOK JAYA 4 Rofi ah 83815652508 0 SESUAI APIP":
+        - cell "2"
+        - cell "15/9/2025, 16.00.00"
+        - cell "HI2508270001109":
+          - paragraph: HI2508270001109
+        - cell "20606152"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Cipocok Jaya"
+        - cell "SD NEGERI CIPOCOK JAYA 4"
+        - cell "Rofi ah"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 8/9/2025, 17.15.00 HI2508270001131 69977067 Prov. Banten Kota Serang Kec. Cipocok Jaya SD ASSA ADAH GLOBAL ISLAMIC SCHOOL ABDURAHMAN 83815652508 0 SESUAI APIP":
+        - cell "3"
+        - cell "8/9/2025, 17.15.00"
+        - cell "HI2508270001131":
+          - paragraph: HI2508270001131
+        - cell "69977067"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Cipocok Jaya"
+        - cell "SD ASSA ADAH GLOBAL ISLAMIC SCHOOL"
+        - cell "ABDURAHMAN"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 8/9/2025, 16.00.00 HI2508270000953 69830510 Prov. Banten Kota Serang Kec. Cipocok Jaya SD ISLAM AN-NUR Dhanni Achmad Kusuma 83815652508 0 SESUAI APIP":
+        - cell "4"
+        - cell "8/9/2025, 16.00.00"
+        - cell "HI2508270000953":
+          - paragraph: HI2508270000953
+        - cell "69830510"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Cipocok Jaya"
+        - cell "SD ISLAM AN-NUR"
+        - cell "Dhanni Achmad Kusuma"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "5 8/9/2025, 15.00.00 HI2508270000955 69883590 Prov. Banten Kota Serang Kec. Cipocok Jaya SD ELFATIH Fairuz Athiyyah 83815652508 0 SESUAI APIP":
+        - cell "5"
+        - cell "8/9/2025, 15.00.00"
+        - cell "HI2508270000955":
+          - paragraph: HI2508270000955
+        - cell "69883590"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Cipocok Jaya"
+        - cell "SD ELFATIH"
+        - cell "Fairuz Athiyyah"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "6 6/9/2025, 17.00.00 HI2508270001057 20605826 Prov. Banten Kota Serang Kec. Serang SD NEGERI KALIGANDU Murniati 83815652508 0 SESUAI APIP":
+        - cell "6"
+        - cell "6/9/2025, 17.00.00"
+        - cell "HI2508270001057":
+          - paragraph: HI2508270001057
+        - cell "20605826"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SD NEGERI KALIGANDU"
+        - cell "Murniati"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "7 6/9/2025, 15.00.00 HI2508280000262 20605335 Prov. Banten Kota Serang Kec. Serang SKH SAMANTHA Sunaeni 83815652508 0 SESUAI APIP":
+        - cell "7"
+        - cell "6/9/2025, 15.00.00"
+        - cell "HI2508280000262":
+          - paragraph: HI2508280000262
+        - cell "20605335"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SKH SAMANTHA"
+        - cell "Sunaeni"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "8 4/9/2025, 17.00.00 HI2508270001107 20606126 Prov. Banten Kota Serang Kec. Serang SD NEGERI CINANGGUNG Umdawiyah 83815652508 0 SESUAI APIP":
+        - cell "8"
+        - cell "4/9/2025, 17.00.00"
+        - cell "HI2508270001107":
+          - paragraph: HI2508270001107
+        - cell "20606126"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SD NEGERI CINANGGUNG"
+        - cell "Umdawiyah"
+        - cell "83815652508"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "9 A Saleh Aziz (GRAFIKA) 83814105420 PYX 1 8/9/2025, 17.00.00 HI2508280000259 20605320 Prov. Banten Kota Serang Kec. Serang SKH MADINA Teti Herawati 83814105420 0 SESUAI APIP":
+        - cell "9"
+        - cell "A Saleh Aziz (GRAFIKA)"
+        - cell "83814105420"
+        - cell "PYX"
+        - cell "1"
+        - cell "8/9/2025, 17.00.00"
+        - cell "HI2508280000259":
+          - paragraph: HI2508280000259
+        - cell "20605320"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SKH MADINA"
+        - cell "Teti Herawati"
+        - cell "83814105420"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "2 8/9/2025, 16.00.00 HI2508270000969 20604838 Prov. Banten Kota Serang Kec. Serang SD NEGERI SERANG 02 Salmi 83814105420 0 SESUAI APIP":
+        - cell "2"
+        - cell "8/9/2025, 16.00.00"
+        - cell "HI2508270000969":
+          - paragraph: HI2508270000969
+        - cell "20604838"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SD NEGERI SERANG 02"
+        - cell "Salmi"
+        - cell "83814105420"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "3 4/9/2025, 17.00.00 HI2508270000973 20604842 Prov. Banten Kota Serang Kec. Serang SD NEGERI SERANG 04 Rena Komalasari 83814105420 0 SESUAI APIP":
+        - cell "3"
+        - cell "4/9/2025, 17.00.00"
+        - cell "HI2508270000973":
+          - paragraph: HI2508270000973
+        - cell "20604842"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SD NEGERI SERANG 04"
+        - cell "Rena Komalasari"
+        - cell "83814105420"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row "4 4/9/2025, 15.00.00 HI2508270000977 20604849 Prov. Banten Kota Serang Kec. Serang SD NEGERI SERANG 01 Ade Samsiah 83814105420 0 SESUAI APIP":
+        - cell "4"
+        - cell "4/9/2025, 15.00.00"
+        - cell "HI2508270000977":
+          - paragraph: HI2508270000977
+        - cell "20604849"
+        - cell "Prov. Banten"
+        - cell "Kota Serang"
+        - cell "Kec. Serang"
+        - cell "SD NEGERI SERANG 01"
+        - cell "Ade Samsiah"
+        - cell "83814105420"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+      - row "10 A. Zakaria 82236920116 PYX 1 19/9/2025, 18.00.00 HI2509140001684 20591543 Prov. Jawa Timur Kab. Banyuwangi Kec. Gambiran SDLB ADELWIS Heri Kusumawanto 82236920116 0 SESUAI APIP":
+        - cell "10"
+        - cell "A. Zakaria"
+        - cell "82236920116"
+        - cell "PYX"
+        - cell "1"
+        - cell "19/9/2025, 18.00.00"
+        - cell "HI2509140001684":
+          - paragraph: HI2509140001684
+        - cell "20591543"
+        - cell "Prov. Jawa Timur"
+        - cell "Kab. Banyuwangi"
+        - cell "Kec. Gambiran"
+        - cell "SDLB ADELWIS"
+        - cell "Heri Kusumawanto"
+        - cell "82236920116"
+        - cell "0"
+        - cell "SESUAI APIP"
+      - row:
+        - cell
+  - paragraph: "Grup per halaman:"
+  - 'combobox "Grup per halaman: 10"': "10"
+  - paragraph: 1–10 of 44
+  - button "Go to previous page" [disabled]
+  - button "Go to next page"
+  - text: Copyright 2026 ZLP Digital Teknologi

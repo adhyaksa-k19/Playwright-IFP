@@ -1,0 +1,55 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - paragraph: Detail Koordinator
+  - button "Kembali ke List Koordinator"
+  - tablist:
+    - tab "Profil Koordinator" [selected]
+  - separator: Identitas Koordinator
+  - text: Kode Koordinator
+  - textbox "Kode Koordinator" [disabled]: (SYSTEM GENERATED)
+  - paragraph: Kode akan dibuat otomatis setelah disimpan
+  - text: Nama Koordinator *
+  - textbox "Nama Koordinator *"
+  - separator: Kontak dan Lokasi
+  - text: Email
+  - textbox "Email"
+  - text: Phone 1 *
+  - textbox "Phone 1 *"
+  - text: Phone 2
+  - textbox "Phone 2"
+  - text: Propinsi Area *
+  - button "Pilih Propinsi"
+  - paragraph: Belum ada propinsi yang dipilih
+  - text: Alamat
+  - textbox "Alamat"
+  - button "Simpan Koordinator"
+  - button "Simpan & Tambah Lagi"
+  - button "Reset Form"
+  - text: Copyright 2026 ZLP Digital Teknologi

@@ -1,0 +1,72 @@
+- banner:
+  - button
+  - text: Instalasi IFP 2026
+  - button "Scan BAPP"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "Transaksi"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Menu Administrasi"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Master":
+          - /url: /master/sekolah
+      - listitem:
+        - paragraph: Tambah Sekolah
+  - button "Kembali ke List Sekolah"
+  - heading "Informasi Sekolah" [level=6]
+  - separator: Identitas Instansi
+  - text: NPSN
+  - textbox "NPSN"
+  - text: Nama Sekolah
+  - textbox "Nama Sekolah"
+  - separator: Klasifikasi
+  - text: Jenjang Pendidikan
+  - combobox [invalid]: Pilih Jenjang
+  - text: Bentuk Pendidikan
+  - combobox: Pilih Bentuk
+  - text: Status Sekolah
+  - combobox: Pilih Status
+  - text: Status Formal
+  - combobox: Pilih Formal
+  - text: Direktorat
+  - combobox [invalid]: Pilih Direktorat
+  - separator: Kontak dan PIC
+  - text: Nama PIC / Kepala Sekolah
+  - textbox "Nama PIC / Kepala Sekolah"
+  - text: Nomor Telepon
+  - textbox "Nomor Telepon"
+  - text: Email Sekolah
+  - textbox "Email Sekolah"
+  - separator: Alamat dan Lokasi
+  - text: Alamat Lengkap
+  - textbox "Alamat Lengkap"
+  - text: Provinsi
+  - combobox: Pilih Provinsi
+  - text: Kabupaten / Kota
+  - combobox [disabled]: Pilih Kabupaten
+  - text: Kecamatan
+  - combobox [disabled]: Pilih Kecamatan
+  - text: Kelurahan
+  - combobox [disabled]: Pilih Kelurahan
+  - button "Simpan Sekolah"
+  - button "Reset Form"
+  - text: Copyright 2026 ZLP Digital Teknologi
