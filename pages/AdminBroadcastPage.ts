@@ -2,6 +2,8 @@ import { expect, Page } from '@playwright/test';
 
 const TIMEOUT = 60_000;
 
+export type BroadcastTarget = 'nasional' | 'propinsi' | 'koordinator' | 'teknisi';
+
 export class AdminBroadcastPage {
     constructor(private readonly page: Page) {}
 
@@ -39,5 +41,62 @@ export class AdminBroadcastPage {
         await expect(next).toBeEnabled({ timeout: TIMEOUT });
         await next.click();
         await expect(previous).toBeEnabled({ timeout: TIMEOUT });
+    }
+
+    async sendAnnouncement(target: BroadcastTarget, title: string, message: string) {
+        await this.selectTarget(target);
+        await this.page.getByRole('textbox', { name: 'Judul Pengumuman' }).fill(title);
+        await this.page.getByRole('textbox', { name: 'Isi Pesan' }).fill(message);
+
+        const submit = this.page.getByRole('button', { name: 'KIRIM PENGUMUMAN MASSAL' });
+        await expect(submit).toBeEnabled({ timeout: TIMEOUT });
+        const responseTimeout = 180_000;
+        const response = this.page.waitForResponse((item) =>
+            item.request().method() === 'POST' && item.url().includes('/api/admin/')
+        , { timeout: responseTimeout });
+        this.page.once('dialog', async (dialog) => dialog.accept());
+        await submit.click();
+        const result = await response;
+        const errorBody = result.ok() ? '' : await result.text();
+        expect(result.ok(), `HTTP ${result.status()} saat mengirim broadcast: ${errorBody}`).toBeTruthy();
+        await expect(this.page.getByRole('textbox', { name: 'Judul Pengumuman' }))
+            .toHaveValue('', { timeout: responseTimeout });
+    }
+
+    private async selectTarget(target: BroadcastTarget) {
+        if (target === 'nasional') {
+            return;
+        }
+
+        const targetLabel = {
+            propinsi: 'Per Propinsi',
+            koordinator: 'Per Tim Koordinator',
+            teknisi: 'Teknisi Spesifik',
+        }[target];
+        await this.page.getByRole('combobox').first().click();
+        await this.page.getByRole('option', { name: targetLabel, exact: true }).click();
+
+        if (target === 'propinsi') {
+            await this.page.getByRole('combobox').nth(1).click();
+            await this.page.getByRole('option', { name: 'Prov. D.K.I. Jakarta', exact: true }).click();
+            return;
+        }
+
+        if (target === 'koordinator') {
+            const coordinator = this.page.getByRole('combobox', { name: 'Pilih Koordinator' });
+            await coordinator.fill('ZLP KOORDINATOR');
+            await this.page.getByRole('option', {
+                name: 'ZLP KOORDINATOR (KD-2026-00000327)',
+                exact: true,
+            }).click();
+            return;
+        }
+
+        const technician = this.page.getByRole('combobox', { name: 'Cari & Pilih Teknisi *' });
+        await technician.fill('ZLP TEKNISI 2');
+        await this.page.getByRole('option', {
+            name: 'ZLP TEKNISI 2 (TEK-2026-00091297) - Prov. D.K.I. Jakarta',
+            exact: true,
+        }).click();
     }
 }

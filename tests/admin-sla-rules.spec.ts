@@ -6,9 +6,9 @@ test.describe.serial('Administrasi - Konfigurasi SLA', () => {
 
     const rule: SlaRuleData = {
         province: 'Prov. Aceh',
-        lowerBound: '-99999',
-        upperBound: '6',
-        score: '3',
+        lowerBound: '99999',
+        upperBound: '100000',
+        score: '9',
     };
 
     test('layout halaman tersedia', async ({ page }) => {
@@ -32,7 +32,7 @@ test.describe.serial('Administrasi - Konfigurasi SLA', () => {
     test('hapus SLA rule', async ({ page }) => {
         const admin = new AdminSlaRulesPage(page);
         await admin.goto();
-        await admin.verifyDeleteRuleConfirmation(rule);
+        await admin.verifyDeleteRuleConfirmation(rule.province);
     });
 
     test('add SLA rule', async ({ page }) => {
@@ -44,6 +44,6 @@ test.describe.serial('Administrasi - Konfigurasi SLA', () => {
     test('edit SLA rule', async ({ page }) => {
         const admin = new AdminSlaRulesPage(page);
         await admin.goto();
-        await admin.verifyEditRuleForm(rule, '4');
+        await admin.verifyEditRuleForm(rule.province, '4');
     });
 });

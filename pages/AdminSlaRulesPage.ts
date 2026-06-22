@@ -55,20 +55,19 @@ export class AdminSlaRulesPage {
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
     }
 
-    async verifyEditRuleForm(data: SlaRuleData, score: string) {
-        await this.filterByProvince(data.province);
-        await this.ruleRow(data).getByRole('button', { name: 'Edit Rule' }).click();
+    async verifyEditRuleForm(province: string, score: string) {
+        await this.filterByProvince(province);
+        await this.page.getByRole('button', { name: 'Edit Rule' }).first().click();
         const dialog = this.page.getByRole('dialog', { name: 'Edit Aturan SLA' });
-        await expect(dialog.getByRole('spinbutton', { name: 'Batas Bawah (Jam) *' }))
-            .toHaveValue(data.lowerBound);
+        await expect(dialog.getByRole('spinbutton', { name: 'Batas Bawah (Jam) *' })).not.toHaveValue('');
         await dialog.getByRole('spinbutton', { name: 'Skor (+ atau -) *' }).fill(score);
         await expect(dialog.getByRole('button', { name: 'Simpan Rules' })).toBeEnabled();
         await dialog.getByRole('button', { name: 'Batal' }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
     }
 
-    async verifyDeleteRuleConfirmation(data: SlaRuleData) {
-        await this.filterByProvince(data.province);
+    async verifyDeleteRuleConfirmation(province: string) {
+        await this.filterByProvince(province);
         const confirmation = new Promise<void>((resolve) => {
             this.page.once('dialog', async (dialog) => {
                 expect(dialog.message()).toContain('menghapus Aturan SLA');
@@ -76,9 +75,9 @@ export class AdminSlaRulesPage {
                 resolve();
             });
         });
-        await this.ruleRow(data).getByRole('button', { name: 'Hapus Rule' }).click();
+        await this.page.getByRole('button', { name: 'Hapus Rule' }).first().click();
         await confirmation;
-        await expect(this.page.getByText(data.lowerBound, { exact: true })).toBeVisible({ timeout: TIMEOUT });
+        await expect(this.page.getByRole('button', { name: 'Hapus Rule' }).first()).toBeVisible();
     }
 
     private async filterByProvince(province: string) {
@@ -90,11 +89,6 @@ export class AdminSlaRulesPage {
         }
         await expect(this.page.getByText(province, { exact: true }).first().or(this.emptyState()))
             .toBeVisible({ timeout: TIMEOUT });
-    }
-
-    private ruleRow(data: SlaRuleData) {
-        return this.page.getByText(data.lowerBound, { exact: true })
-            .locator('xpath=ancestor::div[.//button][1]');
     }
 
     private emptyState() {

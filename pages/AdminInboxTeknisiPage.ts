@@ -35,6 +35,13 @@ export class AdminInboxTeknisiPage {
         await expect(previous).toBeEnabled({ timeout: TIMEOUT });
     }
 
+    async expectAnnouncementVisible(title: string, message: string) {
+        await expect(this.page.getByText(title, { exact: true }).first())
+            .toBeVisible({ timeout: 180_000 });
+        await expect(this.page.getByText(message, { exact: true }).first())
+            .toBeVisible({ timeout: 180_000 });
+    }
+
     private emptyState() {
         return this.page.getByText(/No (?:rows to display|data available)/);
     }
