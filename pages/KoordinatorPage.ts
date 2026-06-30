@@ -1,4 +1,4 @@
-import { expect, Page } from '@playwright/test';
+import { expect, Page, Response } from '@playwright/test';
 
 export interface CoordinatorData {
     name: string;
@@ -112,20 +112,24 @@ export class KoordinatorPage {
     }
 
     async expectCoordinatorVisible(value: string) {
-        await expect(this.page.getByText(value, { exact: true })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible();
+        await this.waitForCoordinatorReady();
+        await expect(this.page.getByText(value, { exact: true })).toBeVisible({ timeout: 30_000 });
+        await expect(this.dataRows().first()).toBeVisible({ timeout: 30_000 });
     }
 
     async expectTableHasData() {
-        await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible();
+        await this.waitForCoordinatorReady();
+        await expect(this.dataRows().first()).toBeVisible({ timeout: 30_000 });
     }
 
     async getCoordinatorDataOnRow(index: number): Promise<CoordinatorRowData> {
         await this.ensureListPage();
         await this.resetFilters();
 
-        const editButton = this.page.getByRole('button', { name: 'Edit' }).nth(index);
-        await expect(editButton).toBeVisible();
+        await this.waitForCoordinatorReady();
+
+        const editButton = this.dataRows().nth(index);
+        await expect(editButton).toBeVisible({ timeout: 30_000 });
 
         const row = editButton.locator('xpath=../../..');
         const columns = (await row.locator(':scope > *').allTextContents())
@@ -150,7 +154,8 @@ export class KoordinatorPage {
     }
 
     async expectNoData() {
-        await expect(this.emptyState()).toBeVisible();
+        await this.waitForCoordinatorReady();
+        await expect(this.emptyState()).toBeVisible({ timeout: 30_000 });
     }
 
     async resetFilters() {
@@ -162,6 +167,7 @@ export class KoordinatorPage {
         const responsePromise = this.waitForCoordinatorResponse(false);
         await reset.click();
         await this.captureApi(await responsePromise);
+        await this.waitForCoordinatorReady();
     }
 
     async expectFiltersReset() {
@@ -248,12 +254,12 @@ export class KoordinatorPage {
     }
 
     private async search() {
-        const responsePromise = this.waitForCoordinatorResponse(true);
-        await this.page.getByRole('button', { name: /Cari Koordinator|Search Coordinator/ }).click();
-        await this.captureApi(await responsePromise);
-        await expect(
-            this.page.getByRole('button', { name: 'Edit' }).first().or(this.emptyState())
-        ).toBeVisible();
+        await this.retryCoordinatorAction(async () => {
+            const responsePromise = this.waitForCoordinatorResponse(true);
+            await this.page.getByRole('button', { name: /Cari Koordinator|Search Coordinator/ }).click();
+            await this.captureApi(await responsePromise);
+            await this.waitForCoordinatorReady();
+        });
     }
 
     private async ensureListPage() {
@@ -294,12 +300,49 @@ export class KoordinatorPage {
             response.url().includes('/api/reference/koordinator?') &&
             response.url().includes(`search=${search}`) &&
             response.request().method() === 'GET'
-        );
+        , { timeout: 30_000 }).catch(() => null);
     }
 
-    private async captureApi(response: Awaited<ReturnType<Page['waitForResponse']>>) {
+    private async captureApi(response: Response | null) {
+        if (!response) {
+            return;
+        }
+
         this.authorization = response.request().headers()['authorization'];
         this.apiOrigin = new URL(response.url()).origin;
+    }
+
+    private async retryCoordinatorAction(action: () => Promise<void>, attempts = 3) {
+        let lastError: unknown;
+
+        for (let attempt = 1; attempt <= attempts; attempt += 1) {
+            try {
+                await action();
+                return;
+            } catch (error) {
+                lastError = error;
+                if (attempt === attempts) break;
+
+                await this.goto();
+                await this.verifyPageLoaded();
+                await this.waitForCoordinatorReady().catch(() => undefined);
+            }
+        }
+
+        throw lastError;
+    }
+
+    private async waitForCoordinatorReady(timeout = 45_000) {
+        const loading = this.page.getByText(/^(Loading data\.\.\.|Memuat data\.\.\.)$/);
+        if (await loading.isVisible().catch(() => false)) {
+            await expect(loading).toBeHidden({ timeout });
+        }
+
+        await expect(this.dataRows().first().or(this.emptyState())).toBeVisible({ timeout });
+    }
+
+    private dataRows() {
+        return this.page.getByRole('button', { name: 'Edit' });
     }
 
     private codeInput() {

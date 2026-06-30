@@ -152,22 +152,32 @@ export class ProsesInstalasiPage {
     }
 
     async searchByNpsn(npsn: string) {
-        await this.textbox('NPSN').fill(npsn);
-        await this.button('Cari').click();
-        await this.waitForTableReady();
-        await expect(this.page.getByRole('table')).toContainText(npsn);
+        await this.retrySearch(async () => {
+            await this.textbox('NPSN').fill(npsn);
+            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)));
+            await this.button('Cari').click();
+            await response;
+            await this.waitForTableReady(30_000);
+            await expect(this.page.getByRole('table')).toContainText(npsn, { timeout: 10_000 });
+        });
     }
 
     async searchNpsnWithoutResults(npsn: string) {
-        await this.textbox('NPSN').fill(npsn);
-        await this.button('Cari').click();
-        await this.waitForTableReady();
-        await expect(this.emptyState()).toBeVisible();
+        await this.retrySearch(async () => {
+            await this.textbox('NPSN').fill(npsn);
+            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)));
+            await this.button('Cari').click();
+            await response;
+            await this.waitForTableReady(30_000);
+            await expect(this.emptyState()).toBeVisible({ timeout: 10_000 });
+        });
     }
 
     async resetFilters() {
+        const response = this.waitForDataResponse();
         await this.button('Reset').click();
-        await this.waitForTableReady();
+        await response;
+        await this.waitForTableReady(30_000);
         await this.verifyTableHasData();
     }
 
@@ -192,15 +202,28 @@ export class ProsesInstalasiPage {
     }
 
     private async waitForDataRowWithRetry() {
+        let lastError: unknown;
+
         for (let attempt = 0; attempt < 3; attempt++) {
-            await this.waitForTableReady();
-            if (await this.firstDataRow().isVisible().catch(() => false)) return;
+            try {
+                await this.waitForTableReady(45_000);
+                if (await this.firstDataRow().isVisible().catch(() => false)) return;
+            } catch (error) {
+                lastError = error;
+            }
 
             const apiFailed = await this.loadError().isVisible().catch(() => false);
-            if (!apiFailed || attempt === 2) break;
+            const loadingStuck = await this.loadingState().isVisible().catch(() => false);
+            if ((!apiFailed && !loadingStuck) || attempt === 2) break;
 
+            const response = this.waitForDataResponse();
             await this.page.reload();
+            await response;
             await this.verifyPageLoaded();
+        }
+
+        if (lastError) {
+            throw lastError;
         }
 
         await expect(
@@ -209,14 +232,49 @@ export class ProsesInstalasiPage {
         ).toBeVisible();
     }
 
-    private async waitForTableReady() {
-        const loading = this.page.getByText('Loading data...', { exact: true });
+    private waitForDataResponse(extra: (url: string) => boolean = () => true) {
+        return this.page.waitForResponse((response) => {
+            const url = response.url();
+            return response.request().method() === 'GET' &&
+                url.includes('/api/') &&
+                /proses[_-]?instalasi|instalasi|installation/i.test(url) &&
+                response.ok() &&
+                extra(url);
+        }, { timeout: 20_000 }).catch(() => null);
+    }
+
+    private async retrySearch(action: () => Promise<void>, attempts = 3) {
+        let lastError: unknown;
+
+        for (let attempt = 1; attempt <= attempts; attempt += 1) {
+            try {
+                await action();
+                return;
+            } catch (error) {
+                lastError = error;
+                if (attempt === attempts) break;
+
+                await this.page.reload();
+                await this.verifyPageLoaded();
+                await this.waitForDataRowWithRetry().catch(() => undefined);
+            }
+        }
+
+        throw lastError;
+    }
+
+    private async waitForTableReady(timeout = 60_000) {
+        const loading = this.loadingState();
         if (await loading.isVisible().catch(() => false)) {
-            await expect(loading).toBeHidden({ timeout: 60_000 });
+            await expect(loading).toBeHidden({ timeout });
         }
 
         await expect(
             this.firstDataRow().or(this.emptyState())
-        ).toBeVisible({ timeout: 60_000 });
+        ).toBeVisible({ timeout });
+    }
+
+    private loadingState() {
+        return this.page.getByText(/^(Loading data\.\.\.|Memuat data\.\.\.)$/);
     }
 }

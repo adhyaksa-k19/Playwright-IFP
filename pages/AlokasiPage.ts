@@ -184,19 +184,37 @@ async verifyDropdowns() {
     }
 
 async clickCariAlokasi() {
-    const response = this.page.waitForResponse((item) =>
-        item.request().method() === 'GET' &&
-        item.url().includes('/api/') &&
-        item.url().includes('alokasi')
-    , { timeout: 15_000 }).catch(() => null);
+    const idTransaksi = await this.textbox('ID Transaksi').inputValue().catch(() => '');
 
-    await this.button('Cari Alokasi').click();
+    for (let attempt = 1; attempt <= 3; attempt += 1) {
+        const response = this.waitForAlokasiResponse((url) => {
+            if (!idTransaksi) return true;
+            return url.searchParams.get('id_transaksi') === idTransaksi;
+        });
 
-    const result = await response;
-    if (result) {
+        await this.button('Cari Alokasi').click();
+
+        const result = await response;
+        if (!result) {
+            await this.page.waitForTimeout(1_500);
+            continue;
+        }
+
         expect(result.ok(), `HTTP ${result.status()} saat mencari alokasi`).toBeTruthy();
+
+        const body = await result.json().catch(() => null);
+        const rows = body?.data?.data;
+
+        if (Array.isArray(rows) && rows.length === 0) {
+            await expect(this.emptyState()).toBeVisible({ timeout: 30_000 });
+            await expect(this.getDataRows().first()).toBeHidden();
+            return;
+        }
+
+        await expect(this.getDataRows().first().or(this.emptyState())).toBeVisible({ timeout: 30_000 });
+        return;
     }
-    await this.page.waitForTimeout(5_000);
+
     await expect(this.getDataRows().first().or(this.emptyState())).toBeVisible({ timeout: 60_000 });
 }
 
@@ -221,9 +239,8 @@ async clickReset() {
     }
 
     async verifyTableIsEmpty() {
-        await expect(
-            this.emptyState()
-        ).toBeVisible({ timeout: 60_000 });
+        await expect(this.emptyState()).toBeVisible({ timeout: 60_000 });
+        await expect(this.getDataRows().first()).toBeHidden();
     }
 
     async verifyPaymentFilterResult(value: string) {
@@ -251,5 +268,14 @@ async clickReset() {
 
     private emptyState() {
         return this.page.getByText(/No (?:rows to display|data available)/);
+    }
+
+    private waitForAlokasiResponse(extra: (url: URL) => boolean = () => true) {
+        return this.page.waitForResponse((item) => {
+            if (item.request().method() !== 'GET' || !item.url().includes('/api/')) return false;
+
+            const url = new URL(item.url());
+            return url.pathname.includes('/api/transaksi/alokasi') && extra(url);
+        }, { timeout: 30_000 }).catch(() => null);
     }
 }

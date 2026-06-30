@@ -76,7 +76,7 @@ test.describe('Monitoring - Alokasi', () => {
     });
 
     test('Filter - Search with no matching results', async () => {
-        await alokasi.fillIdTransaksi('ID_TIDAK_ADA_9999999');
+        await alokasi.fillIdTransaksi('HI999999999999999');
         await alokasi.clickCariAlokasi();
         await alokasi.verifyTableIsEmpty();
     }); 

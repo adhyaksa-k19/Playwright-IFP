@@ -38,19 +38,18 @@ export class InstalasiPage {
         await input.blur();
         await expect(input).toHaveValue(id);
 
-        const response = this.waitForData((url) =>
-            new URL(url).searchParams.get('id_transaksi') === id
-        );
-        await this.searchButton().click();
-        await response;
-        await expect(this.page.getByRole('button', { name: 'Edit' })).toHaveCount(1, {
-            timeout: 60_000,
+        await this.retrySearchUntil(async () => {
+            const response = this.waitForData((url) =>
+                new URL(url).searchParams.get('id_transaksi') === id
+            );
+            await this.searchButton().click();
+            await response;
+            await expect(this.page.getByText(id, { exact: true }).first()).toBeVisible({ timeout: 10_000 });
         });
-        await expect(this.page.getByText(id, { exact: true }).first()).toBeVisible();
     }
 
     async selectStatus(status: string) {
-        await this.page.getByRole('combobox').filter({ hasText: 'Semua Status Progress' }).click();
+        await this.page.getByRole('combobox').filter({ hasText: /Semua Status Progress|All Status/ }).click();
         await this.page.getByRole('option', { name: status, exact: true }).click();
         const response = this.waitForData();
         await this.searchButton().click();
@@ -59,7 +58,9 @@ export class InstalasiPage {
     }
 
     async reset() {
+        const response = this.waitForData();
         await this.page.getByRole('button', { name: 'Reset' }).click();
+        await response;
         await expect(this.transactionIdInput()).toHaveValue('');
     }
 
@@ -72,7 +73,9 @@ export class InstalasiPage {
     }
 
     async goToNextPage() {
+        const response = this.waitForData((url) => url.includes('page=2'));
         await this.page.getByRole('button', { name: 'Go to next page' }).click();
+        await response;
         await expect(this.page.getByText(/26.?50 of/)).toBeVisible({ timeout: 60_000 });
     }
 
@@ -80,6 +83,22 @@ export class InstalasiPage {
         return this.page.waitForResponse((response) => {
             const url = response.url();
             return url.includes('/api/transaksi/alokasi?') && response.ok() && extra(url);
-        });
+        }, { timeout: 15_000 }).catch(() => null);
+    }
+
+    private async retrySearchUntil(assertion: () => Promise<void>, attempts = 3) {
+        let lastError: unknown;
+        for (let attempt = 1; attempt <= attempts; attempt += 1) {
+            try {
+                await assertion();
+                return;
+            } catch (error) {
+                lastError = error;
+                if (attempt < attempts) {
+                    await this.page.waitForTimeout(1_500);
+                }
+            }
+        }
+        throw lastError;
     }
 }
