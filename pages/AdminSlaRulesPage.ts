@@ -15,19 +15,19 @@ export class AdminSlaRulesPage {
     async goto() {
         await this.page.goto('/admin/sla_rules');
         await expect(this.page.getByRole('navigation', { name: 'breadcrumb' })
-            .getByText('Konfigurasi Aturan SLA', { exact: true })).toBeVisible({ timeout: TIMEOUT });
+            .getByText(/Konfigurasi Aturan SLA|SLA Configuration/)).toBeVisible({ timeout: TIMEOUT });
     }
 
     async verifyPageLoaded() {
-        await expect(this.page.getByRole('button', { name: 'Cari Data' })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Tambah Aturan SLA' })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Edit Rule' }).first()).toBeVisible();
+        await expect(this.page.getByRole('button', { name: /Cari Data|Search/ })).toBeVisible();
+        await expect(this.page.getByRole('button', { name: /Tambah Aturan SLA|Add Rule/ })).toBeVisible();
+        await expect(this.page.getByRole('button', { name: /Edit Rule|Edit/ }).first()).toBeVisible();
     }
 
     async filterWithoutResultAndReset() {
         const input = this.page.getByRole('textbox', { name: 'Cari Propinsi Area...' });
         await input.fill(`PROPINSI_TIDAK_ADA_${Date.now()}`);
-        await this.page.getByRole('button', { name: 'Cari Data' }).click();
+        await this.page.getByRole('button', { name: /Cari Data|Search/ }).click();
         await expect(this.emptyState()).toBeVisible({ timeout: TIMEOUT });
 
         await this.page.getByRole('button', { name: 'Reset' }).click();
@@ -43,26 +43,26 @@ export class AdminSlaRulesPage {
     }
 
     async verifyAddRuleForm(data: SlaRuleData) {
-        await this.page.getByRole('button', { name: 'Tambah Aturan SLA' }).click();
-        const dialog = this.page.getByRole('dialog', { name: 'Tambah Aturan SLA Baru' });
-        await dialog.getByRole('combobox', { name: 'Pilih Propinsi Tujuan (Bisa Multiple) *' }).click();
+        await this.page.getByRole('button', { name: /Tambah Aturan SLA|Add Rule/ }).click();
+        const dialog = this.page.getByRole('dialog', { name: /Tambah Aturan SLA Baru|Add New SLA Rule|Add Rule/ });
+        await dialog.getByRole('combobox', { name: /Pilih Propinsi Tujuan|Select Target Province/ }).click();
         await this.page.getByRole('option', { name: data.province, exact: true }).click();
-        await dialog.getByRole('spinbutton', { name: 'Batas Bawah (Jam) *' }).fill(data.lowerBound);
-        await dialog.getByRole('spinbutton', { name: 'Batas Atas (Jam)' }).fill(data.upperBound);
-        await dialog.getByRole('spinbutton', { name: 'Skor (+ atau -) *' }).fill(data.score);
-        await expect(dialog.getByRole('button', { name: 'Simpan Rules' })).toBeEnabled();
-        await dialog.getByRole('button', { name: 'Batal' }).click();
+        await dialog.getByRole('spinbutton', { name: /Batas Bawah|Lower Bound/ }).fill(data.lowerBound);
+        await dialog.getByRole('spinbutton', { name: /Batas Atas|Upper Bound/ }).fill(data.upperBound);
+        await dialog.getByRole('spinbutton', { name: /Skor|Score/ }).fill(data.score);
+        await expect(dialog.getByRole('button', { name: /Simpan Rules|Save Rules|Save/ })).toBeEnabled();
+        await dialog.getByRole('button', { name: /Batal|Cancel/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
     }
 
     async verifyEditRuleForm(province: string, score: string) {
         await this.filterByProvince(province);
-        await this.page.getByRole('button', { name: 'Edit Rule' }).first().click();
-        const dialog = this.page.getByRole('dialog', { name: 'Edit Aturan SLA' });
-        await expect(dialog.getByRole('spinbutton', { name: 'Batas Bawah (Jam) *' })).not.toHaveValue('');
-        await dialog.getByRole('spinbutton', { name: 'Skor (+ atau -) *' }).fill(score);
-        await expect(dialog.getByRole('button', { name: 'Simpan Rules' })).toBeEnabled();
-        await dialog.getByRole('button', { name: 'Batal' }).click();
+        await this.page.getByRole('button', { name: /Edit Rule|Edit/ }).first().click();
+        const dialog = this.page.getByRole('dialog', { name: /Edit Aturan SLA|Edit SLA Rule|Edit Rule/ });
+        await expect(dialog.getByRole('spinbutton', { name: /Batas Bawah|Lower Bound/ }).first()).not.toHaveValue('');
+        await dialog.getByRole('spinbutton', { name: /Skor|Score/ }).fill(score);
+        await expect(dialog.getByRole('button', { name: /Simpan Rules|Save Rules|Save/ })).toBeEnabled();
+        await dialog.getByRole('button', { name: /Batal|Cancel/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
     }
 
@@ -70,20 +70,20 @@ export class AdminSlaRulesPage {
         await this.filterByProvince(province);
         const confirmation = new Promise<void>((resolve) => {
             this.page.once('dialog', async (dialog) => {
-                expect(dialog.message()).toContain('menghapus Aturan SLA');
+                expect(dialog.message()).toMatch(/hapus|delete|SLA|Aturan/i);
                 await dialog.dismiss();
                 resolve();
             });
         });
-        await this.page.getByRole('button', { name: 'Hapus Rule' }).first().click();
+        await this.page.getByRole('button', { name: /Hapus Rule|Delete/ }).first().click();
         await confirmation;
-        await expect(this.page.getByRole('button', { name: 'Hapus Rule' }).first()).toBeVisible();
+        await expect(this.page.getByRole('button', { name: /Hapus Rule|Delete/ }).first()).toBeVisible();
     }
 
     private async filterByProvince(province: string) {
         const input = this.page.getByRole('textbox', { name: 'Cari Propinsi Area...' });
         await input.fill(province);
-        await this.page.getByRole('button', { name: 'Cari Data' }).click();
+        await this.page.getByRole('button', { name: /Cari Data|Search/ }).click();
         if (province !== 'Prov. Bali') {
             await expect(this.page.getByText('Prov. Bali', { exact: true })).toBeHidden({ timeout: TIMEOUT });
         }

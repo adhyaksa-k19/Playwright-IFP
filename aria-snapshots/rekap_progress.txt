@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,27 +15,27 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
-    - button "Rekap Progress"
+    - button "Progress Recap"
   - listitem:
-    - button "Ranking SLA Koordinator"
+    - button "Coordinator SLA Ranking"
   - listitem:
-    - button "Ranking SLA Teknisi"
+    - button "Technician SLA Ranking"
   - listitem:
-    - button "Rekap per Propinsi"
+    - button "Recap per Province"
   - listitem:
-    - button "Rekap per Kabupaten"
+    - button "Recap per Regency"
   - listitem:
-    - button "Rekap per Direktorat"
+    - button "Recap per Directorate"
   - listitem:
-    - button "Report Pembayaran"
+    - button "Payment Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -44,53 +46,330 @@
         - link "Report":
           - /url: /report/rekap_progress
       - listitem:
-        - paragraph: Rekap Progress Harian
-  - text: Dari Tanggal
-  - textbox "Dari Tanggal": 2026-05-22
-  - text: Sampai Tanggal
-  - textbox "Sampai Tanggal": 2026-06-21
-  - text: Direktorat
-  - combobox: Semua Direktorat
-  - text: Propinsi
-  - combobox: Semua Propinsi
-  - text: Kabupaten / Kota
-  - combobox [disabled]: Semua Kabupaten
-  - button "Tarik Data"
+        - paragraph: Progress Recap
+  - text: Start Date
+  - textbox "Start Date": 2026-05-31
+  - text: End Date
+  - textbox "End Date": 2026-06-30
+  - text: Directorate
+  - combobox: All Directorates
+  - text: Province
+  - combobox: All Provinces
+  - text: Regency/City
+  - combobox [disabled]: All Counties/Regencies
+  - text: Partner
+  - combobox: All Partners
+  - button "Filter Data"
   - button "Reset"
   - button "Print"
-  - button "Excel" [disabled]
-  - heading "Trend Progress Harian" [level=6]
+  - button "Excel"
+  - heading "Daily Progress Trend" [level=6]
   - list:
     - listitem:
-      - img "Disetujui legend icon"
-      - text: Disetujui
+      - img "Approved (Dir) legend icon"
+      - text: Approved (Dir)
     - listitem:
-      - img "Gagal legend icon"
-      - text: Gagal
+      - img "Constrained legend icon"
+      - text: Constrained
     - listitem:
-      - img "Mulai Instalasi legend icon"
-      - text: Mulai Instalasi
+      - img "Failed legend icon"
+      - text: Failed
     - listitem:
-      - img "Revisi legend icon"
-      - text: Revisi
+      - img "Installation Complete legend icon"
+      - text: Installation Complete
     - listitem:
-      - img "Revisi Selesai legend icon"
-      - text: Revisi Selesai
+      - img "Ready to Install legend icon"
+      - text: Ready to Install
     - listitem:
-      - img "Selesai Instalasi legend icon"
-      - text: Selesai Instalasi
+      - img "Revision legend icon"
+      - text: Revision
     - listitem:
-      - img "Siap Diinstal legend icon"
-      - text: Siap Diinstal
+      - img "Revision Completed legend icon"
+      - text: Revision Completed
     - listitem:
-      - img "Terkendala legend icon"
-      - text: Terkendala
-  - application
+      - img "Start Installation legend icon"
+      - text: Start Installation
+  - application: 2026-05-31 2026-06-03 2026-06-06 2026-06-09 2026-06-12 2026-06-15 2026-06-18 2026-06-21 2026-06-24 2026-06-27 2026-06-30 0 1500 3000 4500 6000
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Tanggal Siap Diinstal Mulai Instalasi Selesai Instalasi Terkendala Gagal Direvisi Disetujui Dir. Revisi Selesai
-  - paragraph: No rows to display
-  - alert:
-    - text: Gagal memuat data rekap harian
-    - button "Close"
+  - text: Date Ready to Install Start Installation Installation Complete Constrained Failed Revision Approved (Dir) Revision Completed
+  - paragraph: 2026-06-30
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-29
+  - paragraph: "0"
+  - paragraph: "14"
+  - paragraph: "4"
+  - paragraph: "2"
+  - paragraph: "3"
+  - paragraph: "0"
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: 2026-06-28
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-27
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-26
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-25
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "2"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-24
+  - paragraph: "0"
+  - paragraph: "8"
+  - paragraph: "2"
+  - paragraph: "2"
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-23
+  - paragraph: "0"
+  - paragraph: "5"
+  - paragraph: "3"
+  - paragraph: "3"
+  - paragraph: "2"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-22
+  - paragraph: "1"
+  - paragraph: "1055"
+  - paragraph: "8"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-21
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "4"
+  - paragraph: "1"
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-20
+  - paragraph: "0"
+  - paragraph: "5000"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-19
+  - paragraph: "35"
+  - paragraph: "12"
+  - paragraph: "0"
+  - paragraph: "3"
+  - paragraph: "3"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-18
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "2"
+  - paragraph: "2"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-17
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-16
+  - paragraph: "1"
+  - paragraph: "801"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-15
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-14
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-13
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-12
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-11
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-10
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-09
+  - paragraph: "1"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-08
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-07
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-06
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-05
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-04
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-03
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-02
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-06-01
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: 2026-05-31
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
+  - paragraph: "0"
   - text: Copyright 2026 ZLP Digital Teknologi

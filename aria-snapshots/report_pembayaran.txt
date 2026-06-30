@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,27 +15,27 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
-    - button "Rekap Progress"
+    - button "Progress Recap"
   - listitem:
-    - button "Ranking SLA Koordinator"
+    - button "Coordinator SLA Ranking"
   - listitem:
-    - button "Ranking SLA Teknisi"
+    - button "Technician SLA Ranking"
   - listitem:
-    - button "Rekap per Propinsi"
+    - button "Recap per Province"
   - listitem:
-    - button "Rekap per Kabupaten"
+    - button "Recap per Regency"
   - listitem:
-    - button "Rekap per Direktorat"
+    - button "Recap per Directorate"
   - listitem:
-    - button "Report Pembayaran"
+    - button "Payment Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -44,43 +46,45 @@
         - link "Report":
           - /url: /report/pembayaran
       - listitem:
-        - paragraph: Report Pembayaran
-  - checkbox "Filter Tanggal"
-  - paragraph: Filter Tanggal
-  - text: Dari Tanggal Bayar
-  - textbox "Dari Tanggal Bayar" [disabled]: 2026-05-22
-  - text: Sampai Tanggal Bayar
-  - textbox "Sampai Tanggal Bayar" [disabled]: 2026-06-21
-  - text: Direktorat
-  - combobox: Semua Direktorat
-  - text: Propinsi
-  - combobox: Semua Propinsi
-  - text: Kabupaten / Kota
-  - combobox [disabled]: Semua Kabupaten
-  - text: Koordinator
-  - combobox "Koordinator"
+        - paragraph: Payment Report
+  - checkbox "Filter by Payment Date"
+  - paragraph: Filter by Payment Date
+  - text: Payment Start Date
+  - textbox "Payment Start Date" [disabled]: 2026-05-31
+  - text: Payment End Date
+  - textbox "Payment End Date" [disabled]: 2026-06-30
+  - text: Directorate
+  - combobox: All Directorates
+  - text: Partner
+  - combobox: All Partners
+  - text: Province
+  - combobox: All Provinces
+  - text: Regency/City
+  - combobox [disabled]: All Counties/Regencies
+  - text: Coordinator
+  - combobox "Coordinator"
   - button "Open"
-  - text: Teknisi
-  - combobox "Teknisi"
+  - text: Technician
+  - combobox "Technician"
   - button "Open"
-  - button "Tampilkan Report"
+  - button "Show Report"
   - button "Reset"
   - button "Export Excel"
   - button "Export CSV"
-  - text: TOTAL KESELURUHAN
+  - text: Grand Total
+  - heading "2" [level=6]
+  - text: Total Paid
+  - heading "2" [level=6]
+  - text: Total Cash Advance
   - heading "0" [level=6]
-  - text: TOTAL PAID
+  - text: Total Unpaid
   - heading "0" [level=6]
-  - text: TOTAL KASBON
-  - heading "0" [level=6]
-  - text: TOTAL UNPAID
-  - heading "0" [level=6]
-  - heading "Rasio Pembayaran" [level=6]
+  - heading "Payment Ratio" [level=6]
   - button
   - list:
     - listitem:
-      - img "Kasbon legend icon"
-      - text: Kasbon
+      - img "CASH ADVANCE legend icon"
+      - text: CASH ADVANCE
     - listitem:
       - img "Paid legend icon"
       - text: Paid
@@ -88,20 +92,41 @@
       - img "Unpaid legend icon"
       - text: Unpaid
   - application
-  - heading "Trend Pembayaran Harian (Paid)" [level=6]
+  - heading "Daily Payment Trend" [level=6]
   - button
   - list:
     - listitem:
       - img "Total Paid legend icon"
       - text: Total Paid
-  - application
+  - application: 2026-06-22 2026-06-29 0 0.25 0.5 0.75 1
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Status Pembayaran Tanggal Lunas PIC Lunas Tanggal Kasbon PIC Kasbon Penalty SLA ID Transaksi NPSN Nama Sekolah Propinsi Kabupaten/Kota Status Progres Koordinator Teknisi
-  - paragraph: No rows to display
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–0 of 0
+  - text: Payment Status Settlement Date Settlement PIC Cash Advance Date Cash Advance PIC SLA Penalty Transaction ID NPSN School Name Province Regency/City Progress Status Coordinator Technician PAID
+  - paragraph: 29/06/2026 05:01:00
+  - paragraph: ELSA
+  - paragraph: "-"
+  - paragraph
+  - paragraph: 2 Days
+  - paragraph: HI202600000000078
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - text: SESUAI APIP ZLP KOORDINATOR - ZLP TEKNISI 3 - PAID
+  - paragraph: 22/06/2026 02:12:00
+  - paragraph: jos
+  - paragraph: "-"
+  - paragraph
+  - paragraph: 0 Days
+  - paragraph: HI202600000000748
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - paragraph: Prov. Papua Selatan
+  - paragraph: Kab. Asmat
+  - text: SESUAI APIP ZLP KOORDINATOR - ZLP TEKNISI 2 -
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–2 of 2
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

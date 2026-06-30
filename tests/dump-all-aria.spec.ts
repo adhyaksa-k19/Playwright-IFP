@@ -22,6 +22,30 @@ const inventory = JSON.parse(
 ) as MenuItem[];
 
 const outputDirectory = 'aria-snapshots';
+const labelAliases: Record<string, string[]> = {
+    Transaksi: ['Transaction'],
+    'Menu Administrasi': ['Administration Menu'],
+    'Akun User': ['User Account'],
+};
+
+function escapeRegex(value: string) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+async function findMenuButton(
+    page: import('@playwright/test').Page,
+    caption: string
+) {
+    const labels = [caption, ...(labelAliases[caption] ?? [])];
+    const pattern = new RegExp(`^(${labels.map(escapeRegex).join('|')})$`);
+    const button = page.getByRole('button', { name: pattern }).first();
+    const isVisible = await button.waitFor({
+        state: 'visible',
+        timeout: 1_500,
+    }).then(() => true).catch(() => false);
+
+    return isVisible ? button : null;
+}
 
 async function waitUntilReady(page: import('@playwright/test').Page) {
     await page.waitForLoadState('domcontentloaded');
@@ -37,14 +61,16 @@ async function openFromMenu(
     item: MenuItem
 ) {
     await page.goto('/dashboard', { waitUntil: 'domcontentloaded' });
-    await expect(page.getByRole('main')).toBeVisible({ timeout: 30_000 });
+    const main = page.getByRole('main');
+    const isDashboardVisible = await main.waitFor({
+        state: 'visible',
+        timeout: 5_000,
+    }).then(() => true).catch(() => false);
+    if (!isDashboardVisible) return false;
 
     if (item.level === 2 && item.parent) {
-        const parent = page.getByRole('button', {
-            name: item.parent,
-            exact: true,
-        });
-        if (!await parent.isVisible().catch(() => false)) return false;
+        const parent = await findMenuButton(page, item.parent);
+        if (!parent) return false;
         await parent.click();
     } else if (item.level > 2) {
         // Level-three inventory entries use the parent menu code. Open each
@@ -52,26 +78,17 @@ async function openFromMenu(
         const parentItem = inventory.find((candidate) => candidate.code === item.parent);
         if (!parentItem) return false;
         if (parentItem.parent) {
-            const grandparent = page.getByRole('button', {
-                name: parentItem.parent,
-                exact: true,
-            });
-            if (await grandparent.isVisible().catch(() => false)) {
+            const grandparent = await findMenuButton(page, parentItem.parent);
+            if (grandparent) {
                 await grandparent.click();
             }
         }
-        const parent = page.getByRole('button', {
-            name: parentItem.caption,
-            exact: true,
-        });
-        if (await parent.isVisible().catch(() => false)) await parent.click();
+        const parent = await findMenuButton(page, parentItem.caption);
+        if (parent) await parent.click();
     }
 
-    const menu = page.getByRole('button', {
-        name: item.caption,
-        exact: true,
-    });
-    if (!await menu.isVisible().catch(() => false)) return false;
+    const menu = await findMenuButton(page, item.caption);
+    if (!menu) return false;
     await menu.click();
     await page.waitForTimeout(1_000);
     return true;

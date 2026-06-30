@@ -92,13 +92,13 @@ test.describe('Monitoring - Alokasi', () => {
 
     test('Checkbox - SN Terisi is checked by default', async ({ page }) => {
         await expect(
-            page.getByRole('checkbox', { name: 'SN Terisi' })
+            page.getByRole('checkbox', { name: /^(SN Terisi|SN Filled)$/ })
         ).toBeChecked();
     });
 
     test('Checkbox - SN Kosong is checked by default', async ({ page }) => {
         await expect(
-            page.getByRole('checkbox', { name: 'SN Kosong' })
+            page.getByRole('checkbox', { name: /^(SN Kosong|SN Empty)$/ })
         ).toBeChecked();
     });
 

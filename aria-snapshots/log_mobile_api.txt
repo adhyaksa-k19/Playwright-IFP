@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,19 +15,19 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
   - listitem:
-    - button "Akun User"
+    - button "User Account"
   - listitem:
     - button "User Role"
   - listitem:
-    - button "Konfigurasi SLA"
+    - button "SLA Configuration"
   - listitem:
     - button "Allocation Sandbox"
   - listitem:
@@ -33,9 +35,9 @@
   - listitem:
     - button "Log Sartrans API"
   - listitem:
-    - button "Log Notifikasi Teknisi"
+    - button "Technician Notification Log"
   - listitem:
-    - button "Broadcast Pengumuman"
+    - button "Broadcast Announcement"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -43,195 +45,195 @@
         - link "Home":
           - /url: /
       - listitem:
-        - link "Administrasi":
+        - link "Administration Menu":
           - /url: /admin/log_mobile_api
       - listitem:
-        - paragraph: Log Mobile API
-  - heading "Filter Log API" [level=6]
+        - paragraph: Mobile API Log
+  - heading "Filter" [level=6]
   - textbox "Search JSON Payload/Response"
   - textbox "Endpoint"
   - textbox "HTTP Code"
   - text: Method
-  - combobox: Semua Method
+  - combobox: All
   - text: Status
-  - combobox: Semua Status
+  - combobox: All
   - text: Tanggal Mulai
   - textbox "Tanggal Mulai"
   - text: Tanggal Akhir
   - textbox "Tanggal Akhir"
-  - button "Cari Log"
+  - button "Search"
   - button "Reset"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Aksi Waktu Method Endpoint HTTP Code Waktu Respon Status
+  - text: Actions Time Method Endpoint Status Code Response Time Status
   - button
-  - text: 22/6/2026, 00.14.34 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000349
+  - text: 29/6/2026, 12.02.01 POST
+  - paragraph: /pyx/api/jobs/installations/HI202600000000078/paid
+  - paragraph: "400"
+  - text: 205 ms Error
+  - button
+  - text: 29/6/2026, 11.21.21 POST
+  - paragraph: "[FCM] /messages:send"
   - paragraph: "200"
-  - text: 189 ms Berhasil
+  - text: 151 ms Success
   - button
-  - text: 22/6/2026, 00.14.33 POST
+  - text: 29/6/2026, 11.21.21 POST
+  - paragraph: /pyx/api/jobs/installations/HI202600000052881/unblock
+  - paragraph: "404"
+  - text: 143 ms Error
+  - button
+  - text: 29/6/2026, 11.21.21 POST
+  - paragraph: /pyx/api/jobs/installations/HI202600000052881/reopen
+  - paragraph: "400"
+  - text: 114 ms Error
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 53 ms Error
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 53 ms Error
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 53 ms Error
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: "[FCM] /messages:send"
+  - paragraph: "200"
+  - text: 200 ms Success
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 53 ms Error
+  - button
+  - text: 29/6/2026, 11.18.27 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 99 ms Error
+  - button
+  - text: 29/6/2026, 11.17.41 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 57 ms Error
+  - button
+  - text: 29/6/2026, 11.17.40 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 56 ms Error
+  - button
+  - text: 29/6/2026, 11.17.40 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 56 ms Error
+  - button
+  - text: 29/6/2026, 11.17.40 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 54 ms Error
+  - button
+  - text: 29/6/2026, 11.17.40 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 103 ms Error
+  - button
+  - text: 29/6/2026, 10.35.52 PUT
+  - paragraph: /pyx/api/technicians/TEK-2026-00091313/verify
+  - paragraph: "200"
+  - text: 150 ms Success
+  - button
+  - text: 29/6/2026, 10.35.50 PUT
+  - paragraph: /pyx/api/technicians/TEK-2026-00091312/verify
+  - paragraph: "200"
+  - text: 148 ms Success
+  - button
+  - text: 29/6/2026, 10.35.49 PUT
+  - paragraph: /pyx/api/technicians/TEK-2026-00091311/verify
+  - paragraph: "200"
+  - text: 157 ms Success
+  - button
+  - text: 29/6/2026, 10.35.47 PUT
+  - paragraph: /pyx/api/technicians/TEK-2026-00091310/verify
+  - paragraph: "200"
+  - text: 265 ms Success
+  - button
+  - text: 29/6/2026, 10.35.03 POST
+  - paragraph: /pyx/api/technicians
+  - paragraph: "200"
+  - text: 183 ms Success
+  - button
+  - text: 29/6/2026, 10.34.04 POST
+  - paragraph: /pyx/api/technicians
+  - paragraph: "200"
+  - text: 184 ms Success
+  - button
+  - text: 29/6/2026, 10.32.40 POST
+  - paragraph: /pyx/api/technicians
+  - paragraph: "200"
+  - text: 104 ms Success
+  - button
+  - text: 29/6/2026, 10.32.40 POST
+  - paragraph: /pyx/api/auth
+  - paragraph: "200"
+  - text: 367 ms Success
+  - button
+  - text: 29/6/2026, 10.31.43 POST
+  - paragraph: /pyx/api/technicians
+  - paragraph: "200"
+  - text: 163 ms Success
+  - button
+  - text: 29/6/2026, 10.29.19 POST
   - paragraph: /pyx/api/technicians
   - paragraph: "500"
-  - text: 186 ms Gagal
+  - text: 238 ms Error
   - button
-  - text: 22/6/2026, 00.14.33 POST
+  - text: 29/6/2026, 10.29.19 POST
   - paragraph: /pyx/api/technicians
   - paragraph: "200"
-  - text: 180 ms Berhasil
+  - text: 234 ms Success
   - button
-  - text: 22/6/2026, 00.05.07 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000348
+  - text: 29/6/2026, 09.40.02 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 63 ms Error
+  - button
+  - text: 29/6/2026, 09.40.02 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 141 ms Error
+  - button
+  - text: 29/6/2026, 09.40.02 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 66 ms Error
+  - button
+  - text: 29/6/2026, 09.40.02 POST
+  - paragraph: /pyx/api/jobs/installations
+  - paragraph: "400"
+  - text: 85 ms Error
+  - button
+  - text: 29/6/2026, 09.40.02 POST
+  - paragraph: /pyx/api/auth
   - paragraph: "200"
-  - text: 127 ms Berhasil
+  - text: 471 ms Success
   - button
-  - text: 22/6/2026, 00.05.06 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 189 ms Gagal
-  - button
-  - text: 22/6/2026, 00.05.06 POST
-  - paragraph: /pyx/api/technicians
+  - text: 29/6/2026, 09.40.01 POST
+  - paragraph: "[FCM] /messages:send"
   - paragraph: "200"
-  - text: 183 ms Berhasil
+  - text: 389 ms Success
   - button
-  - text: 21/6/2026, 23.42.44 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000347
-  - paragraph: "200"
-  - text: 191 ms Berhasil
-  - button
-  - text: 21/6/2026, 23.42.43 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 206 ms Gagal
-  - button
-  - text: 21/6/2026, 23.42.43 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 195 ms Berhasil
-  - button
-  - text: 21/6/2026, 23.26.11 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000346
-  - paragraph: "200"
-  - text: 122 ms Berhasil
-  - button
-  - text: 21/6/2026, 23.26.10 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 356 ms Gagal
-  - button
-  - text: 21/6/2026, 23.26.10 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 349 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.41.43 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000345
-  - paragraph: "200"
-  - text: 178 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.41.42 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 187 ms Gagal
-  - button
-  - text: 21/6/2026, 22.41.42 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 179 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.25.40 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000344
-  - paragraph: "200"
-  - text: 118 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.25.39 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 182 ms Gagal
-  - button
-  - text: 21/6/2026, 22.25.39 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 179 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.16.24 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000343
-  - paragraph: "200"
-  - text: 164 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.16.23 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 164 ms Gagal
-  - button
-  - text: 21/6/2026, 22.16.23 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 160 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.05.09 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000342
-  - paragraph: "200"
-  - text: 167 ms Berhasil
-  - button
-  - text: 21/6/2026, 22.05.07 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 170 ms Gagal
-  - button
-  - text: 21/6/2026, 22.05.07 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 160 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.51.52 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000341
-  - paragraph: "200"
-  - text: 120 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.51.51 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 217 ms Gagal
-  - button
-  - text: 21/6/2026, 21.51.51 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 208 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.33.49 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000340
-  - paragraph: "200"
-  - text: 120 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.33.48 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 176 ms Gagal
-  - button
-  - text: 21/6/2026, 21.33.48 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 171 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.28.14 DELETE
-  - paragraph: /pyx/api/technicians/KD-2026-00000339
-  - paragraph: "200"
-  - text: 139 ms Berhasil
-  - button
-  - text: 21/6/2026, 21.28.13 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "500"
-  - text: 198 ms Gagal
-  - button
-  - text: 21/6/2026, 21.28.13 POST
-  - paragraph: /pyx/api/technicians
-  - paragraph: "200"
-  - text: 190 ms Berhasil
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 36982
+  - text: 25/6/2026, 11.23.19 POST
+  - paragraph: "[FCM] /messages:send"
+  - paragraph: "400"
+  - text: 297 ms Error
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 38233
   - button "Go to previous page" [disabled]
   - button "Go to next page"
   - text: Copyright 2026 ZLP Digital Teknologi

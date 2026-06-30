@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,27 +15,27 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
-    - button "Rekap Progress"
+    - button "Progress Recap"
   - listitem:
-    - button "Ranking SLA Koordinator"
+    - button "Coordinator SLA Ranking"
   - listitem:
-    - button "Ranking SLA Teknisi"
+    - button "Technician SLA Ranking"
   - listitem:
-    - button "Rekap per Propinsi"
+    - button "Recap per Province"
   - listitem:
-    - button "Rekap per Kabupaten"
+    - button "Recap per Regency"
   - listitem:
-    - button "Rekap per Direktorat"
+    - button "Recap per Directorate"
   - listitem:
-    - button "Report Pembayaran"
+    - button "Payment Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -41,44 +43,48 @@
         - link "Home":
           - /url: /
       - listitem:
-        - paragraph: Rekap Per Kabupaten
-  - combobox: Semua Direktorat
-  - combobox: Semua Propinsi
-  - button "Tampilkan Report"
+        - link "Report":
+          - /url: /report/rekap_per_kabupaten
+      - listitem:
+        - paragraph: Recap per Regency
+  - combobox: All Directorates
+  - combobox: All Provinces
+  - combobox: All Partners
+  - button "Show Report"
   - button "Reset"
   - button "Print"
   - button "Excel" [disabled]
   - button "CSV" [disabled]
-  - 'heading "Laporan Rekapitulasi Alokasi Per Kabupaten (Total: 0)" [level=6]'
+  - heading "Regency Summary (0)" [level=6]
   - table:
     - rowgroup:
-      - row "No Propinsi Kabupaten/Kota Total Barang Siap Menuju Alamat Belum Assign Koord Sudah Assign Koord Proses Selesai Kendala Gagal Revisi Setuju Reviu APIP Sesuai APIP Penarikan":
+      - row "No Province Regency/City Total Ready En Route Unassigned Coordinator Assigned Coordinator In Progress Completed Obstructed Failed Revision Approved APIP Review APIP Compliant Withdrawal Request":
         - columnheader "No"
-        - columnheader "Propinsi"
-        - columnheader "Kabupaten/Kota"
+        - columnheader "Province"
+        - columnheader "Regency/City"
         - columnheader "Total"
-        - columnheader "Barang Siap"
-        - columnheader "Menuju Alamat"
-        - columnheader "Belum Assign Koord"
-        - columnheader "Sudah Assign Koord"
-        - columnheader "Proses"
-        - columnheader "Selesai"
-        - columnheader "Kendala"
-        - columnheader "Gagal"
-        - columnheader "Revisi"
-        - columnheader "Setuju"
-        - columnheader "Reviu APIP"
-        - columnheader "Sesuai APIP"
-        - columnheader "Penarikan"
+        - columnheader "Ready"
+        - columnheader "En Route"
+        - columnheader "Unassigned Coordinator"
+        - columnheader "Assigned Coordinator"
+        - columnheader "In Progress"
+        - columnheader "Completed"
+        - columnheader "Obstructed"
+        - columnheader "Failed"
+        - columnheader "Revision"
+        - columnheader "Approved"
+        - columnheader "APIP Review"
+        - columnheader "APIP Compliant"
+        - columnheader "Withdrawal Request"
     - rowgroup:
-      - row "Memuat Laporan...":
-        - cell "Memuat Laporan...":
+      - row "Loading report...":
+        - cell "Loading report...":
           - progressbar:
             - img
-          - paragraph: Memuat Laporan...
+          - paragraph: Loading report...
     - rowgroup:
-      - row "TOTAL KESELURUHAN 0 0 0 0 0 0 0 0 0 0 0 0 0 0":
-        - cell "TOTAL KESELURUHAN"
+      - row "Grand Total 0 0 0 0 0 0 0 0 0 0 0 0 0 0":
+        - cell "Grand Total"
         - cell "0"
         - cell "0"
         - cell "0"

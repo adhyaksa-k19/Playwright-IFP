@@ -28,7 +28,7 @@ test.describe('Transaksi - Buat Alokasi', () => {
     test('memilih sekolah membuka dialog Tambah Alokasi', async () => {
         await createAlokasi.selectFirstSchool();
         const dialog = await createAlokasi.openAddDialog();
-        await dialog.getByRole('button', { name: 'Batal' }).click();
+        await dialog.getByRole('button', { name: /^(Batal|Cancel)$/ }).click();
         await expect(dialog).toBeHidden();
     });
 
@@ -38,7 +38,7 @@ test.describe('Transaksi - Buat Alokasi', () => {
         const result = await createAlokasi.submitAllocation(1);
         expect(result).toMatchObject({
             success: true,
-            message: expect.stringContaining('Processing 1 Allocations'),
+            message: expect.stringMatching(/Processing 1 Allocations|Memproses 1 Alokasi/),
         });
     });
 });

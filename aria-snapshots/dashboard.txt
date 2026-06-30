@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,13 +15,13 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -28,9 +30,9 @@
           - /url: /
       - listitem:
         - paragraph: Dashboard
-  - paragraph: Statistik Nasional
-  - text: Filter Koordinator
-  - combobox "Filter Koordinator"
+  - paragraph: National Statistics
+  - text: Filter Coordinator
+  - combobox "Filter Coordinator"
   - button "Open"
   - button "Total Alokasi ...":
     - text: Total Alokasi
@@ -51,8 +53,8 @@
     - text: Siap Diinstal
     - heading "..." [level=6]
   - text: Status Detail
-  - button "Sudah Assign Koordinator ...":
-    - text: Sudah Assign Koordinator
+  - button "Coordinator Assigned ...":
+    - text: Coordinator Assigned
     - heading "..." [level=6]
   - button "Proses Instalasi ...":
     - text: Proses Instalasi
@@ -81,16 +83,16 @@
   - button "Pengajuan Penarikan ...":
     - text: Pengajuan Penarikan
     - heading "..." [level=6]
-  - heading "Proporsi Status" [level=6]
+  - heading "Status Proportion" [level=6]
   - button
-  - heading "Progress per Propinsi" [level=6]
+  - heading "Progress per Province" [level=6]
   - button
-  - heading "Assignment Map (Sebaran Koordinator & Teknisi)" [level=6]
+  - heading "Assignment Map (Coordinator & Technician Distribution)" [level=6]
   - progressbar:
     - img
   - table:
     - rowgroup:
-      - row "Propinsi":
-        - columnheader "Propinsi"
+      - row "Province":
+        - columnheader "Province"
     - rowgroup
   - text: Copyright 2026 ZLP Digital Teknologi

@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -47,36 +49,37 @@
           - /url: /transaksi/list_instalasi
       - listitem:
         - paragraph: Daftar Instalasi
-  - textbox "ID Transaksi"
+  - textbox "Transaction ID"
   - button "Scan QR Code"
   - combobox: Semua Status Progress
   - combobox: Semua Pembayaran
   - textbox "NPSN"
   - button "Scan Barcode"
-  - textbox "Nama Sekolah"
+  - textbox "School Name"
   - textbox "AWB"
   - textbox "Serial Number"
   - combobox: Semua Jenjang
-  - combobox: Semua Direktorat
-  - combobox: Semua Propinsi
-  - combobox: Semua Kabupaten Kota
-  - combobox: Semua Kecamatan
-  - combobox: Semua Kelurahan
-  - text: Koordinator
-  - combobox "Koordinator"
+  - combobox: All Directorates
+  - combobox: All Partners
+  - combobox: All Provinces
+  - combobox: All Regencies
+  - combobox: All Districts
+  - combobox: All Villages
+  - text: Coordinator
+  - combobox "Coordinator"
   - button "Open"
-  - text: Teknisi
-  - combobox "Teknisi" [disabled]
+  - text: Technician
+  - combobox "Technician" [disabled]
   - button "Open" [disabled]
-  - checkbox "SN Terisi" [checked]
-  - paragraph: SN Terisi
-  - checkbox "SN Kosong" [checked]
-  - paragraph: SN Kosong
-  - button "Cari Alokasi"
+  - checkbox "SN Filled" [checked]
+  - paragraph: SN Filled
+  - checkbox "SN Empty" [checked]
+  - paragraph: SN Empty
+  - button "Search Allocation"
   - button "Reset"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Aksi Trans. ID NPSN Status Pembayaran Propinsi Kabupaten Nama Sekolah Foto Serial Number Penerima / NIP AWB Koordinator Teknisi / Telp
+  - text: Actions Trans. ID NPSN Status Payment Province Regency / City Managing Partner School Name Photos Serial Number Receiver / NIP AWB Coordinator Technician / Phone
   - button "Edit"
   - paragraph: HI202600000000001
   - paragraph: "70006190"
@@ -102,14 +105,14 @@
   - button "Edit"
   - paragraph: HI202600000000003
   - paragraph: "70006190"
-  - text: SIAP DIINSTAL
+  - text: PROSES INSTALASI
   - paragraph: Prov. D.K.I. Jakarta
   - paragraph: Kota Jakarta Timur
   - paragraph: TK TAMAN MAIN ROYAL AT-TIN
   - paragraph: "0"
   - text: Kosong - -
   - paragraph
-  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 - -
+  - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 Adrena Teknisi 1 +62811978009
   - button "Edit"
   - paragraph: HI202600000000004
   - paragraph: "70006190"
@@ -205,14 +208,14 @@
   - paragraph: Prov. D.K.I. Jakarta
   - paragraph: Kota Jakarta Utara
   - paragraph: KB AL HUSNA
-  - paragraph: "0"
+  - paragraph: "3"
   - text: Kosong - -
   - paragraph
   - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 ZLP TEKNISI 1 +6281212121213
   - button "Edit"
   - paragraph: HI202600000000013
   - paragraph: "69857209"
-  - text: PROSES INSTALASI
+  - text: INSTALASI GAGAL
   - paragraph: Prov. D.K.I. Jakarta
   - paragraph: Kota Jakarta Utara
   - paragraph: KB AL HUSNA
@@ -440,9 +443,9 @@
   - text: Kosong - -
   - paragraph
   - text: KD-2026-00000327 ZLP KOORDINATOR +6281212121212 ZLP TEKNISI 1 +6281212121213
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 6522847
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 6582313
   - button "Go to previous page" [disabled]
   - button "Go to next page"
   - text: Copyright 2026 ZLP Digital Teknologi

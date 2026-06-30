@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -11,19 +13,21 @@
   - listitem:
     - button "Monitoring"
   - listitem:
-    - button "Alokasi"
+    - button "Allocation"
   - listitem:
-    - button "Proses Instalasi"
+    - button "Installation Process"
+  - listitem:
+    - button "Coordinator Broadcast"
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -34,66 +38,66 @@
         - link "Monitoring":
           - /url: /monitoring/proses_instalasi
       - listitem:
-        - paragraph: Proses Instalasi
-  - text: Mulai
-  - textbox "Mulai"
-  - text: Selesai
-  - textbox "Selesai"
-  - textbox "Nama Koordinator/Teknisi"
+        - paragraph: Installation Process
+  - text: Start
+  - textbox "Start"
+  - text: End
+  - textbox "End"
+  - textbox "Coordinator/Technician Name"
   - text: Group By
-  - combobox "Teknisi"
+  - combobox "Technician"
   - text: All Group
   - combobox "All Group"
-  - combobox "SEMUA PROPINSI"
-  - combobox "SEMUA KABUPATEN" [disabled]
-  - combobox "SEMUA KECAMATAN" [disabled]
-  - textbox "Nama Sekolah"
+  - combobox "All Provinces"
+  - combobox "All Regencies" [disabled]
+  - combobox "All Districts" [disabled]
+  - textbox "School Name"
   - textbox "NPSN"
-  - combobox "SEMUA STATUS"
-  - button "Cari"
+  - combobox "ALL STATUS"
+  - button "Search"
   - button "Reset"
   - button "Excel"
   - button "CSV"
-  - text: TOTAL INSTALASI
+  - text: TOTAL INSTALLATIONS
   - textbox: "0"
-  - text: PROSES INSTALASI
+  - text: INSTALLATION PROCESS
   - textbox: "0"
-  - text: INSTALASI GAGAL
+  - text: FAILED INSTALLATION
   - textbox: "0"
-  - text: INSTALASI SELESAI
+  - text: COMPLETED INSTALLATION
   - textbox: "0"
   - button "Atur Tampilan Kolom"
   - separator
   - table:
     - rowgroup:
-      - row "No Nama Teknisi Telp Teknisi Group No. Inst Jam Trans. ID NPSN Propinsi Kabupaten Kecamatan Nama Sekolah PIC Telp PIC Foto Status":
+      - row "No Technician Phone Number Group Inst. No. Time Transaction ID NPSN Province Regency / City District School Name PIC PIC Phone Photo Status":
         - columnheader "No":
           - button "No"
-        - columnheader "Nama Teknisi"
-        - columnheader "Telp Teknisi"
+        - columnheader "Technician"
+        - columnheader "Phone Number"
         - columnheader "Group"
-        - columnheader "No. Inst":
-          - button "No. Inst"
-        - columnheader "Jam":
-          - button "Jam"
-        - columnheader "Trans. ID":
-          - button "Trans. ID"
+        - columnheader "Inst. No.":
+          - button "Inst. No."
+        - columnheader "Time":
+          - button "Time"
+        - columnheader "Transaction ID":
+          - button "Transaction ID"
         - columnheader "NPSN":
           - button "NPSN"
-        - columnheader "Propinsi":
-          - button "Propinsi"
-        - columnheader "Kabupaten":
-          - button "Kabupaten"
-        - columnheader "Kecamatan":
-          - button "Kecamatan"
-        - columnheader "Nama Sekolah":
-          - button "Nama Sekolah"
+        - columnheader "Province":
+          - button "Province"
+        - columnheader "Regency / City":
+          - button "Regency / City"
+        - columnheader "District":
+          - button "District"
+        - columnheader "School Name":
+          - button "School Name"
         - columnheader "PIC":
           - button "PIC"
-        - columnheader "Telp PIC":
-          - button "Telp PIC"
-        - columnheader "Foto":
-          - button "Foto"
+        - columnheader "PIC Phone":
+          - button "PIC Phone"
+        - columnheader "Photo":
+          - button "Photo"
         - columnheader "Status":
           - button "Status"
     - rowgroup:
@@ -105,6 +109,6 @@
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - alert:
-    - text: Gagal memuat data
+    - text: Failed to load data
     - button "Close"
   - text: Copyright 2026 ZLP Digital Teknologi

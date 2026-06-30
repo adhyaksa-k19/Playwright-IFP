@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,19 +15,23 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Sekolah"
+    - button "School"
   - listitem:
-    - button "Koordinator"
+    - button "Coordinator"
   - listitem:
-    - button "Teknisi"
+    - button "Technician"
   - listitem:
-    - button "Transaksi"
+    - button "Partner"
+  - listitem:
+    - button "NPSN Partner Allocation"
+  - listitem:
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -33,30 +39,30 @@
         - link "Home":
           - /url: /
       - listitem:
-        - link "Data Master":
+        - link "Master":
           - /url: /master/sekolah
       - listitem:
-        - paragraph: Daftar Sekolah
+        - paragraph: School List
   - textbox "NPSN"
-  - textbox "Nama Sekolah"
-  - combobox: Semua Jenjang
-  - combobox: Semua Direktorat
-  - combobox: Semua Propinsi
-  - combobox: Semua Kabupaten Kota
-  - combobox: Semua Kecamatan
-  - combobox: Semua Kelurahan
-  - button "Cari Sekolah"
+  - textbox "School Name"
+  - combobox: All Education Level
+  - combobox: All Directorates
+  - combobox: All Provinces
+  - combobox: All Regencies
+  - combobox: All Districts
+  - combobox: All Villages
+  - button "Search School"
   - button "Reset"
   - button "Export Excel"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Aksi Hapus NPSN Nama Sekolah Propinsi Kabupaten Kecamatan Kelurahan Direktorat Jenjang Alamat PIC Telp.
+  - text: Actions Delete NPSN School Name Province Regency / City District Sub-district Directorate Education Level Address PIC / Principal Name Phone Number
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10001804"
   - paragraph: SDN LUENG SA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Timur
+  - paragraph
   - paragraph: Kec. Madat
   - paragraph: Lueng Satu
   - paragraph: SD
@@ -65,11 +71,11 @@
   - paragraph: Badriyani
   - paragraph: 85260984542FG
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10015000"
   - paragraph: SD ABADI PERKASA 2
   - paragraph: Prov. Lampung
-  - paragraph: Kab. Tulang Bawang
+  - paragraph
   - paragraph: Kec. Gedung Meneng
   - paragraph: Gedung Meneng
   - paragraph: SD
@@ -78,11 +84,11 @@
   - paragraph: Dewi Arianti
   - paragraph: "85313763261"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10040130"
   - paragraph: SDN 19 BATHIN SOLAPAN
   - paragraph: Prov. Riau
-  - paragraph: Kab. Bengkalis
+  - paragraph
   - paragraph: Kec. Bathin Solapan
   - paragraph: Desa Petani
   - paragraph: SD
@@ -91,11 +97,11 @@
   - paragraph: SYAMSIDAR
   - paragraph: "85271674038"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10050665"
   - paragraph: SD NEGERI.No.82II DESA PANJANG
   - paragraph: Prov. Jambi
-  - paragraph: Kab. Bungo
+  - paragraph
   - paragraph: Kec. Tanah Tumbuh
   - paragraph: Panjang
   - paragraph: SD
@@ -104,11 +110,11 @@
   - paragraph: iskandar
   - paragraph: "82280300312"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100101"
   - paragraph: SMP NEGERI 1 DARUL KAMAL
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darul Kamal
   - paragraph: Neusok
   - paragraph: SMP
@@ -117,11 +123,11 @@
   - paragraph: M. Kamal
   - paragraph: "85277233736"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100102"
   - paragraph: SMP NEGERI 2 MONTASIK
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Montasik
   - paragraph: Lam Raya
   - paragraph: SMP
@@ -130,11 +136,11 @@
   - paragraph: Agusniar
   - paragraph: "81360034422"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100103"
   - paragraph: SMP N 2 LHOONG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Lhoong
   - paragraph: Seungko Mulat
   - paragraph: SMP
@@ -143,11 +149,11 @@
   - paragraph: Sitti Nurbani
   - paragraph: "81377119872"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100106"
   - paragraph: SMP NEGERI 1 MONTASIK
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Montasik
   - paragraph: Lamnga
   - paragraph: SMP
@@ -156,11 +162,11 @@
   - paragraph: Cut Nasriyati
   - paragraph: "81360255755"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100109"
   - paragraph: SMP NEGERI 1 INGIN JAYA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Ingin Jaya
   - paragraph: Lubok Gapuy
   - paragraph: SMP
@@ -169,11 +175,11 @@
   - paragraph: Zaidarsyah
   - paragraph: "82120407067"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100112"
   - paragraph: SMK NEGERI 1 MESJID RAYA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Mesjid Raya
   - paragraph: Neuheun
   - paragraph: SMK
@@ -182,11 +188,11 @@
   - paragraph: Muhammad Husin
   - paragraph: "82297786359"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100113"
   - paragraph: SMK NEGERI 1 KOTA JANTHO
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kota Jantho
   - paragraph: BUKIT MEUSARA
   - paragraph: SMK
@@ -195,11 +201,11 @@
   - paragraph: Hasnawati
   - paragraph: "81269554069"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100114"
   - paragraph: SMP NEGERI 3 LHOONG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Lhoong
   - paragraph: Glee Bruek
   - paragraph: SMP
@@ -208,11 +214,11 @@
   - paragraph: Naufridawati
   - paragraph: "81360913552"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100115"
   - paragraph: SMP NEGERI 1 SIMPANG TIGA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Simpang Tiga
   - paragraph: Krueng Mak
   - paragraph: SMP
@@ -221,11 +227,11 @@
   - paragraph: Elvina Waty
   - paragraph: "81377322645"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100119"
   - paragraph: SMP NEGERI 1 LEMBAH SEULAWAH
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Lembah Seulawah
   - paragraph: Sukadamai
   - paragraph: SMP
@@ -234,11 +240,11 @@
   - paragraph: Mulyadi. A
   - paragraph: "8126938652"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100132"
   - paragraph: SMPS MALEM PUTRA 1
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darul Imarah
   - paragraph: Leugeu
   - paragraph: SMP
@@ -247,11 +253,11 @@
   - paragraph: Cut Fitriyana
   - paragraph: "81264015444"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100134"
   - paragraph: SMP SWASTA ISLAM AL-FALAH
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Ingin Jaya
   - paragraph: LAM UE
   - paragraph: SMP
@@ -260,11 +266,11 @@
   - paragraph: Nurul Mahmudah
   - paragraph: "85361751924"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100136"
   - paragraph: SMP ABULYATAMA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kuta Baro
   - paragraph: LAMPOH KEUDE
   - paragraph: SMP
@@ -273,11 +279,11 @@
   - paragraph: Yan Muttaqin Sachlan
   - paragraph: "8889033740"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100137"
   - paragraph: SMP NEGERI 4 SEULIMEUM
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Seulimeum
   - paragraph: Ujong Keupula
   - paragraph: SMP
@@ -286,11 +292,11 @@
   - paragraph: Latifah Aini
   - paragraph: "81260759700"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100142"
   - paragraph: SD NEGERI LAMLEUOT
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kuta Cot Glie
   - paragraph: KEUREUWEUNG BLANG
   - paragraph: SD
@@ -299,11 +305,11 @@
   - paragraph: Nur Afriani
   - paragraph: "85260621616"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100143"
   - paragraph: SD NEGERI LAMKLAT
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darussalam
   - paragraph: Li-Eue
   - paragraph: SD
@@ -312,11 +318,11 @@
   - paragraph: Zulfikar
   - paragraph: "81360537773"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100144"
   - paragraph: SD NEGERI LAM UJONG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Krung Barona Jaya
   - paragraph: MEUNASAH BAET
   - paragraph: SD
@@ -325,11 +331,11 @@
   - paragraph: Muhammad Ridha
   - paragraph: "8126944046"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100145"
   - paragraph: SD NEGERI LADONG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Mesjid Raya
   - paragraph: Ladong
   - paragraph: SD
@@ -338,11 +344,11 @@
   - paragraph: Aidarus
   - paragraph: "81360364784"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100147"
   - paragraph: SD NEGERI KRUENG RAYA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Mesjid Raya
   - paragraph: Meunasah Mon
   - paragraph: SD
@@ -351,11 +357,11 @@
   - paragraph: Erniati
   - paragraph: "82267830993"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100148"
   - paragraph: SD NEGERI JRUEK
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Indrapuri
   - paragraph: Jruek Bak Kreh
   - paragraph: SD
@@ -364,11 +370,11 @@
   - paragraph: Tamren
   - paragraph: "81360949908"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100149"
   - paragraph: SD NEGERI 2 JEUMPET
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darul Imarah
   - paragraph: Lampasi Engking
   - paragraph: SD
@@ -377,11 +383,11 @@
   - paragraph: Zuarni
   - paragraph: "85358668273"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100151"
   - paragraph: SD NEGERI IE ALANG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kuta Cot Glie
   - paragraph: Ie Alang Mesjid
   - paragraph: SD
@@ -390,11 +396,11 @@
   - paragraph: Zulfahmi
   - paragraph: "85277646546"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100152"
   - paragraph: SD NEGERI IBOIH
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Seulimeum
   - paragraph: IBOH TANJONG
   - paragraph: SD
@@ -403,11 +409,11 @@
   - paragraph: Masyithah
   - paragraph: "85359623606"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100153"
   - paragraph: SD NEGERI LAMPEUDAYA
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darussalam
   - paragraph: Lam Peudaya
   - paragraph: SD
@@ -416,11 +422,11 @@
   - paragraph: Mahdalena
   - paragraph: "82316083401"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100154"
   - paragraph: SD NEGERI LAMSAYUEN
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Ingin Jaya
   - paragraph: Meunasah Manyet
   - paragraph: SD
@@ -429,11 +435,11 @@
   - paragraph: Cut Leni Marlina
   - paragraph: "8116887912"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100156"
   - paragraph: SLB NEGERI KOTA JANTHO
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kota Jantho
   - paragraph: Jantho Makmur
   - paragraph: PKPLK
@@ -442,11 +448,11 @@
   - paragraph: Nilawati
   - paragraph: "8126911125"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100158"
   - paragraph: SD NEGERI ULEE KAREUNG
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Kuta Baro
   - paragraph: Gue
   - paragraph: SD
@@ -455,11 +461,11 @@
   - paragraph: NASRIAH
   - paragraph: "85358273350"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100159"
   - paragraph: SD N TRANS DESPOT LEUNGAH
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Seulimeum
   - paragraph: Beureunut
   - paragraph: SD
@@ -468,11 +474,11 @@
   - paragraph: Yusri
   - paragraph: "81361413772"
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - paragraph: "10100160"
   - paragraph: SD NEGERI TANJUNG SELAMAT
   - paragraph: Prov. Aceh
-  - paragraph: Kab. Aceh Besar
+  - paragraph
   - paragraph: Kec. Darussalam
   - paragraph: Tanjung Selamat
   - paragraph: SD
@@ -480,10 +486,10 @@
   - paragraph: Tanjung Selamat Tanjung Selamat Kec. Darussalam Kab. Aceh Be sar Prov. Aceh 23374
   - paragraph: Juharah
   - paragraph: "85276283845"
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 310742
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 310743
   - button "Go to previous page" [disabled]
   - button "Go to next page"
-  - button "Tambah Sekolah"
+  - button "Add School"
   - text: Copyright 2026 ZLP Digital Teknologi

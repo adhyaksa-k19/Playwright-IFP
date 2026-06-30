@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -46,26 +48,24 @@
         - link "Transaksi":
           - /url: /transaksi/bulk_assign_teknisi
       - listitem:
-        - paragraph: Bulk Assign Teknisi
-  - heading "Target Assignment Koordinator" [level=6]
-  - text: Nama / Kode Koordinator
-  - combobox "Nama / Kode Koordinator"
+        - paragraph: Bulk Assign Technician
+  - heading "Target Coordinator Assignment" [level=6]
+  - text: Name / Code of Coordinator
+  - combobox "Name / Code of Coordinator"
   - button "Open"
   - button "Assign (0)" [disabled]
-  - button "Reset Tim" [disabled]
-  - textbox "Cari berdasarkan nama teknisi..."
-  - text: Propinsi
-  - combobox "Propinsi"
+  - button "Reset Team" [disabled]
+  - textbox "Search by technician name..."
+  - text: Province
+  - combobox "Province"
   - button "Open"
-  - text: Kabupaten/Kota
-  - combobox "Kabupaten/Kota" [disabled]
+  - text: Regency / City
+  - combobox "Regency / City" [disabled]
   - button "Open" [disabled]
   - button "Atur Tampilan Kolom"
   - separator
-  - progressbar:
-    - img
   - checkbox
-  - text: ID Nama Teknisi Propinsi Kota/Kab
+  - text: ID Technician Province Regency / City
   - checkbox
   - paragraph: TEK-2026-00000006
   - paragraph: Zaky
@@ -81,8 +81,8 @@
   - paragraph: AGUS SUGENG
   - paragraph: Prov. Jawa Timur
   - paragraph: Kab. Lamongan
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
   - paragraph: 1–3 of 3
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]

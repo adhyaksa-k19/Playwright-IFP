@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -43,24 +45,150 @@
         - link "Home":
           - /url: /
       - listitem:
-        - link "Transaksi":
+        - link "Transaction":
           - /url: /transaksi/batch_bapp
       - listitem:
-        - paragraph: Manifest Penyerahan ke APIP
-  - button "Buat Batch Baru"
+        - paragraph: Manifest Submission to APIP
+  - button "Create New Batch"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Detail Nomor Batch Status Jml Dokumen Keterangan Tanggal Dibuat Tanggal Dikirim Pembuat
-  - button "Lihat Detail Batch"
+  - text: Detail Batch Number Status Document Count Description Date Created Date Sent Created By
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782708325041
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 29/6/2026, 11.45.37 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782367748702
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 25/6/2026, 13.09.09 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782281130263
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 24/6/2026, 13.05.30 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782194891267
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 23/6/2026, 13.08.11 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782113446398
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 14.30.46 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782096057268
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 09.40.57 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782094499885
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 09.15.00 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782091981075
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 08.33.03 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782086579631
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 07.03.01 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782066936499
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 01.35.38 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782063440861
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 00.37.22 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782062034177
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 00.13.56 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782061469979
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 22/6/2026, 00.04.31 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782060119043
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 21/6/2026, 23.42.00 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782059127848
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 21/6/2026, 23.25.29 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782056463568
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 21/6/2026, 22.41.05 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: E2E-BATCH-1782056266112
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph: Batch draft dibuat otomatis oleh Playwright
+  - text: 21/6/2026, 22.37.48 -
+  - paragraph: admin
+  - button "View Batch Detail"
+  - paragraph: "423444434"
+  - text: DRAFT
+  - paragraph: "0"
+  - paragraph
+  - text: 21/6/2026, 22.28.53 -
+  - paragraph: admin
+  - button "View Batch Detail"
   - paragraph: Batch Test 1444123
   - text: DRAFT
   - paragraph: "0"
   - paragraph
   - text: 21/6/2026, 14.43.11 -
   - paragraph: admin
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–1 of 1
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–19 of 19
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

@@ -7,6 +7,13 @@
     "route": "/dashboard"
   },
   {
+    "code": "PARTNER",
+    "parent": "Master",
+    "caption": "Partner",
+    "level": 2,
+    "route": "/master/partner"
+  },
+  {
     "code": "REVISI",
     "parent": "Monitoring",
     "caption": "Revisi",
@@ -31,6 +38,13 @@
     "code": "DOUBLE_SN",
     "parent": "Monitoring",
     "caption": "Double SN",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "NPSN_PARTNER_ALLOCATION",
+    "parent": "Master",
+    "caption": "Alokasi NPSN Partner",
     "level": 2,
     "route": null
   },
@@ -61,6 +75,13 @@
     "caption": "Alokasi",
     "level": 2,
     "route": "/monitoring/list_alokasi"
+  },
+  {
+    "code": "MONITOR_BROADCAST_KOORDINATOR",
+    "parent": "Monitoring",
+    "caption": "Broadcast Koordinator",
+    "level": 2,
+    "route": null
   },
   {
     "code": "PROSES_INSTALASI",
@@ -175,13 +196,6 @@
     "route": null
   },
   {
-    "code": "REPORT_SLA_KOORDINATOR",
-    "parent": "Report",
-    "caption": "Report SLA Koordinator",
-    "level": 2,
-    "route": null
-  },
-  {
     "code": "REPORT_SLA_TEKNISI",
     "parent": "Report",
     "caption": "Report SLA Teknisi",
@@ -192,6 +206,13 @@
     "code": "REKAP_PERFORMA_KOORDINATOR",
     "parent": "Report",
     "caption": "Rekap Performa Koordinator",
+    "level": 2,
+    "route": null
+  },
+  {
+    "code": "REPORT_SLA_KOORDINATOR",
+    "parent": "Report",
+    "caption": "Report SLA Koordinator",
     "level": 2,
     "route": null
   },

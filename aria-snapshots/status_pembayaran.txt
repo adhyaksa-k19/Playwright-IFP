@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,51 +15,72 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Status Pembayaran"
+    - button "Payment Status"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
-  - heading "Status Pembayaran" [level=5]
+  - heading "Payment Status" [level=5]
   - alert:
-    - strong: "Aturan Finance:"
-    - text: Status KASBON digunakan untuk mencatat pencairan dana di awal sebesar 50%. Transaksi dapat langsung dilunasi 100% menggunakan status PAID (Lunas) tanpa harus melalui status Kasbon.
-  - text: ID Transaksi
-  - textbox "ID Transaksi"
+    - strong: "Finance Rules:"
+    - text: KASBON status is used to record an initial 50% fund disbursement. Transactions can be immediately settled 100% using PAID status without going through Kasbon status.
+  - text: Transaction ID
+  - textbox "Transaction ID"
   - text: NPSN
   - textbox "NPSN"
-  - text: Status Pembayaran
-  - combobox: Semua
-  - text: Propinsi
-  - combobox: Semua Propinsi
-  - text: Kabupaten/Kota
-  - combobox: Semua Kabupaten
-  - text: Koordinator
-  - combobox "Koordinator"
+  - text: Payment Status
+  - combobox: All
+  - text: Province
+  - combobox: All Provinces
+  - text: Regency/City
+  - combobox: All Counties/Regencies
+  - text: Coordinator
+  - combobox "Coordinator"
   - button "Open"
-  - text: Teknisi
-  - combobox "Teknisi"
+  - text: Technician
+  - combobox "Technician"
   - button "Open"
-  - button "Cari Data"
+  - button "Search"
   - button "Reset"
   - button "Export Excel"
   - button "Export CSV"
-  - paragraph: 0 Transaksi dipilih
-  - button "Tandai KASBON (50%)" [disabled]
-  - button "Tandai LUNAS (PAID)" [disabled]
+  - paragraph: 0 Transactions selected
+  - button "Mark KASBON (50%)" [disabled]
+  - button "Mark PAID (100%)" [disabled]
   - button "Atur Tampilan Kolom"
   - separator
   - checkbox
-  - text: Status Pembayaran Tanggal Lunas PIC Lunas Tanggal Kasbon PIC Kasbon Penalty SLA ID Transaksi NPSN Nama Sekolah Propinsi Kabupaten/Kota Status Progres Koordinator Teknisi NIK Teknisi
-  - paragraph: No rows to display
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 0–0 of 0
+  - text: Payment Status Settlement Date Settlement PIC Cash Advance Date Cash Advance PIC SLA Penalty Transaction ID NPSN School Name Province Regency/City Progress Status Coordinator Technician Technician NIK PAID
+  - paragraph: 22/06/2026 09:12:00
+  - paragraph: jos
+  - paragraph: "-"
+  - paragraph
+  - paragraph: 0 Days
+  - paragraph: HI202600000000748
+  - paragraph: "60304105"
+  - paragraph: SD INPRES UWUS
+  - paragraph: Prov. Papua Selatan
+  - paragraph: Kab. Asmat
+  - text: INSTALASI SELESAI ZLP KOORDINATOR +6281212121212 ZLP TEKNISI 2 +6281212121214 - PAID
+  - paragraph: 29/06/2026 12:01:00
+  - paragraph: ELSA
+  - paragraph: "-"
+  - paragraph
+  - paragraph: 2 Days
+  - paragraph: HI202600000000078
+  - paragraph: "69766345"
+  - paragraph: KB MANUNGGAL
+  - paragraph: Prov. Sulawesi Selatan
+  - paragraph: Kab. Barru
+  - text: SESUAI APIP ZLP KOORDINATOR +6281212121212 ZLP TEKNISI 3 +6281212121215 -
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–2 of 2
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

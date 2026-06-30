@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -46,23 +48,65 @@
         - link "Transaksi":
           - /url: /transaksi/list_perbaikan
       - listitem:
-        - paragraph: Perbaikan Kerusakan
-  - text: ID Transaksi
-  - textbox "ID Transaksi"
+        - paragraph: Failure & Repair
+  - text: Transaction ID
+  - textbox "Transaction ID"
   - text: NPSN
   - textbox "NPSN"
-  - text: Status Approval
+  - text: Approval Status
   - combobox: Semua Status
-  - text: Tgl Mulai
-  - textbox "Tgl Mulai"
-  - text: Tgl Selesai
-  - textbox "Tgl Selesai"
+  - text: Start Date
+  - textbox "Start Date"
+  - text: End Date
+  - textbox "End Date"
   - button "Cari Data"
   - button "Reset"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Aksi ID Tiket ID Transaksi NPSN Nama Sekolah Status Kategori Kerusakan Tindakan Tgl Pengajuan Tgl Approval
-  - button "Evaluasi"
+  - text: Actions Ticket ID Transaction ID NPSN School Name Status Damage Category Action Sub. Date App. Date
+  - button "Evaluate"
+  - paragraph: PRB-HI202600002657856-0013
+  - paragraph: HI202600002657856
+  - paragraph: "69821011"
+  - paragraph: BKB PAUD TUNAS MELATI
+  - text: MENUNGGU APPROVAL UNIT_RUSAK - 29/06/2026 12:30:58 -
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000052881-0012
+  - paragraph: HI202600000052881
+  - paragraph: "70001440"
+  - paragraph: TK AL WILDAN ISLAMIC SCHOOL 2 BEKASI
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 29/06/2026 11:19:51 29/06/2026 11:21:21
+  - button "Evaluate"
+  - paragraph: PRB-HI202600000074906-0011
+  - paragraph: HI202600000074906
+  - paragraph: "70006190"
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: MENUNGGU APPROVAL UNIT_RUSAK - 29/06/2026 10:52:45 -
+  - button "Evaluate"
+  - paragraph: PRB-HI202600002640331-0010
+  - paragraph: HI202600002640331
+  - paragraph: "69821129"
+  - paragraph: BKB PAUD CAMAR RW.05
+  - text: MENUNGGU APPROVAL AKSESORIS_TIDAK_LENGKAP - 26/06/2026 13:46:49 -
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000074934-0009
+  - paragraph: HI202600000074934
+  - paragraph: "70006190"
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 24/06/2026 22:01:40 24/06/2026 22:03:18
+  - button "Lihat Detail"
+  - paragraph: PRB-HI202600000074917-0008
+  - paragraph: HI202600000074917
+  - paragraph: "70006190"
+  - paragraph: TK TAMAN MAIN ROYAL AT-TIN
+  - text: DISETUJUI UNIT_RUSAK SPAREPART 23/06/2026 14:13:36 23/06/2026 14:14:15
+  - button "Evaluate"
+  - paragraph: PRB-HI202600000000013-0007
+  - paragraph: HI202600000000013
+  - paragraph: "69857209"
+  - paragraph: KB AL HUSNA
+  - text: MENUNGGU APPROVAL UNIT_RUSAK - 23/06/2026 12:24:31 -
+  - button "Evaluate"
   - paragraph: PRB-HI202600000000753-0006
   - paragraph: HI202600000000753
   - paragraph: "60304105"
@@ -98,9 +142,9 @@
   - paragraph: "60304105"
   - paragraph: SD INPRES UWUS
   - text: DISETUJUI UNIT_RUSAK SPAREPART 18/06/2026 16:39:55 18/06/2026 16:41:10
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–6 of 6
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–13 of 13
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

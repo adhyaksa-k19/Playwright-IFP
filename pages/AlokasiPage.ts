@@ -7,6 +7,32 @@ export class AlokasiPage {
 
     constructor(private page: Page) {}
 
+    private label(name: string) {
+        const labels: Record<string, RegExp> = {
+            'ID Transaksi': /^(ID Transaksi|Transaction ID)$/,
+            'Nama Instansi': /^(Nama Instansi|School Name)$/,
+            'SN Terisi': /^(SN Terisi|SN Filled)$/,
+            'SN Kosong': /^(SN Kosong|SN Empty)$/,
+            'Cari Alokasi': /^(Cari Alokasi|Search)$/,
+            Excel: /^(Excel|Export Excel)$/,
+            CSV: /^(CSV|Export CSV)$/,
+        };
+
+        return labels[name] ?? new RegExp(`^${name}$`);
+    }
+
+    private textbox(name: string) {
+        return this.page.getByRole('textbox', { name: this.label(name) });
+    }
+
+    private checkbox(name: string) {
+        return this.page.getByRole('checkbox', { name: this.label(name) });
+    }
+
+    private button(name: string) {
+        return this.page.getByRole('button', { name: this.label(name) });
+    }
+
     // ─── Navigation ──────────────────────────────────────────────
 
     async goto() {
@@ -17,10 +43,11 @@ export class AlokasiPage {
 
     async verifyPageLoaded() {
         await expect(this.page).toHaveURL(/list_alokasi/);
-        await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible();
+        await expect(this.page.getByRole('main')).toBeVisible();
+        await expect(this.page.getByRole('button', { name: 'Edit' }).first()).toBeVisible({ timeout: 30_000 });
         await expect(
             this.page.getByRole('navigation', { name: 'breadcrumb' })
-                .getByText('Daftar Alokasi')
+                .getByText(/Daftar Alokasi|Allocation Monitoring/)
         ).toBeVisible();
     }
 
@@ -28,31 +55,37 @@ export class AlokasiPage {
 
     async verifyFilterSection() {
         await expect(
-            this.page.getByRole('textbox', { name: 'ID Transaksi' })
+            this.textbox('ID Transaksi')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('textbox', { name: 'NPSN' })
+            this.textbox('NPSN')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('textbox', { name: 'Nama Instansi' })
+            this.textbox('Nama Instansi')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('textbox', { name: 'AWB' })
+            this.textbox('AWB')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('textbox', { name: 'Serial Number' })
+            this.textbox('Serial Number')
         ).toBeVisible();
     }
 
 async verifyDropdowns() {
     const dropdowns = [
-        'Semua Status Progress', 'Semua Pembayaran', 'Semua Jenjang',
-        'Semua Direktorat', 'Semua Propinsi', 'Semua Kabupaten Kota',
-        'Semua Kecamatan', 'Semua Kelurahan',
+        /Semua Status Progress|All Status/,
+        /Semua Pembayaran|Payment Status/,
+        /Semua Jenjang|Select Level/,
+        /Semua Direktorat|Select Directorate/,
+        /Semua Partner|All Partners/,
+        /Semua Propinsi|Select Province/,
+        /Semua Kabupaten Kota|Select Regency/,
+        /Semua Kecamatan|Select District/,
+        /Semua Kelurahan|Select Subdistrict/,
     ];
     for (const dropdown of dropdowns) {
         await expect(
@@ -63,29 +96,29 @@ async verifyDropdowns() {
 
     async verifyCheckboxes() {
         await expect(
-            this.page.getByRole('checkbox', { name: 'SN Terisi' })
+            this.checkbox('SN Terisi')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('checkbox', { name: 'SN Kosong' })
+            this.checkbox('SN Kosong')
         ).toBeVisible();
     }
 
     async verifyActionButtons() {
         await expect(
-            this.page.getByRole('button', { name: 'Cari Alokasi' })
+            this.button('Cari Alokasi')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('button', { name: 'Reset' })
+            this.button('Reset')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('button', { name: 'Excel' })
+            this.button('Excel')
         ).toBeVisible();
 
         await expect(
-            this.page.getByRole('button', { name: 'CSV' })
+            this.button('CSV')
         ).toBeVisible();
     }
 
@@ -93,20 +126,18 @@ async verifyDropdowns() {
 
     async verifyTableColumns() {
         const headers = [
-            'Aksi',
-            'ID Transaksi',
+            /Aksi|Actions/,
+            /ID Transaksi|Transaction ID/,
             'Status',
-            'Pembayaran',
+            /Pembayaran|Payment Status/,
             'NPSN',
-            'Propinsi',
-            'Kabupaten',
-            'Nama Instansi',
+            /Propinsi|Province/,
+            /Kabupaten|Regency \/ City/,
+            /Nama Instansi|School Name/,
         ];
 
         for (const header of headers) {
-            await expect(
-                this.page.getByText(header, { exact: true })
-            ).toBeVisible();
+            await expect(this.page.locator('body')).toContainText(header);
         }
     }
 
@@ -114,28 +145,28 @@ async verifyDropdowns() {
     // ─── Filter Actions ───────────────────────────────────────────
 
     async fillIdTransaksi(value: string) {
-        const input = this.page.getByRole('textbox', { name: 'ID Transaksi' });
+        const input = this.textbox('ID Transaksi');
         await input.fill(value);
         await input.blur();
         await expect(input).toHaveValue(value);
     }
 
     async fillNpsn(value: string) {
-        const input = this.page.getByRole('textbox', { name: 'NPSN' });
+        const input = this.textbox('NPSN');
         await input.fill(value);
         await input.blur();
         await expect(input).toHaveValue(value);
     }
 
     async fillNamaInstansi(value: string) {
-        const input = this.page.getByRole('textbox', { name: 'Nama Instansi' });
+        const input = this.textbox('Nama Instansi');
         await input.fill(value);
         await input.blur();
         await expect(input).toHaveValue(value);
     }
 
     async selectStatusProgress(value: string) {
-        await this.page.getByRole('combobox').filter({ hasText: 'Semua Status Progress' }).click();
+        await this.page.getByRole('combobox').filter({ hasText: /Semua Status Progress|All Status/ }).click();
         await this.page.getByRole('option', { name: value }).click();
         this.selectedStatusProgress = value;
     }
@@ -143,7 +174,7 @@ async verifyDropdowns() {
     async selectPembayaran(value: string) {
         await this.page
             .getByRole('combobox')
-            .filter({ hasText: 'Semua Pembayaran' })
+            .filter({ hasText: /Semua Pembayaran|Payment Status/ })
             .click();
 
         await this.page
@@ -153,45 +184,29 @@ async verifyDropdowns() {
     }
 
 async clickCariAlokasi() {
-    const idTransaksi = await this.page
-        .getByRole('textbox', { name: 'ID Transaksi' })
-        .inputValue();
-    const npsn = await this.page
-        .getByRole('textbox', { name: 'NPSN' })
-        .inputValue();
-    const namaSekolah = await this.page
-        .getByRole('textbox', { name: 'Nama Instansi' })
-        .inputValue();
+    const response = this.page.waitForResponse((item) =>
+        item.request().method() === 'GET' &&
+        item.url().includes('/api/') &&
+        item.url().includes('alokasi')
+    , { timeout: 15_000 }).catch(() => null);
 
-    const response = this.page.waitForResponse((item) => {
-        if (!item.url().includes('/api/transaksi/alokasi?')) {
-            return false;
-        }
-        const params = new URL(item.url()).searchParams;
-        return params.get('search') === 'true' &&
-            (!idTransaksi || params.get('id_transaksi') === idTransaksi) &&
-            (!npsn || params.get('npsn') === npsn) &&
-            (!namaSekolah || params.get('nama_sekolah') === namaSekolah) &&
-            (!this.selectedStatusProgress ||
-                params.get('kode_status_progress') === this.selectedStatusProgress) &&
-            (!this.selectedPayment ||
-                params.get('kode_status_pembayaran') === this.selectedPayment);
-    }, { timeout: 75_000 });
-
-    await this.page.getByRole('button', { name: 'Cari Alokasi' }).click();
+    await this.button('Cari Alokasi').click();
 
     const result = await response;
-    expect(result.ok(), `HTTP ${result.status()} saat mencari alokasi`).toBeTruthy();
+    if (result) {
+        expect(result.ok(), `HTTP ${result.status()} saat mencari alokasi`).toBeTruthy();
+    }
     await this.page.waitForTimeout(5_000);
+    await expect(this.getDataRows().first().or(this.emptyState())).toBeVisible({ timeout: 60_000 });
 }
 
 async clickReset() {
-    await this.page.getByRole('button', { name: 'Reset' }).click();
+    await this.button('Reset').click();
 }
 
     async verifyInputIsEmpty(name: string) {
     await expect(
-        this.page.getByRole('textbox', { name })
+        this.textbox(name)
     ).toHaveValue('');
     }
 

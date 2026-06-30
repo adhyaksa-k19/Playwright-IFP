@@ -11,10 +11,10 @@ setup('authenticate', async ({ page }) => {
         .fill(process.env.IFP_PASSWORD!);
 
     await page.getByRole('button', {
-        name: 'Masuk ke Sistem'
+        name: /^(Masuk ke Sistem|Sign In to System)$/
     }).click();
 
-    await expect(page).toHaveURL(/dashboard/);
+    await expect(page).toHaveURL(/dashboard/, { timeout: 30_000 });
 
     await page.context().storageState({
         path: 'playwright/.auth/user.json'

@@ -3,6 +3,10 @@ import { expect, Page } from '@playwright/test';
 export class PerbaikanPage {
     constructor(private readonly page: Page) {}
 
+    private transactionIdInput() {
+        return this.page.getByRole('textbox', { name: /^(ID Transaksi|Transaction ID)$/ });
+    }
+
     async goto() {
         const response = this.waitForData();
         await this.page.goto('/transaksi/list_perbaikan');
@@ -12,7 +16,7 @@ export class PerbaikanPage {
 
     async verifyPageLoaded() {
         await expect(this.page).toHaveURL(/list_perbaikan/);
-        await expect(this.page.getByText('Perbaikan Kerusakan')).toBeVisible();
+        await expect(this.page.getByText(/Perbaikan Kerusakan|Failure & Repair/)).toBeVisible();
         await expect(this.page.getByRole('button', { name: 'Cari Data' })).toBeVisible();
         await expect(this.page.getByRole('button', { name: 'Reset' })).toBeVisible();
     }
@@ -24,7 +28,7 @@ export class PerbaikanPage {
     }
 
     async searchByTransactionId(id: string) {
-        await this.page.getByRole('textbox', { name: 'ID Transaksi' }).fill(id);
+        await this.transactionIdInput().fill(id);
         const response = this.waitForData((url) => url.includes(`id_transaksi=${id}`));
         await this.page.getByRole('button', { name: 'Cari Data' }).click();
         await response;
@@ -44,17 +48,17 @@ export class PerbaikanPage {
         const response = this.waitForData();
         await this.page.getByRole('button', { name: 'Reset' }).click();
         await response;
-        await expect(this.page.getByRole('textbox', { name: 'ID Transaksi' })).toHaveValue('');
+        await expect(this.transactionIdInput()).toHaveValue('');
     }
 
     async verifyPaginationForCurrentDataset() {
-        await expect(this.page.getByRole('combobox', { name: /Baris per halaman:/ })).toHaveText('100');
+        await expect(this.page.getByRole('combobox', { name: /Baris per halaman:|Rows per page/ })).toHaveText('100');
         await expect(this.page.getByRole('button', { name: 'Go to previous page' })).toBeDisabled();
         await expect(this.page.getByRole('button', { name: 'Go to next page' })).toBeDisabled();
     }
 
     private rowActions() {
-        return this.page.getByRole('button', { name: /Evaluasi|Lihat Detail/ });
+        return this.page.getByRole('button', { name: /Evaluasi|Evaluate|Lihat Detail/ });
     }
 
     private waitForData(extra: (url: string) => boolean = () => true) {

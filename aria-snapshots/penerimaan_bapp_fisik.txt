@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -47,23 +49,47 @@
           - /url: /transaksi/penerimaan_bapp_fisik
       - listitem:
         - paragraph: Penerimaan BAPP Fisik
+  - button "Total Batch Created 0":
+    - text: Total Batch Created
+    - heading "0" [level=6]
+  - button "Batch Open (OPEN) 0":
+    - text: Batch Open (OPEN)
+    - heading "0" [level=6]
+  - button "Batch Closed (CLOSED) 0":
+    - text: Batch Closed (CLOSED)
+    - heading "0" [level=6]
   - heading "Pencarian & Filter" [level=6]
   - textbox "Cari Nama Folder / Batch"
   - button "Cari Data"
   - button "Reset"
-  - button "Buat Folder Baru"
+  - button "Create New Folder"
   - tablist:
-    - tab "Kelola BAPP" [selected]
+    - tab "Manage BAPP" [selected]
     - tab "Audit Trail"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Aksi Nama Folder / Batch Isi Dokumen Status Tanggal Dibuat
+  - text: Actions Folder / Batch Name Gate PIC Directorate Coordinator Received Date Document Content Status
+  - button
+  - paragraph: BAPP-RCV-SD-ZLP_KOORDINATOR-0002
+  - text: Ardi SD ZLP KOORDINATOR 29/6/2026 1 BAPP OPEN
+  - button
+  - paragraph: BAPP-RCV-SD-ZLP-KOORDINATOR-0001
+  - text: Matthew SD ZLP KOORDINATOR 29/6/2026 0 BAPP OPEN
+  - button
+  - paragraph: BAPP-RCV-SD-ZLP-KOORDINATOR-0000
+  - text: Matthew SD ZLP KOORDINATOR 29/6/2026 0 BAPP OPEN
+  - button
+  - paragraph: BAPP-RCV-SD-ZLP-KOORDINATOR-0000
+  - text: Matthew SD ZLP KOORDINATOR 29/6/2026 0 BAPP OPEN
+  - button
+  - paragraph: Folder BAPP - 21/6/2026
+  - text: "- - - - 2 BAPP CLOSED"
   - button
   - paragraph: Folder BAPP - 11/6/2026
-  - text: 0 BAPP OPEN 11/6/2026, 10.41.02
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–1 of 1
+  - text: "- - - - 1 BAPP OPEN"
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–6 of 6
   - button "Go to previous page" [disabled]
   - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

@@ -4,6 +4,12 @@ export class LoginPage {
 
     constructor(private page: Page) {}
 
+    private signInButton() {
+        return this.page.getByRole('button', {
+            name: /^(Masuk ke Sistem|Sign In to System)$/,
+        });
+    }
+
     async goto() {
         await this.page.goto('/login');
     }
@@ -17,9 +23,7 @@ export class LoginPage {
             .getByRole('textbox', { name: 'Password' })
             .fill(password);
 
-        await this.page
-            .getByRole('button', { name: 'Masuk ke Sistem' })
-            .click();
+        await this.signInButton().click();
     }
 
     async verifyLoginPageLoaded() {
@@ -31,13 +35,13 @@ export class LoginPage {
             this.page.getByRole('textbox', { name: 'Password' })
         ).toBeVisible();
         await expect(
-            this.page.getByRole('button', { name: 'Masuk ke Sistem' })
+            this.signInButton()
         ).toBeVisible();
     }
 
     async verifyErrorMessage(message: string) {
         await expect(
-            this.page.getByText(message)
+            this.page.getByText(new RegExp(message.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'i'))
         ).toBeVisible();
     }
 

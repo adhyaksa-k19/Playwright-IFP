@@ -18,15 +18,15 @@ export class AdminUserAccountPage {
     async goto() {
         await this.page.goto('/admin/user_account');
         await expect(this.page.getByRole('navigation', { name: 'breadcrumb' })
-            .getByText('Daftar User', { exact: true })).toBeVisible({ timeout: TIMEOUT });
-        await this.page.waitForTimeout(500);
+            .getByText(/Daftar User|User Account|User List/)).toBeVisible({ timeout: TIMEOUT });
+        await this.page.waitForTimeout(2_500);
         await expect(this.page.getByText('Loading data...', { exact: true }))
             .toBeHidden({ timeout: TIMEOUT });
     }
 
     async verifyPageLoaded() {
-        await expect(this.page.getByRole('heading', { name: 'Pencarian & Filter Data' })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Cari User Account' })).toBeVisible();
+        await expect(this.page.getByRole('heading', { name: /Pencarian & Filter Data|Filter|Search & Filter/ })).toBeVisible();
+        await expect(this.page.getByRole('button', { name: /Cari User Account|Search User Account|Search/ })).toBeVisible();
         await expect(this.page.getByRole('button', { name: 'add', exact: true })).toBeVisible();
     }
 
@@ -48,19 +48,19 @@ export class AdminUserAccountPage {
 
     async addUser(data: AdminUserData) {
         await this.page.getByRole('button', { name: 'add', exact: true }).click();
-        const dialog = this.page.getByRole('dialog', { name: 'Add New User' });
+        const dialog = this.page.getByRole('dialog', { name: /Tambah User Baru|Add New User|Add User/ });
         await expect(dialog).toBeVisible();
 
         await dialog.getByRole('textbox', { name: 'Username', exact: true }).fill(data.username, { force: true });
         await dialog.getByRole('combobox', { name: 'Role' }).click();
         await this.page.getByRole('option', { name: data.role, exact: true }).click();
         await dialog.getByRole('textbox', { name: 'Password', exact: true }).fill(data.password);
-        await dialog.getByRole('textbox', { name: 'Ulangi Password' }).fill(data.password);
-        await dialog.getByRole('textbox', { name: 'Nama Depan' }).fill(data.firstName);
-        await dialog.getByRole('textbox', { name: 'Nama Belakang' }).fill(data.lastName);
+        await dialog.getByRole('textbox', { name: /Ulangi Password|Confirm New Password|Confirm Password/ }).fill(data.password);
+        await dialog.getByRole('textbox', { name: /Nama Depan|First Name/ }).fill(data.firstName);
+        await dialog.getByRole('textbox', { name: /Nama Belakang|Last Name/ }).fill(data.lastName);
         await dialog.getByRole('textbox', { name: 'Email' }).fill(data.email);
-        await dialog.getByRole('textbox', { name: 'No. Telepon' }).fill(data.phone);
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await dialog.getByRole('textbox', { name: /No\. Telepon|Phone Number/ }).fill(data.phone);
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
 
         await this.page.waitForTimeout(2_000);
@@ -73,8 +73,8 @@ export class AdminUserAccountPage {
         await this.rowAction(username, 0).click();
         const dialog = this.page.getByRole('dialog', { name: 'Edit User' });
         await expect(dialog).toBeVisible();
-        await dialog.getByRole('textbox', { name: 'Nama Belakang' }).fill(lastName);
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await dialog.getByRole('textbox', { name: /Nama Belakang|Last Name/ }).fill(lastName);
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
 
         await this.goto();
@@ -85,11 +85,11 @@ export class AdminUserAccountPage {
     async setPassword(username: string, password: string) {
         await this.filterByUsername(username);
         await this.rowAction(username, 1).click();
-        const dialog = this.page.getByRole('dialog', { name: `Ubah Password untuk user ${username}` });
+        const dialog = this.page.getByRole('dialog', { name: new RegExp(`Ubah Password untuk user ${username}|Change Password.*${username}|Set Password.*${username}|Reset Password.*${username}`) });
         await expect(dialog).toBeVisible();
         await dialog.getByRole('textbox', { name: 'Password', exact: true }).fill(password);
-        await dialog.getByRole('textbox', { name: 'Ulangi Password' }).fill(password);
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await dialog.getByRole('textbox', { name: /Ulangi Password|Confirm New Password|Confirm Password/ }).fill(password);
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
     }
 
@@ -136,7 +136,7 @@ export class AdminUserAccountPage {
             return url.pathname === '/api/user_account/user' &&
                 url.searchParams.get('user_account_username') === username;
         }, { timeout: TIMEOUT });
-        await this.page.getByRole('button', { name: 'Cari User Account' }).click();
+        await this.page.getByRole('button', { name: /Cari User Account|Search User Account|Search/ }).click();
         const result = await response;
         expect(result.ok(), `HTTP ${result.status()} saat mencari user account`).toBeTruthy();
         await this.page.waitForTimeout(500);

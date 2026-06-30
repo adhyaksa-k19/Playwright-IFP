@@ -1,0 +1,67 @@
+- banner:
+  - button
+  - text: IFP Installation 2026
+  - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
+  - button
+  - button "A"
+- separator
+- list:
+  - listitem:
+    - button "Dashboard"
+  - listitem:
+    - button "Monitoring"
+  - listitem:
+    - button "Master"
+  - listitem:
+    - button "School"
+  - listitem:
+    - button "Coordinator"
+  - listitem:
+    - button "Technician"
+  - listitem:
+    - button "Partner"
+  - listitem:
+    - button "NPSN Partner Allocation"
+  - listitem:
+    - button "Transaction"
+  - listitem:
+    - button "Report"
+  - listitem:
+    - button "Finance"
+  - listitem:
+    - button "Administration Menu"
+- main:
+  - navigation "breadcrumb":
+    - list:
+      - listitem:
+        - link "Home":
+          - /url: /
+      - listitem:
+        - link "Master":
+          - /url: /master/partner
+      - listitem:
+        - paragraph: Partner List
+  - heading "Search & Filter Data" [level=6]
+  - textbox "Search Partner..."
+  - button "Search"
+  - button "Reset"
+  - button "Atur Tampilan Kolom"
+  - separator
+  - text: Actions Partner Code Partner Name
+  - button "Edit"
+  - button "Delete"
+  - paragraph: P123
+  - paragraph: TEST PARTNER
+  - button "Edit"
+  - button "Delete"
+  - paragraph: SARTRANS
+  - paragraph: SARTRANS
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–2 of 2
+  - button "Go to previous page" [disabled]
+  - button "Go to next page" [disabled]
+  - button "Add Partner"
+  - text: Copyright 2026 ZLP Digital Teknologi

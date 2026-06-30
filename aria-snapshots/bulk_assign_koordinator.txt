@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,29 +15,29 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
-    - button "Buat Alokasi"
+    - button "Create Allocation"
   - listitem:
-    - button "Instalasi"
+    - button "Installation"
   - listitem:
-    - button "Perbaikan"
+    - button "Repair"
   - listitem:
-    - button "Bulk Assign Koordinator"
+    - button "Bulk Assign Coordinator"
   - listitem:
-    - button "Bulk Assign Teknisi"
+    - button "Bulk Assign Technician"
   - listitem:
-    - button "Bulk Assign Instalasi"
+    - button "Bulk Assign Installation"
   - listitem:
-    - button "Penerimaan BAPP Fisik"
+    - button "Physical BAPP Receipt"
   - listitem:
-    - button "Pengiriman Batch BAPP"
+    - button "Batch BAPP Shipment"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -46,54 +48,64 @@
         - link "Transaksi":
           - /url: /transaksi/bulk_assign_koordinator
       - listitem:
-        - paragraph: Bulk Assign Koordinator
-  - heading "Filter Alokasi" [level=6]
-  - textbox "ID Transaksi"
+        - paragraph: Bulk Assign Coordinator
+  - heading "Filter Allocation" [level=6]
+  - textbox "Transaction ID"
   - textbox "NPSN"
-  - textbox "Nama Sekolah"
-  - text: Propinsi
-  - combobox: Semua Propinsi
+  - textbox "School Name"
+  - text: Province
+  - combobox: All Provinces
   - button "Cari Data"
   - button "Reset"
-  - text: TOTAL ALOKASI (SIAP DIINSTAL)
+  - text: TOTAL ALLOCATION (READY FOR INSTALLATION)
   - heading "0" [level=6]
-  - text: SUDAH ASSIGN KOORDINATOR
+  - text: COORDINATOR ASSIGNED
   - heading "0" [level=6]
-  - text: BELUM ASSIGN KOORDINATOR
+  - text: COORDINATOR NOT ASSIGNED
   - heading "0" [level=6]
-  - text: DATA NPSN
+  - text: NPSN DATA
   - heading "0" [level=6]
-  - heading "Target Assignment (Berdasarkan Ranking SLA Lokal)" [level=6]
-  - text: Ketik Nama atau Kode Koordinator Tujuan
-  - combobox "Ketik Nama atau Kode Koordinator Tujuan"
+  - heading "Target Assignment (Based on Local SLA Ranking)" [level=6]
+  - text: Type Name or Code of Target Coordinator
+  - combobox "Type Name or Code of Target Coordinator"
   - button "Open"
-  - paragraph: "* Pilih alokasi atau filter Propinsi terlebih dahulu untuk membatasi list koordinator."
+  - paragraph: "* Select allocation or filter Province first to limit coordinator list."
   - button "ASSIGN (0)" [disabled]
-  - text: Kabupaten
-  - combobox [disabled]: Semua Kabupaten
-  - text: Kecamatan
-  - combobox [disabled]: Semua Kecamatan
-  - text: Kelurahan
-  - combobox [disabled]: Semua Kelurahan
+  - text: Regency / City
+  - combobox [disabled]: All Regencies
+  - text: District
+  - combobox [disabled]: All Districts
+  - text: Village
+  - combobox [disabled]: All Villages
   - button "Atur Tampilan Kolom"
   - separator
   - checkbox
-  - text: Trans. ID NPSN Nama Sekolah Koordinator Propinsi Kabupaten/Kota Kecamatan Kelurahan Status
+  - text: Trans. ID NPSN School Name Managed Partner Coordinator Province Regency / City District Village Status
   - checkbox
   - paragraph: HI202600000000852
   - paragraph: "69766345"
   - paragraph: KB MANUNGGAL
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Barru
   - paragraph: Kec. Barru
   - paragraph: Sumpang Binangae
   - text: SIAP DIINSTAL
   - checkbox
+  - paragraph: HI202600000000880
+  - paragraph: BRIGIF_TP_47
+  - paragraph: BRIGIF TP 47
+  - text: Independent / Pyx Belum Assign
+  - paragraph: Prov. Aceh
+  - paragraph: Kab. Bener Meriah
+  - paragraph: Kec. Timang Gajah
+  - paragraph: Lampahan Barat
+  - text: SIAP DIINSTAL
+  - checkbox
   - paragraph: HI202600000000881
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -103,7 +115,7 @@
   - paragraph: HI202600000000882
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -113,7 +125,7 @@
   - paragraph: HI202600000000883
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -123,7 +135,7 @@
   - paragraph: HI202600000000884
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -133,7 +145,7 @@
   - paragraph: HI202600000000885
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -143,7 +155,7 @@
   - paragraph: HI202600000000886
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -153,7 +165,7 @@
   - paragraph: HI202600000000887
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -163,7 +175,7 @@
   - paragraph: HI202600000000888
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -173,7 +185,7 @@
   - paragraph: HI202600000000889
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -183,7 +195,7 @@
   - paragraph: HI202600000000890
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -193,7 +205,7 @@
   - paragraph: HI202600000000891
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -203,7 +215,7 @@
   - paragraph: HI202600000000892
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -213,7 +225,7 @@
   - paragraph: HI202600000000893
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -223,7 +235,7 @@
   - paragraph: HI202600000000894
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -233,7 +245,7 @@
   - paragraph: HI202600000000895
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -243,7 +255,7 @@
   - paragraph: HI202600000000896
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -253,7 +265,7 @@
   - paragraph: HI202600000000897
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -263,7 +275,7 @@
   - paragraph: HI202600000000898
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -273,7 +285,7 @@
   - paragraph: HI202600000000899
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -283,7 +295,7 @@
   - paragraph: HI202600000000900
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -293,7 +305,7 @@
   - paragraph: HI202600000000901
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -303,7 +315,7 @@
   - paragraph: HI202600000000902
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -313,7 +325,7 @@
   - paragraph: HI202600000000903
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -323,7 +335,7 @@
   - paragraph: HI202600000000904
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -333,7 +345,7 @@
   - paragraph: HI202600000000905
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -343,7 +355,7 @@
   - paragraph: HI202600000000906
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -353,7 +365,7 @@
   - paragraph: HI202600000000907
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -363,7 +375,7 @@
   - paragraph: HI202600000000908
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -373,7 +385,7 @@
   - paragraph: HI202600000000909
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -383,7 +395,7 @@
   - paragraph: HI202600000000910
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
@@ -393,25 +405,15 @@
   - paragraph: HI202600000000911
   - paragraph: P9959706
   - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
+  - text: Independent / Pyx Belum Assign
   - paragraph: Prov. Sulawesi Selatan
   - paragraph: Kab. Luwu Timur
   - paragraph: Kec. Mangkutana
   - paragraph: SINDU AGUNG
   - text: SIAP DIINSTAL
-  - checkbox
-  - paragraph: HI202600000000912
-  - paragraph: P9959706
-  - paragraph: PKBM NURUL IMAN
-  - text: Belum Assign
-  - paragraph: Prov. Sulawesi Selatan
-  - paragraph: Kab. Luwu Timur
-  - paragraph: Kec. Mangkutana
-  - paragraph: SINDU AGUNG
-  - text: SIAP DIINSTAL
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 7158143
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 7207997
   - button "Go to previous page" [disabled]
   - button "Go to next page"
   - text: Copyright 2026 ZLP Digital Teknologi

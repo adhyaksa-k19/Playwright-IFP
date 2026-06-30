@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,19 +15,23 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Sekolah"
+    - button "School"
   - listitem:
-    - button "Koordinator"
+    - button "Coordinator"
   - listitem:
-    - button "Teknisi"
+    - button "Technician"
   - listitem:
-    - button "Transaksi"
+    - button "Partner"
+  - listitem:
+    - button "NPSN Partner Allocation"
+  - listitem:
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -36,17 +42,18 @@
         - link "Master":
           - /url: /master/teknisi
       - listitem:
-        - paragraph: Teknisi
-  - textbox "Kode Teknisi"
-  - textbox "Nama Teknisi"
-  - textbox "No Telepon"
-  - text: Koordinator
-  - combobox "Koordinator"
+        - paragraph: Technician List
+  - textbox "Technician Code"
+  - textbox "Technician Name"
+  - textbox "Phone Number"
+  - text: Coordinator
+  - combobox "Coordinator"
   - button "Open"
-  - combobox: Semua Propinsi
-  - combobox [disabled]: Semua Kabupaten/Kota
-  - combobox: Semua Validasi
-  - button "Cari Teknisi"
+  - combobox: All Partners
+  - combobox: All Provinces
+  - combobox [disabled]: All Regencies
+  - combobox: All Validation
+  - button "Search Technician"
   - button "Reset"
   - button "Export Excel"
   - button "Upload Bulk CSV"
@@ -54,12 +61,13 @@
     - /url: /assets/BULK_UPLOAD_TEKNISI-DBDUIag0.xlsx
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Edit Hapus Validasi Validated Validation Date Kode Teknisi Nama Teknisi Alamat Telp. 1 Propinsi Kabupaten Kode Koordinator Nama Koordinator
+  - text: Edit Delete Validate Validated Validation Date Technician Code Technician Name Managing Partner Address Phone Number 1 Province Regency / City Technician Code Technician Name
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 15 Jun 2026, 14.04
+  - button
   - paragraph: TEK-2026-00000001
-  - paragraph: Adrena Teknisi 01
+  - paragraph: Adrena Teknisi 1
   - paragraph
   - paragraph: "+62811978009"
   - paragraph: Prov. D.K.I. Jakarta
@@ -67,7 +75,7 @@
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 15 Jun 2026, 14.04
   - paragraph: TEK-2026-00000002
   - paragraph: Adrena Teknisi 02
@@ -78,7 +86,7 @@
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 15 Jun 2026, 14.04
   - paragraph: TEK-2026-00000003
   - paragraph: Adrena Teknisi 03
@@ -89,7 +97,7 @@
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 15 Jun 2026, 14.04
   - paragraph: TEK-2026-00000004
   - paragraph: Adrena Teknisi 04
@@ -100,7 +108,7 @@
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 15 Jun 2026, 14.04
   - paragraph: TEK-2026-00000005
   - paragraph: Adrena Teknisi 05
@@ -111,7 +119,7 @@
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 09 Jun 2026, 10.45
   - paragraph: TEK-2026-00000006
   - paragraph: Zaky
@@ -122,7 +130,7 @@
   - paragraph
   - paragraph
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - button "Validasi Manual"
   - text: UNVERIFIED -
   - paragraph: TEK-2026-00000007
@@ -134,7 +142,7 @@
   - paragraph
   - paragraph
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 07 Jun 2026, 14.05
   - paragraph: TEK-2026-00000010
   - paragraph: Wandi Taufik
@@ -145,7 +153,7 @@
   - paragraph: KD-2026-00000016
   - paragraph: Dewie silvie
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 07 Jun 2026, 14.05
   - paragraph: TEK-2026-00000118
   - paragraph: Yogi lesmana
@@ -156,7 +164,7 @@
   - paragraph: KD-2026-00000016
   - paragraph: Dewie silvie
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 08 Jun 2026, 23.52
   - paragraph: TEK-2026-00000119
   - paragraph: MUHAMMAD RAFI
@@ -167,7 +175,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 09 Jun 2026, 10.56
   - paragraph: TEK-2026-00000120
   - paragraph: FATHIR ADITYA RISKI
@@ -178,7 +186,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 08 Jun 2026, 20.44
   - paragraph: TEK-2026-00000121
   - paragraph: RIFAIZAL
@@ -189,7 +197,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 08 Jun 2026, 20.42
   - paragraph: TEK-2026-00000122
   - paragraph: DESMAN ALBER LAIA
@@ -200,7 +208,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 09.51
   - paragraph: TEK-2026-00000123
   - paragraph: TENGKU PUTERA MAHENDRA
@@ -211,7 +219,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 06 Jun 2026, 22.22
   - paragraph: TEK-2026-00000124
   - paragraph: MEDIAN FRADERICK
@@ -222,7 +230,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 09 Jun 2026, 10.45
   - paragraph: TEK-2026-00000125
   - paragraph: AZMI
@@ -233,7 +241,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 10.18
   - paragraph: TEK-2026-00000126
   - paragraph: BAMBANG ISMOYOJATI
@@ -244,7 +252,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 10.08
   - paragraph: TEK-2026-00000127
   - paragraph: HARAPAN MAHINSAT PANE
@@ -255,7 +263,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 22.26
   - paragraph: TEK-2026-00000128
   - paragraph: RAHMAT HIDAYAT PRATAMA
@@ -266,7 +274,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 14.34
   - paragraph: TEK-2026-00000129
   - paragraph: JULIAN SYAHPUTRA
@@ -277,7 +285,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 14.27
   - paragraph: TEK-2026-00000130
   - paragraph: RICKY ADI SYAHPUTRA
@@ -288,7 +296,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 07.05
   - paragraph: TEK-2026-00000131
   - paragraph: FIKY WILYA
@@ -299,7 +307,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.08
   - paragraph: TEK-2026-00000132
   - paragraph: JOHAN
@@ -310,7 +318,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.30
   - paragraph: TEK-2026-00000133
   - paragraph: ALBERT RIO FOURTH GALINGGING
@@ -321,7 +329,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.21
   - paragraph: TEK-2026-00000136
   - paragraph: CHRISTOPER SIMBOLON
@@ -332,7 +340,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 11.25
   - paragraph: TEK-2026-00000137
   - paragraph: ZIELDO HIDAYAT
@@ -343,7 +351,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.23
   - paragraph: TEK-2026-00000138
   - paragraph: HERMANTO
@@ -354,7 +362,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.36
   - paragraph: TEK-2026-00000139
   - paragraph: SHOLAHUDDIN AFDHOL
@@ -365,7 +373,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 11.48
   - paragraph: TEK-2026-00000140
   - paragraph: VIFI HAWANI
@@ -376,7 +384,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 10 Jun 2026, 22.41
   - paragraph: TEK-2026-00000141
   - paragraph: YOHANA ASNAWATI LAIA
@@ -387,7 +395,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 11.55
   - paragraph: TEK-2026-00000142
   - paragraph: FERDI
@@ -398,7 +406,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 07.31
   - paragraph: TEK-2026-00000143
   - paragraph: RAHMAD GUSTI MAULANA
@@ -409,7 +417,7 @@
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
   - button "Edit"
-  - button "Hapus"
+  - button "Delete"
   - text: VERIFIED 11 Jun 2026, 08.26
   - paragraph: TEK-2026-00000144
   - paragraph: DESPERADO SARAGI
@@ -419,10 +427,10 @@
   - paragraph: Kota Pekanbaru
   - paragraph: KD-2026-00000005
   - paragraph: Angelia Hartawan
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 79450
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 79462
   - button "Go to previous page" [disabled]
   - button "Go to next page"
-  - button "add": Tambah Teknisi
+  - button "add": Add Technician
   - text: Copyright 2026 ZLP Digital Teknologi

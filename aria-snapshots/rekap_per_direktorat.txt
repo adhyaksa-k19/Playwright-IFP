@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,27 +15,27 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
-    - button "Rekap Progress"
+    - button "Progress Recap"
   - listitem:
-    - button "Ranking SLA Koordinator"
+    - button "Coordinator SLA Ranking"
   - listitem:
-    - button "Ranking SLA Teknisi"
+    - button "Technician SLA Ranking"
   - listitem:
-    - button "Rekap per Propinsi"
+    - button "Recap per Province"
   - listitem:
-    - button "Rekap per Kabupaten"
+    - button "Recap per Regency"
   - listitem:
-    - button "Rekap per Direktorat"
+    - button "Recap per Directorate"
   - listitem:
-    - button "Report Pembayaran"
+    - button "Payment Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -41,40 +43,44 @@
         - link "Home":
           - /url: /
       - listitem:
-        - paragraph: Rekap Per Direktorat
-  - combobox: Semua Propinsi
-  - button "Tampilkan Report"
+        - link "Report":
+          - /url: /report/rekap_per_direktorat
+      - listitem:
+        - paragraph: Recap per Directorate
+  - combobox: All Provinces
+  - combobox: All Partners
+  - button "Show Report"
   - button "Reset"
   - button "Print"
   - button "Excel" [disabled]
   - button "CSV" [disabled]
-  - 'heading "Laporan Rekapitulasi Alokasi Per Direktorat (Total: 0)" [level=6]'
+  - heading "Direktorat Summary (0)" [level=6]
   - table:
     - rowgroup:
-      - row "No Direktorat Total Barang Siap Siap Instal Proses Selesai Kendala Gagal Revisi Setuju Reviu APIP Sesuai APIP Penarikan":
+      - row "No Directorate Total Ready Ready to Install In Progress Completed Obstructed Failed Revision Approved APIP Review APIP Compliant Withdrawal Request":
         - columnheader "No"
-        - columnheader "Direktorat"
+        - columnheader "Directorate"
         - columnheader "Total"
-        - columnheader "Barang Siap"
-        - columnheader "Siap Instal"
-        - columnheader "Proses"
-        - columnheader "Selesai"
-        - columnheader "Kendala"
-        - columnheader "Gagal"
-        - columnheader "Revisi"
-        - columnheader "Setuju"
-        - columnheader "Reviu APIP"
-        - columnheader "Sesuai APIP"
-        - columnheader "Penarikan"
+        - columnheader "Ready"
+        - columnheader "Ready to Install"
+        - columnheader "In Progress"
+        - columnheader "Completed"
+        - columnheader "Obstructed"
+        - columnheader "Failed"
+        - columnheader "Revision"
+        - columnheader "Approved"
+        - columnheader "APIP Review"
+        - columnheader "APIP Compliant"
+        - columnheader "Withdrawal Request"
     - rowgroup:
-      - row "Memuat Laporan...":
-        - cell "Memuat Laporan...":
+      - row "Loading report...":
+        - cell "Loading report...":
           - progressbar:
             - img
-          - paragraph: Memuat Laporan...
+          - paragraph: Loading report...
     - rowgroup:
-      - row "TOTAL KESELURUHAN 0 0 0 0 0 0 0 0 0 0 0 0":
-        - cell "TOTAL KESELURUHAN"
+      - row "Grand Total 0 0 0 0 0 0 0 0 0 0 0 0":
+        - cell "Grand Total"
         - cell "0"
         - cell "0"
         - cell "0"

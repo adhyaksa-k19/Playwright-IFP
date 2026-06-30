@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,19 +15,23 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Sekolah"
+    - button "School"
   - listitem:
-    - button "Koordinator"
+    - button "Coordinator"
   - listitem:
-    - button "Teknisi"
+    - button "Technician"
   - listitem:
-    - button "Transaksi"
+    - button "Partner"
+  - listitem:
+    - button "NPSN Partner Allocation"
+  - listitem:
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -36,18 +42,19 @@
         - link "Master":
           - /url: /master/koordinator
       - listitem:
-        - paragraph: Koordinator
-  - textbox "Kode Koordinator"
-  - textbox "Nama Koordinator"
-  - textbox "No Telepon"
-  - combobox: Semua Propinsi
-  - combobox [disabled]: Semua Kabupaten/Kota
-  - button "Cari Koordinator"
+        - paragraph: Coordinator
+  - textbox "Technician Code"
+  - textbox "Technician Name"
+  - textbox "Phone Number"
+  - combobox: All Partners
+  - combobox: All Provinces
+  - combobox [disabled]: All Regencies
+  - button "Search Coordinator"
   - button "Reset"
   - button "Export Excel"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Edit Koor. ID Nama Koordinator Alamat Telp. 1 Telp. 2 Propinsi Area Kabupaten
+  - text: Actions Coord. ID Technician Name Partner Address Phone Number 1 Phone Number 2 Province Regency / City
   - button "Edit"
   - paragraph: KD-2026-00000001
   - paragraph: Adrena Koordinator 1
@@ -332,10 +339,10 @@
   - text: Prov. Aceh
   - button "+37 ..."
   - paragraph
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 286
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–100 of 289
   - button "Go to previous page" [disabled]
   - button "Go to next page"
-  - button "add": Tambah Koordinator
+  - button "add": Add Coordinator
   - text: Copyright 2026 ZLP Digital Teknologi

@@ -1,7 +1,9 @@
 - banner:
   - button
-  - text: Instalasi IFP 2026
+  - text: IFP Installation 2026
   - button "Scan BAPP"
+  - button "Bahasa Indonesia":
+    - img "Bahasa Indonesia"
   - button
   - button "A"
 - separator
@@ -13,19 +15,19 @@
   - listitem:
     - button "Master"
   - listitem:
-    - button "Transaksi"
+    - button "Transaction"
   - listitem:
     - button "Report"
   - listitem:
     - button "Finance"
   - listitem:
-    - button "Menu Administrasi"
+    - button "Administration Menu"
   - listitem:
-    - button "Akun User"
+    - button "User Account"
   - listitem:
     - button "User Role"
   - listitem:
-    - button "Konfigurasi SLA"
+    - button "SLA Configuration"
   - listitem:
     - button "Allocation Sandbox"
   - listitem:
@@ -33,9 +35,9 @@
   - listitem:
     - button "Log Sartrans API"
   - listitem:
-    - button "Log Notifikasi Teknisi"
+    - button "Technician Notification Log"
   - listitem:
-    - button "Broadcast Pengumuman"
+    - button "Broadcast Announcement"
 - main:
   - navigation "breadcrumb":
     - list:
@@ -43,257 +45,54 @@
         - link "Home":
           - /url: /
       - listitem:
-        - link "Administrasi":
+        - link "Administration Menu":
           - /url: /admin/inbox_teknisi
       - listitem:
-        - paragraph: Log Notifikasi Teknisi
-  - heading "Filter Pencarian" [level=6]
+        - paragraph: Technician Notification Log
+  - heading "Filter" [level=6]
   - textbox "Cari Teknisi (Nama/Kode)"
-  - text: Filter Koordinator
-  - combobox: Semua Koordinator
-  - text: Status Baca
-  - combobox: Semua Status
+  - text: Coordinator
+  - combobox: All Coordinators
+  - text: Status
+  - combobox: All
   - textbox "Tanggal Mulai"
   - textbox "Tanggal Selesai"
-  - button "Terapkan Filter"
+  - button "Search"
   - button "Reset"
   - button "Atur Tampilan Kolom"
   - separator
-  - text: Waktu Dikirim Status Nama Teknisi No. Telp Koordinator Judul Pesan Isi Pesan
-  - paragraph: 2026-06-20T09:09:12.521Z
+  - text: Time Status Technician Name Phone Number Coordinator Title Message
+  - paragraph: 2026-06-29T04:21:21.082Z
   - text: Belum Dibaca
-  - paragraph: ZLP TEKNISI 2
-  - paragraph: "+6281212121214"
-  - paragraph: ZLP KOORDINATOR
+  - paragraph: Ardi
+  - paragraph: "+6287764350777"
+  - paragraph: matthewkoor
+  - paragraph: Perbaikan Disetujui
+  - paragraph: Laporan perbaikan untuk TK AL WILDAN ISLAMIC SCHOOL 2 BEKASI telah disetujui.
+  - paragraph: 2026-06-29T04:18:27.486Z
+  - text: Belum Dibaca
+  - paragraph: Ardi
+  - paragraph: "+6287764350777"
+  - paragraph: matthewkoor
   - paragraph: Tugas Baru
-  - paragraph: Anda mendapatkan 5000 tugas instalasi baru.
-  - paragraph: 2026-06-19T12:49:49.176Z
+  - paragraph: Anda mendapatkan 5 tugas instalasi baru.
+  - paragraph: 2026-06-29T04:17:40.687Z
   - text: Belum Dibaca
-  - paragraph: ZLP TEKNISI 2
-  - paragraph: "+6281212121214"
-  - paragraph: ZLP KOORDINATOR
-  - paragraph: Tugas Ditarik
-  - paragraph: Tugas instalasi Anda dengan ID HI202600000000621 telah ditarik kembali oleh Koordinator.
-  - paragraph: 2026-06-19T09:53:47.346Z
+  - paragraph: Dovan
+  - paragraph: "+628131434065"
+  - paragraph: matthewkoor
+  - paragraph: Tugas Baru
+  - paragraph: Anda mendapatkan 5 tugas instalasi baru.
+  - paragraph: 2026-06-29T02:40:01.521Z
   - text: Belum Dibaca
-  - paragraph: MUHAMMAD RIZAL ASSHIDIQ
-  - paragraph: "+6285693599606"
-  - paragraph: Dwi Handoyo
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.344Z
-  - text: Belum Dibaca
-  - paragraph: agung ismail
-  - paragraph: "+6281323915320"
-  - paragraph: Putri Ramadhanti
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.342Z
-  - text: Belum Dibaca
-  - paragraph: Muhammad Nurul Faiz
-  - paragraph: "+6285876832122"
-  - paragraph: Rizky Amalia Shidiqah
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.339Z
-  - text: Belum Dibaca
-  - paragraph: Dana Cahya Nugraha
-  - paragraph: "+6289665736659"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.338Z
-  - text: Belum Dibaca
-  - paragraph: Aprial Virnando
-  - paragraph: "+6285373212676"
-  - paragraph: Angela Felicia
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.336Z
-  - text: Belum Dibaca
-  - paragraph: Wan Firan
-  - paragraph: "+6285274460037"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.334Z
-  - text: Belum Dibaca
-  - paragraph: Muh. Rian Syam
-  - paragraph: "+6281524141022"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.332Z
-  - text: Belum Dibaca
-  - paragraph: Arfandi
-  - paragraph: "+6281543181700"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.330Z
-  - text: Belum Dibaca
-  - paragraph: A. Fitra Nanda
-  - paragraph: "+6287755711498"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.328Z
-  - text: Belum Dibaca
-  - paragraph: A. Aldin Alfathayat
-  - paragraph: "+6282344156816"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.326Z
-  - text: Belum Dibaca
-  - paragraph: Nival Gustin
-  - paragraph: "+6285246740030"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.324Z
-  - text: Belum Dibaca
-  - paragraph: Rusli
-  - paragraph: "+6282259882144"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.322Z
-  - text: Belum Dibaca
-  - paragraph: Ajrun Karim
-  - paragraph: "+62895632577050"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.319Z
-  - text: Belum Dibaca
-  - paragraph: Muhammad Nur Adam
-  - paragraph: "+6281524947039"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.317Z
-  - text: Belum Dibaca
-  - paragraph: ADI
-  - paragraph: "+6285397890110"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.315Z
-  - text: Belum Dibaca
-  - paragraph: Khaerunnas
-  - paragraph: "+62895401319299"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.313Z
-  - text: Belum Dibaca
-  - paragraph: SYAKHRUL
-  - paragraph: "+6281524162527"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.310Z
-  - text: Belum Dibaca
-  - paragraph: Sufyan
-  - paragraph: "+6285213635828"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.308Z
-  - text: Belum Dibaca
-  - paragraph: Satria Agung Santoso
-  - paragraph: "+6282256229853"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.305Z
-  - text: Belum Dibaca
-  - paragraph: Mustanul
-  - paragraph: "+6285239820151"
-  - paragraph: Rizky Amalia Shidiqah
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.303Z
-  - text: Belum Dibaca
-  - paragraph: YEHEZKIEL SAMBA' PADANG
-  - paragraph: "+6285214041983"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.301Z
-  - text: Belum Dibaca
-  - paragraph: Iswandi
-  - paragraph: "+6287887655839"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.299Z
-  - text: Belum Dibaca
-  - paragraph: MUH RIFKY NURDIN .H
-  - paragraph: "+6281527434830"
-  - paragraph: Adhi - Sulawesi Selatan
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.297Z
-  - text: Belum Dibaca
-  - paragraph: SOPHIA PURNAMA .H
-  - paragraph: "+6281933673871"
-  - paragraph: Adhi - Sulawesi Selatan
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.295Z
-  - text: Belum Dibaca
-  - paragraph: M. Ilham Zarasfan
-  - paragraph: "+6285732468328"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.293Z
-  - text: Belum Dibaca
-  - paragraph: HADI SASONGKO
-  - paragraph: "+6285790524667"
-  - paragraph: PRM-YASER
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.291Z
-  - text: Belum Dibaca
-  - paragraph: LUQMANUL HAQIM (ITO_JTM)
-  - paragraph: "+6285933762925"
-  - paragraph: MAULANA - JAWA TIMUR
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.289Z
-  - text: Belum Dibaca
-  - paragraph: M. TOZI
-  - paragraph: "+6282268053522"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.287Z
-  - text: Belum Dibaca
-  - paragraph: ARIF FADILLAH
-  - paragraph: "+6282277714970"
-  - paragraph: Muhammad Ilwan Huzari
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.285Z
-  - text: Belum Dibaca
-  - paragraph: Irsan
-  - paragraph: "+6281215489528"
-  - paragraph: ELSA
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: 2026-06-19T09:53:47.282Z
-  - text: Belum Dibaca
-  - paragraph: Fauzan nugrahaYO
-  - paragraph: "+6283121093142"
-  - paragraph: Jhonny5 Siahaan-Jawa Barat
-  - paragraph: "123"
-  - paragraph: tes123
-  - paragraph: "Baris per halaman:"
-  - 'combobox "Baris per halaman: 100"': "100"
-  - paragraph: 1–100 of 287548
+  - paragraph: TIG TEKNISI 1
+  - paragraph: "+6281233211231"
+  - paragraph: TIG KOORDINATOR
+  - paragraph: Tugas Baru
+  - paragraph: Anda mendapatkan 4 tugas instalasi baru.
+  - paragraph: Rows per page
+  - combobox "Rows per page 100": "100"
+  - paragraph: 1–4 of 4
   - button "Go to previous page" [disabled]
-  - button "Go to next page"
+  - button "Go to next page" [disabled]
   - text: Copyright 2026 ZLP Digital Teknologi

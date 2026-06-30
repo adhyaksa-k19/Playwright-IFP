@@ -3,6 +3,43 @@ import { expect, Page } from '@playwright/test';
 export class ProsesInstalasiPage {
     constructor(private readonly page: Page) {}
 
+    private textbox(name: string) {
+        const labels: Record<string, RegExp> = {
+            Mulai: /^(Mulai|Start)$/,
+            Selesai: /^(Selesai|End)$/,
+            'Nama Koordinator/Teknisi': /^(Nama Koordinator\/Teknisi|Coordinator\/Technician Name)$/,
+            'Nama Sekolah': /^(Nama Sekolah|School Name)$/,
+        };
+
+        return this.page.getByRole('textbox', {
+            name: labels[name] ?? new RegExp(`^${name}$`),
+        });
+    }
+
+    private combobox(name: string) {
+        const labels: Record<string, RegExp> = {
+            Teknisi: /^(Teknisi|Technician)$/,
+            'SEMUA PROPINSI': /^(SEMUA PROPINSI|All Provinces)$/,
+            'SEMUA KABUPATEN': /^(SEMUA KABUPATEN|All Regencies)$/,
+            'SEMUA KECAMATAN': /^(SEMUA KECAMATAN|All Districts)$/,
+            'SEMUA STATUS': /^(SEMUA STATUS|ALL STATUS)$/,
+        };
+
+        return this.page.getByRole('combobox', {
+            name: labels[name] ?? new RegExp(`^${name}$`),
+        });
+    }
+
+    private button(name: string) {
+        const labels: Record<string, RegExp> = {
+            Cari: /^(Cari|Search)$/,
+        };
+
+        return this.page.getByRole('button', {
+            name: labels[name] ?? new RegExp(`^${name}$`),
+        });
+    }
+
     async goto() {
         await this.page.goto('/monitoring/proses_instalasi');
     }
@@ -12,7 +49,7 @@ export class ProsesInstalasiPage {
         await expect(
             this.page
                 .getByRole('navigation', { name: 'breadcrumb' })
-                .getByText('Proses Instalasi', { exact: true })
+                .getByText(/Proses Instalasi|Installation Process/)
         ).toBeVisible();
         await expect(this.page.getByRole('table')).toBeVisible();
     }
@@ -27,7 +64,7 @@ export class ProsesInstalasiPage {
         ];
 
         for (const name of textboxes) {
-            await expect(this.page.getByRole('textbox', { name, exact: true })).toBeVisible();
+            await expect(this.textbox(name)).toBeVisible();
         }
 
         const comboboxes = [
@@ -40,63 +77,63 @@ export class ProsesInstalasiPage {
         ];
 
         for (const name of comboboxes) {
-            await expect(this.page.getByRole('combobox', { name, exact: true })).toBeVisible();
+            await expect(this.combobox(name)).toBeVisible();
         }
 
         await expect(
-            this.page.getByRole('combobox', { name: 'SEMUA KABUPATEN', exact: true })
+            this.combobox('SEMUA KABUPATEN')
         ).toBeDisabled();
         await expect(
-            this.page.getByRole('combobox', { name: 'SEMUA KECAMATAN', exact: true })
+            this.combobox('SEMUA KECAMATAN')
         ).toBeDisabled();
     }
 
     async verifyActionButtons() {
         for (const name of ['Cari', 'Reset', 'Excel', 'CSV']) {
-            await expect(this.page.getByRole('button', { name, exact: true })).toBeVisible();
+            await expect(this.button(name)).toBeVisible();
         }
     }
 
     async verifySummary() {
         const labels = [
-            'TOTAL INSTALASI',
-            'PROSES INSTALASI',
-            'INSTALASI GAGAL',
-            'INSTALASI SELESAI',
+            /TOTAL INSTALASI|TOTAL INSTALLATIONS/,
+            /PROSES INSTALASI|INSTALLATION PROCESS/,
+            /INSTALASI GAGAL|FAILED INSTALLATION/,
+            /INSTALASI SELESAI|COMPLETED INSTALLATION/,
         ];
 
         const main = this.page.getByRole('main');
         for (const label of labels) {
             await expect(
-                main.getByText(label, { exact: true }).first()
+                main.getByText(label).first()
             ).toBeVisible();
         }
     }
 
     async verifyTableColumns() {
         const headers = [
-            'No',
-            'Nama Teknisi',
-            'Telp Teknisi',
-            'Group',
-            'No. Inst',
-            'Jam',
-            'Trans. ID',
-            'NPSN',
-            'Propinsi',
-            'Kabupaten',
-            'Kecamatan',
-            'Nama Sekolah',
-            'PIC',
-            'Telp PIC',
-            'Foto',
-            'Status',
+            /^(No)$/,
+            /^(Nama Teknisi|Technician)$/,
+            /^(Telp Teknisi|Phone Number)$/,
+            /^(Group)$/,
+            /^(No\. Inst|Inst\. No\.)$/,
+            /^(Jam|Time)$/,
+            /^(Trans\. ID|Transaction ID)$/,
+            /^(NPSN)$/,
+            /^(Propinsi|Province)$/,
+            /^(Kabupaten|Regency \/ City)$/,
+            /^(Kecamatan|District)$/,
+            /^(Nama Sekolah|School Name)$/,
+            /^(PIC)$/,
+            /^(Telp PIC|PIC Phone)$/,
+            /^(Foto|Photo)$/,
+            /^(Status)$/,
         ];
 
         const table = this.page.getByRole('table');
         for (const header of headers) {
             await expect(
-                table.getByRole('columnheader', { name: header, exact: true })
+                table.getByRole('columnheader', { name: header })
             ).toBeVisible();
         }
     }
@@ -115,21 +152,21 @@ export class ProsesInstalasiPage {
     }
 
     async searchByNpsn(npsn: string) {
-        await this.page.getByRole('textbox', { name: 'NPSN', exact: true }).fill(npsn);
-        await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
+        await this.textbox('NPSN').fill(npsn);
+        await this.button('Cari').click();
         await this.waitForTableReady();
         await expect(this.page.getByRole('table')).toContainText(npsn);
     }
 
     async searchNpsnWithoutResults(npsn: string) {
-        await this.page.getByRole('textbox', { name: 'NPSN', exact: true }).fill(npsn);
-        await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
+        await this.textbox('NPSN').fill(npsn);
+        await this.button('Cari').click();
         await this.waitForTableReady();
         await expect(this.emptyState()).toBeVisible();
     }
 
     async resetFilters() {
-        await this.page.getByRole('button', { name: 'Reset', exact: true }).click();
+        await this.button('Reset').click();
         await this.waitForTableReady();
         await this.verifyTableHasData();
     }
@@ -151,7 +188,7 @@ export class ProsesInstalasiPage {
     }
 
     private loadError() {
-        return this.page.getByRole('alert').filter({ hasText: 'Gagal memuat data' });
+        return this.page.getByRole('alert').filter({ hasText: /Gagal memuat data|Failed to load data/ });
     }
 
     private async waitForDataRowWithRetry() {

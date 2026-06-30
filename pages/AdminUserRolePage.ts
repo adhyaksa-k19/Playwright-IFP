@@ -14,19 +14,19 @@ export class AdminUserRolePage {
     async goto() {
         await this.page.goto('/admin/user_role');
         await expect(this.page.getByRole('navigation', { name: 'breadcrumb' })
-            .getByText('Daftar User Role', { exact: true })).toBeVisible({ timeout: TIMEOUT });
+            .getByText(/Daftar User Role|User Role List|User Roles?/)).toBeVisible({ timeout: TIMEOUT });
     }
 
     async verifyPageLoaded() {
-        await expect(this.page.getByRole('heading', { name: 'Pencarian & Filter Data' })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Tambah User Role' })).toBeVisible();
-        await expect(this.page.getByRole('button', { name: 'Edit Permissions' }).first()).toBeVisible();
+        await expect(this.page.getByRole('heading', { name: /Pencarian & Filter Data|Search & Filter Data|Filter/ })).toBeVisible();
+        await expect(this.addRoleButton()).toBeVisible();
+        await expect(this.permissionButton().first()).toBeVisible();
     }
 
     async filterWithoutResultAndReset() {
-        const input = this.page.getByRole('textbox', { name: 'Cari Role...' });
+        const input = this.roleSearchInput();
         await input.fill(`ROLE_TIDAK_ADA_${Date.now()}`);
-        await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
+        await this.searchButton().click();
         await expect(this.emptyState()).toBeVisible({ timeout: TIMEOUT });
 
         await this.page.getByRole('button', { name: 'Reset' }).click();
@@ -34,12 +34,13 @@ export class AdminUserRolePage {
     }
 
     async addRole(data: AdminRoleData) {
-        await this.page.getByRole('button', { name: 'Tambah User Role' }).click();
-        const dialog = this.page.getByRole('dialog', { name: 'Tambah Role Baru' });
-        await dialog.getByRole('textbox', { name: 'Kode Role' }).fill(data.code);
-        await dialog.getByRole('textbox', { name: 'Nama Role' }).fill(data.name);
-        await dialog.getByRole('textbox', { name: 'Deskripsi' }).fill(data.description);
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await this.addRoleButton().click();
+        const dialog = this.page.getByRole('dialog', { name: /Tambah Role Baru|Add New Role|Add Role/ });
+        const roleInputs = dialog.getByRole('textbox', { name: /Kode Role|Role Code|Role Name/ });
+        await roleInputs.nth(0).fill(data.code);
+        await roleInputs.nth(1).fill(data.name);
+        await dialog.getByRole('textbox', { name: /Deskripsi|Description/ }).fill(data.description);
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
         await this.page.waitForTimeout(2_000);
         await this.goto();
@@ -50,8 +51,8 @@ export class AdminUserRolePage {
         await this.filterByCode(code);
         await this.page.getByRole('button', { name: 'Edit', exact: true }).click();
         const dialog = this.page.getByRole('dialog', { name: 'Edit Role' });
-        await dialog.getByRole('textbox', { name: 'Nama Role' }).fill(name);
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await dialog.getByRole('textbox', { name: /Nama Role|Role Name/ }).last().fill(name);
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
 
         await this.filterByCode(code);
@@ -60,21 +61,21 @@ export class AdminUserRolePage {
 
     async editPermissions(code: string) {
         await this.filterByCode(code);
-        await this.page.getByRole('button', { name: 'Edit Permissions' }).click();
-        const dialog = this.page.getByRole('dialog', { name: 'Edit Permissions' });
+        await this.permissionButton().click();
+        const dialog = this.page.getByRole('dialog', { name: /Edit Permissions|Set Permissions/ });
         await expect(dialog).toBeVisible({ timeout: TIMEOUT });
         const firstView = dialog.getByRole('checkbox', { name: 'View' }).first();
         await firstView.check();
-        await dialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await dialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(dialog).toBeHidden({ timeout: TIMEOUT });
 
         await this.filterByCode(code);
-        await this.page.getByRole('button', { name: 'Edit Permissions' }).click();
-        const reopenedDialog = this.page.getByRole('dialog', { name: 'Edit Permissions' });
+        await this.permissionButton().click();
+        const reopenedDialog = this.page.getByRole('dialog', { name: /Edit Permissions|Set Permissions/ });
         const savedView = reopenedDialog.getByRole('checkbox', { name: 'View' }).first();
         await expect(savedView).toBeChecked({ timeout: TIMEOUT });
         await savedView.uncheck();
-        await reopenedDialog.getByRole('button', { name: 'Simpan', exact: true }).click();
+        await reopenedDialog.getByRole('button', { name: /Simpan|Save/ }).click();
         await expect(reopenedDialog).toBeHidden({ timeout: TIMEOUT });
         await this.clearPermissionsViaApi(code);
     }
@@ -142,10 +143,10 @@ export class AdminUserRolePage {
     }
 
     private async filterByCode(code: string) {
-        const input = this.page.getByRole('textbox', { name: 'Cari Role...' });
+        const input = this.roleSearchInput();
         await input.fill(code);
         await input.blur();
-        await this.page.getByRole('button', { name: 'Cari', exact: true }).click();
+        await this.searchButton().click();
         await expect(this.page.getByText(code, { exact: true }).or(this.emptyState()))
             .toBeVisible({ timeout: TIMEOUT });
         if (await this.page.getByText(code, { exact: true }).isVisible().catch(() => false)) {
@@ -160,5 +161,21 @@ export class AdminUserRolePage {
 
     private emptyState() {
         return this.page.getByText(/No (?:rows to display|data available)/);
+    }
+
+    private roleSearchInput() {
+        return this.page.getByRole('textbox', { name: /Cari Role|Search Role|Role/ });
+    }
+
+    private searchButton() {
+        return this.page.getByRole('button', { name: /Cari|Search/ });
+    }
+
+    private addRoleButton() {
+        return this.page.getByRole('button', { name: /Tambah User Role|Add User Role|Add Role/ });
+    }
+
+    private permissionButton() {
+        return this.page.getByRole('button', { name: /Edit Permissions|Set Permissions/ });
     }
 }

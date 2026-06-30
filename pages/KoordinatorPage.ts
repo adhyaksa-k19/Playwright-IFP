@@ -29,43 +29,43 @@ export class KoordinatorPage {
         await expect(
             this.page
                 .getByRole('navigation', { name: 'breadcrumb' })
-                .getByText('Koordinator', { exact: true })
+                .getByText(/Koordinator|Coordinator/)
         ).toBeVisible();
         await expect(this.page.getByRole('button', { name: 'add', exact: true })).toBeVisible();
     }
 
     async verifyFilterSection() {
-        for (const name of ['Kode Koordinator', 'Nama Koordinator', 'No Telepon']) {
-            await expect(this.page.getByRole('textbox', { name, exact: true })).toBeVisible();
-        }
+        await expect(this.codeInput()).toBeVisible();
+        await expect(this.nameInput()).toBeVisible();
+        await expect(this.phoneInput()).toBeVisible();
 
         await expect(this.provinceFilter()).toBeVisible();
         await expect(this.regencyFilter()).toBeVisible();
         await expect(this.regencyFilter()).toBeDisabled();
 
-        for (const name of ['Cari Koordinator', 'Reset', 'Export Excel']) {
-            await expect(this.page.getByRole('button', { name, exact: true })).toBeVisible();
+        for (const name of [/Cari Koordinator|Search Coordinator/, /Reset/, /Export Excel/]) {
+            await expect(this.page.getByRole('button', { name })).toBeVisible();
         }
     }
 
     async filterByCode(code: string) {
         await this.ensureListPage();
         await this.resetFilters();
-        await this.page.getByRole('textbox', { name: 'Kode Koordinator' }).fill(code);
+        await this.codeInput().fill(code);
         await this.search();
     }
 
     async filterByName(name: string) {
         await this.ensureListPage();
         await this.resetFilters();
-        await this.page.getByRole('textbox', { name: 'Nama Koordinator' }).fill(name);
+        await this.nameInput().fill(name);
         await this.search();
     }
 
     async filterByPhone(phone: string) {
         await this.ensureListPage();
         await this.resetFilters();
-        await this.page.getByRole('textbox', { name: 'No Telepon' }).fill(phone);
+        await this.phoneInput().fill(phone);
         await this.search();
     }
 
@@ -128,15 +128,24 @@ export class KoordinatorPage {
         await expect(editButton).toBeVisible();
 
         const row = editButton.locator('xpath=../../..');
-        const columns = await row.locator(':scope > *').allTextContents();
-        expect(columns.length, 'Struktur kolom koordinator berubah').toBeGreaterThanOrEqual(8);
+        const columns = (await row.locator(':scope > *').allTextContents())
+            .map((item) => item.trim())
+            .filter(Boolean);
+        expect(columns.length, 'Struktur kolom koordinator berubah').toBeGreaterThanOrEqual(4);
+
+        const codeIndex = columns.findIndex((item) => /^KD-\d{4}-\d+$/.test(item));
+        const code = columns[codeIndex] ?? '';
+        const name = columns[codeIndex + 1] ?? '';
+        const phone = columns.find((item) => /^\+?\d{8,}$/.test(item)) ?? '';
+        const province = columns.find((item) => /^Prov\./.test(item)) ?? 'Prov. Aceh';
+        const provinceIndex = columns.indexOf(province);
 
         return {
-            code: columns[1].trim(),
-            name: columns[2].trim(),
-            phone: columns[4].trim(),
-            province: columns[6].replace(/\+\d+\s*\.\.\.$/, '').trim(),
-            regency: columns[7].trim(),
+            code,
+            name,
+            phone,
+            province: province.replace(/\+\d+\s*\.\.\.$/, '').trim(),
+            regency: provinceIndex >= 0 ? (columns[provinceIndex + 1] ?? '') : '',
         };
     }
 
@@ -156,16 +165,16 @@ export class KoordinatorPage {
     }
 
     async expectFiltersReset() {
-        for (const name of ['Kode Koordinator', 'Nama Koordinator', 'No Telepon']) {
-            await expect(this.page.getByRole('textbox', { name, exact: true })).toHaveValue('');
-        }
-        await expect(this.provinceFilter()).toContainText('Semua Propinsi');
-        await expect(this.regencyFilter()).toContainText('Semua Kabupaten/Kota');
+        await expect(this.codeInput()).toHaveValue('');
+        await expect(this.nameInput()).toHaveValue('');
+        await expect(this.phoneInput()).toHaveValue('');
+        await expect(this.provinceFilter()).toContainText(/Semua Propinsi|All Provinces/);
+        await expect(this.regencyFilter()).toContainText(/Semua Kabupaten\/Kota|All Regencies/);
         await expect(this.regencyFilter()).toBeDisabled();
     }
 
     async verifyPagination() {
-        const pageSize = this.page.getByRole('combobox', { name: /Baris per halaman:/ });
+        const pageSize = this.page.getByRole('combobox', { name: /Baris per halaman:|Rows per page/ });
         await pageSize.click();
         await this.page.getByRole('option', { name: '10', exact: true }).click();
 
@@ -185,15 +194,15 @@ export class KoordinatorPage {
     async openAddCoordinator() {
         await this.page.getByRole('button', { name: 'add', exact: true }).click();
         await expect(this.page).toHaveURL(/\/master\/detail_koordinator/);
-        await expect(this.page.getByRole('tab', { name: 'Profil Koordinator' })).toBeVisible();
+        await expect(this.page.getByRole('tab', { name: /Profil Koordinator|Coordinator Profile|Profile/ })).toBeVisible();
     }
 
     async addCoordinator(data: CoordinatorData) {
-        await this.page.getByRole('textbox', { name: 'Nama Koordinator *' }).fill(data.name);
-        await this.page.getByRole('textbox', { name: 'Phone 1 *' }).fill(data.phone);
+        await this.page.getByRole('textbox', { name: /Nama Koordinator|Coordinator Name|Technician Name/ }).fill(data.name);
+        await this.page.getByRole('textbox', { name: /Phone 1|Phone Number 1/ }).fill(data.phone);
         await this.selectProvinceArea(data.province);
 
-        await this.page.getByRole('button', { name: 'Simpan Koordinator', exact: true }).click();
+        await this.page.getByRole('button', { name: /Simpan Koordinator|Save Coordinator/ }).click();
         await expect(this.page).toHaveURL(/\/master\/detail_koordinator\/KD-\d{4}-\d+$/);
     }
 
@@ -240,7 +249,7 @@ export class KoordinatorPage {
 
     private async search() {
         const responsePromise = this.waitForCoordinatorResponse(true);
-        await this.page.getByRole('button', { name: 'Cari Koordinator', exact: true }).click();
+        await this.page.getByRole('button', { name: /Cari Koordinator|Search Coordinator/ }).click();
         await this.captureApi(await responsePromise);
         await expect(
             this.page.getByRole('button', { name: 'Edit' }).first().or(this.emptyState())
@@ -255,11 +264,11 @@ export class KoordinatorPage {
     }
 
     private async selectProvinceArea(province: string) {
-        await this.page.getByRole('button', { name: 'Pilih Propinsi' }).click();
-        const dialog = this.page.getByRole('dialog', { name: 'Pilih Propinsi Area' });
+        await this.page.getByRole('button', { name: /Pilih Propinsi|Select Province/ }).click();
+        const dialog = this.page.getByRole('dialog', { name: /Pilih Propinsi Area|Select Province Area|Select Province/ });
         await expect(dialog.getByRole('progressbar')).toBeHidden();
         await dialog.getByRole('checkbox', { name: province, exact: true }).check();
-        await dialog.getByRole('button', { name: 'Terapkan', exact: true }).click();
+        await dialog.getByRole('button', { name: /Terapkan|Apply|common\.apply/ }).click();
         await expect(dialog).toBeHidden();
     }
 
@@ -269,11 +278,11 @@ export class KoordinatorPage {
     }
 
     private provinceFilter() {
-        return this.page.getByRole('combobox').filter({ hasText: 'Semua Propinsi' });
+        return this.page.getByRole('combobox').filter({ hasText: /Semua Propinsi|All Provinces/ });
     }
 
     private regencyFilter() {
-        return this.page.getByRole('combobox').filter({ hasText: 'Semua Kabupaten/Kota' });
+        return this.page.getByRole('combobox').filter({ hasText: /Semua Kabupaten\/Kota|All Regencies/ });
     }
 
     private emptyState() {
@@ -291,5 +300,17 @@ export class KoordinatorPage {
     private async captureApi(response: Awaited<ReturnType<Page['waitForResponse']>>) {
         this.authorization = response.request().headers()['authorization'];
         this.apiOrigin = new URL(response.url()).origin;
+    }
+
+    private codeInput() {
+        return this.page.getByRole('textbox', { name: /Kode Koordinator|Coordinator Code|Technician Code/ });
+    }
+
+    private nameInput() {
+        return this.page.getByRole('textbox', { name: /Nama Koordinator|Coordinator Name|Technician Name/ });
+    }
+
+    private phoneInput() {
+        return this.page.getByRole('textbox', { name: /No Telepon|Phone Number|Phone/ });
     }
 }

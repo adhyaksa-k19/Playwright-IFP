@@ -4,6 +4,29 @@ export class DashboardPage {
 
     constructor(private page: Page) {}
 
+    private menuLabel(name: string) {
+        const labels: Record<string, RegExp> = {
+            Transaksi: /^(Transaksi|Transaction)$/,
+            'Menu Administrasi': /^(Menu Administrasi|Administration Menu)$/,
+        };
+
+        return labels[name] ?? new RegExp(`^${name}$`);
+    }
+
+    private cardLabel(name: string) {
+        const labels: Record<string, RegExp> = {
+            'Sudah Assign Koordinator': /Sudah Assign Koordinator|Coordinator Assigned/i,
+        };
+
+        return labels[name] ?? new RegExp(name, 'i');
+    }
+
+    private coordinatorFilter() {
+        return this.page.getByRole('combobox', {
+            name: /^(Filter Koordinator|Filter Coordinator)$/,
+        });
+    }
+
     // ─── Navigation ──────────────────────────────────────────────
 
     async goto() {
@@ -14,12 +37,13 @@ export class DashboardPage {
 
 async verifyDashboardLoaded() {
     await expect(this.page).toHaveURL(/dashboard/);
+    await expect(this.page.getByRole('main')).toBeVisible();
     await expect(
         this.page.getByRole('navigation', { name: 'breadcrumb' })
             .getByText('Dashboard', { exact: true })
     ).toBeVisible();
     await expect(
-        this.page.getByRole('combobox', { name: 'Filter Koordinator' })
+        this.coordinatorFilter()
     ).toBeVisible();
 }
 
@@ -38,7 +62,7 @@ async verifySidebarMenu() {
 
     for (const menu of menus) {
         await expect(
-            this.page.getByRole('button', { name: menu, exact: true })
+            this.page.getByRole('button', { name: this.menuLabel(menu) })
         ).toBeVisible();
     }
 }
@@ -63,14 +87,14 @@ async clickSidebarMenu(menuName: string) {
 
         for (const card of cards) {
             await expect(
-                this.page.getByRole('button', { name: new RegExp(card, 'i') })
+                this.page.getByRole('button', { name: this.cardLabel(card) })
             ).toBeVisible();
         }
     }
 
     async getSummaryCardCount(cardName: string): Promise<string> {
         const card = this.page.getByRole('button', {
-            name: new RegExp(cardName, 'i'),
+            name: this.cardLabel(cardName),
         });
         await expect(card).toBeVisible();
         await expect(card).toContainText(/\d/, { timeout: 35_000 });
@@ -95,7 +119,7 @@ async clickSidebarMenu(menuName: string) {
 
         for (const status of statuses) {
             await expect(
-                this.page.getByRole('button', { name: new RegExp(status, 'i') })
+                this.page.getByRole('button', { name: this.cardLabel(status) })
             ).toBeVisible();
         }
     }
@@ -104,11 +128,11 @@ async clickSidebarMenu(menuName: string) {
 
     async verifyCharts() {
         await expect(
-            this.page.getByText('Proporsi Status')
+            this.page.getByText(/Proporsi Status|Status Proportion/)
         ).toBeVisible();
 
         await expect(
-            this.page.getByText('Progress per Propinsi')
+            this.page.getByText(/Progress per Propinsi|Progress per Province/)
         ).toBeVisible();
     }
 
@@ -116,14 +140,12 @@ async clickSidebarMenu(menuName: string) {
 
 async verifyFilterCoordinator() {
     await expect(
-        this.page.getByRole('combobox', { name: 'Filter Koordinator' })
+        this.coordinatorFilter()
     ).toBeVisible();
 }
 
     async applyFilterCoordinator(coordinatorName: string) {
-        const filterInput = this.page.getByRole('combobox', {
-            name: 'Filter Koordinator',
-        });
+        const filterInput = this.coordinatorFilter();
         await filterInput.fill(coordinatorName);
         await this.page.getByRole('option', { name: coordinatorName, exact: true }).click();
         await expect(filterInput).toHaveValue(coordinatorName);
