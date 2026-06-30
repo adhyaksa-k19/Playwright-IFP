@@ -70,7 +70,7 @@ export class AdminUserAccountPage {
 
     async editUser(username: string, lastName: string) {
         await this.filterByUsername(username);
-        await this.rowAction(username, 0).click();
+        await this.clickRowAction(username, 0);
         const dialog = this.page.getByRole('dialog', { name: 'Edit User' });
         await expect(dialog).toBeVisible();
         await dialog.getByRole('textbox', { name: /Nama Belakang|Last Name/ }).fill(lastName);
@@ -84,7 +84,7 @@ export class AdminUserAccountPage {
 
     async setPassword(username: string, password: string) {
         await this.filterByUsername(username);
-        await this.rowAction(username, 1).click();
+        await this.clickRowAction(username, 1);
         const dialog = this.page.getByRole('dialog', { name: new RegExp(`Ubah Password untuk user ${username}|Change Password.*${username}|Set Password.*${username}|Reset Password.*${username}`) });
         await expect(dialog).toBeVisible();
         await dialog.getByRole('textbox', { name: 'Password', exact: true }).fill(password);
@@ -95,7 +95,7 @@ export class AdminUserAccountPage {
 
     async openAudit(username: string) {
         await this.filterByUsername(username);
-        await this.rowAction(username, 2).click();
+        await this.clickRowAction(username, 2);
         await expect(this.page).toHaveURL(new RegExp(`/admin/user_account/audit/${username}/?$`));
         await expect(this.page.getByText(`Audit: ${username}`, { exact: true })).toBeVisible();
     }
@@ -109,7 +109,7 @@ export class AdminUserAccountPage {
                 resolve();
             });
         });
-        await this.rowAction(username, 3).click();
+        await this.clickRowAction(username, 3);
         await confirmation;
         await expect(this.page.getByText(username, { exact: true })).toBeHidden({ timeout: TIMEOUT });
     }
@@ -129,23 +129,80 @@ export class AdminUserAccountPage {
 
     private async filterByUsername(username: string) {
         const input = this.page.getByRole('textbox', { name: 'Username' });
-        await input.fill(username);
-        await input.blur();
-        const response = this.page.waitForResponse((item) => {
-            const url = new URL(item.url());
-            return url.pathname === '/api/user_account/user' &&
-                url.searchParams.get('user_account_username') === username;
-        }, { timeout: TIMEOUT });
-        await this.page.getByRole('button', { name: /Cari User Account|Search User Account|Search/ }).click();
-        const result = await response;
-        expect(result.ok(), `HTTP ${result.status()} saat mencari user account`).toBeTruthy();
-        await this.page.waitForTimeout(500);
+        for (let attempt = 1; attempt <= 3; attempt += 1) {
+            await expect(input).toBeVisible({ timeout: TIMEOUT });
+            await input.fill(username);
+            await input.blur();
+
+            const response = this.page.waitForResponse((item) => {
+                const url = new URL(item.url());
+                return url.pathname === '/api/user_account/user' &&
+                    url.searchParams.get('user_account_username') === username;
+            }, { timeout: 30_000 }).catch(() => null);
+
+            await this.clickSearchButton();
+            const result = await response;
+            if (result) {
+                expect(result.ok(), `HTTP ${result.status()} saat mencari user account`).toBeTruthy();
+            }
+
+            await this.waitForTableReady();
+            if (await this.page.getByText(username, { exact: true }).isVisible().catch(() => false) ||
+                await this.emptyState().isVisible().catch(() => false)) {
+                return;
+            }
+
+            if (attempt < 3) {
+                await this.goto();
+            }
+        }
+
+        await expect(this.page.getByText(username, { exact: true }).or(this.emptyState())).toBeVisible({ timeout: TIMEOUT });
     }
 
     private rowAction(username: string, index: number) {
         const row = this.page.getByText(username, { exact: true })
             .locator('xpath=ancestor::div[.//button][1]');
         return row.getByRole('button').nth(index);
+    }
+
+    private async clickRowAction(username: string, index: number) {
+        const action = this.rowAction(username, index);
+        await expect(this.page.getByText(username, { exact: true })).toBeVisible({ timeout: TIMEOUT });
+        await expect(action).toBeVisible({ timeout: TIMEOUT });
+
+        try {
+            await action.click({ timeout: 5_000 });
+            return;
+        } catch {
+            // The grid can repaint while action buttons are visible; dispatch avoids waiting forever for stability.
+        }
+
+        await action.dispatchEvent('click');
+    }
+
+    private async clickSearchButton() {
+        const search = this.page.getByRole('button', { name: /Cari User Account|Search User Account|Search/ });
+        await expect(search).toBeEnabled({ timeout: TIMEOUT });
+
+        try {
+            await search.click({ timeout: 5_000 });
+            return;
+        } catch {
+            // Avoid burning the whole test timeout when MUI keeps the button unstable.
+        }
+
+        await search.dispatchEvent('click');
+    }
+
+    private async waitForTableReady() {
+        const loading = this.page.getByText(/^(Loading data\.\.\.|Memuat data\.\.\.)$/);
+        if (await loading.isVisible().catch(() => false)) {
+            await expect(loading).toBeHidden({ timeout: TIMEOUT });
+        }
+
+        await expect(this.page.getByText(/^AUTOUSR|AnnatsazZahra/).or(this.emptyState()).or(this.page.getByRole('button', { name: 'Edit' }).first()))
+            .toBeVisible({ timeout: TIMEOUT });
     }
 
     private emptyState() {

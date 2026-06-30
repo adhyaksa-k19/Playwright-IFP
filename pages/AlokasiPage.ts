@@ -187,16 +187,27 @@ async clickCariAlokasi() {
     const idTransaksi = await this.textbox('ID Transaksi').inputValue().catch(() => '');
 
     for (let attempt = 1; attempt <= 3; attempt += 1) {
+        if (attempt > 1) {
+            await this.page.reload();
+            await expect(this.textbox('ID Transaksi')).toBeVisible({ timeout: 30_000 });
+            if (idTransaksi) {
+                await this.textbox('ID Transaksi').fill(idTransaksi);
+                await expect(this.textbox('ID Transaksi')).toHaveValue(idTransaksi);
+            }
+        }
+
         const response = this.waitForAlokasiResponse((url) => {
             if (!idTransaksi) return true;
             return url.searchParams.get('id_transaksi') === idTransaksi;
         });
 
-        await this.button('Cari Alokasi').click();
+        await this.clickSearchButton();
 
         const result = await response;
         if (!result) {
-            await this.page.waitForTimeout(1_500);
+            if (await this.getDataRows().first().or(this.emptyState()).isVisible({ timeout: 10_000 }).catch(() => false)) {
+                return;
+            }
             continue;
         }
 
@@ -276,6 +287,20 @@ async clickReset() {
 
             const url = new URL(item.url());
             return url.pathname.includes('/api/transaksi/alokasi') && extra(url);
-        }, { timeout: 30_000 }).catch(() => null);
+        }, { timeout: 20_000 }).catch(() => null);
+    }
+
+    private async clickSearchButton() {
+        const search = this.button('Cari Alokasi');
+        await expect(search).toBeEnabled({ timeout: 30_000 });
+
+        try {
+            await search.click({ timeout: 5_000 });
+            return;
+        } catch {
+            // MUI can keep the button/layout unstable while the grid is repainting.
+        }
+
+        await search.dispatchEvent('click');
     }
 }

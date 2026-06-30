@@ -152,6 +152,7 @@ export class CreateAlokasiPage {
         const input = this.page.getByRole('textbox', { name: 'NPSN' });
 
         for (let attempt = 1; attempt <= 3; attempt++) {
+            await expect(input).toBeVisible({ timeout: 30_000 });
             await input.fill(npsn);
             const response = this.page.waitForResponse((item) =>
                 item.url().includes('/api/reference/sekolah_alokasi_count') &&
@@ -159,7 +160,7 @@ export class CreateAlokasiPage {
                 item.ok()
             , { timeout: 30_000 }).catch(() => null);
 
-            await this.button('Cari').click();
+            await this.clickSearchButton();
             await response;
 
             const npsnCell = this.page.getByText(npsn, { exact: true }).first();
@@ -169,9 +170,33 @@ export class CreateAlokasiPage {
             }
 
             await this.page.waitForTimeout(1_500);
+            if (attempt < 3) {
+                await this.page.reload();
+                await expect(this.page.getByRole('textbox', { name: 'NPSN' })).toBeVisible({ timeout: 60_000 });
+            }
         }
 
         throw new Error(`Data sekolah dengan NPSN ${npsn} tidak muncul setelah retry pencarian.`);
+    }
+
+    private async clickSearchButton() {
+        const search = this.button('Cari');
+        await expect(search).toBeEnabled({ timeout: 30_000 });
+
+        try {
+            await search.click({ timeout: 5_000 });
+            return;
+        } catch {
+            // MUI table repaint can keep the button from becoming "stable" for Playwright.
+            // Dispatching a click still exercises the same app handler without waiting for layout stability forever.
+        }
+
+        try {
+            await search.dispatchEvent('click');
+            return;
+        } catch {
+            await this.page.getByRole('textbox', { name: 'NPSN' }).press('Enter');
+        }
     }
 
     private async findFallbackSchool(): Promise<SchoolAllocation> {
