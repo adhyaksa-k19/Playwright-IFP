@@ -185,13 +185,15 @@ async verifyDropdowns() {
 
 async clickCariAlokasi() {
     const idTransaksi = await this.textbox('ID Transaksi').inputValue().catch(() => '');
+    const expectsSpecificTransaction = Boolean(idTransaksi);
 
-    for (let attempt = 1; attempt <= 3; attempt += 1) {
+    for (let attempt = 1; attempt <= 4; attempt += 1) {
         if (attempt > 1) {
             await this.page.reload();
             await expect(this.textbox('ID Transaksi')).toBeVisible({ timeout: 30_000 });
             if (idTransaksi) {
                 await this.textbox('ID Transaksi').fill(idTransaksi);
+                await this.textbox('ID Transaksi').blur();
                 await expect(this.textbox('ID Transaksi')).toHaveValue(idTransaksi);
             }
         }
@@ -205,7 +207,8 @@ async clickCariAlokasi() {
 
         const result = await response;
         if (!result) {
-            if (await this.getDataRows().first().or(this.emptyState()).isVisible({ timeout: 10_000 }).catch(() => false)) {
+            if (!expectsSpecificTransaction &&
+                await this.getDataRows().first().or(this.emptyState()).isVisible({ timeout: 10_000 }).catch(() => false)) {
                 return;
             }
             continue;
@@ -217,13 +220,26 @@ async clickCariAlokasi() {
         const rows = body?.data?.data;
 
         if (Array.isArray(rows) && rows.length === 0) {
-            await expect(this.emptyState()).toBeVisible({ timeout: 30_000 });
-            await expect(this.getDataRows().first()).toBeHidden();
+            await this.waitForEmptyTable();
+            return;
+        }
+
+        if (expectsSpecificTransaction && Array.isArray(rows)) {
+            const matchesFilter = rows.every((row) => row?.id_transaksi === idTransaksi);
+            if (!matchesFilter) {
+                continue;
+            }
+
+            await expect(this.page.getByText(idTransaksi, { exact: true }).first()).toBeVisible({ timeout: 30_000 });
             return;
         }
 
         await expect(this.getDataRows().first().or(this.emptyState())).toBeVisible({ timeout: 30_000 });
         return;
+    }
+
+    if (expectsSpecificTransaction) {
+        throw new Error(`Search alokasi untuk ID Transaksi ${idTransaksi} tidak menghasilkan response/filter yang konsisten.`);
     }
 
     await expect(this.getDataRows().first().or(this.emptyState())).toBeVisible({ timeout: 60_000 });
@@ -250,8 +266,7 @@ async clickReset() {
     }
 
     async verifyTableIsEmpty() {
-        await expect(this.emptyState()).toBeVisible({ timeout: 60_000 });
-        await expect(this.getDataRows().first()).toBeHidden();
+        await this.waitForEmptyTable();
     }
 
     async verifyPaymentFilterResult(value: string) {
@@ -302,5 +317,10 @@ async clickReset() {
         }
 
         await search.dispatchEvent('click');
+    }
+
+    private async waitForEmptyTable() {
+        await expect(this.emptyState()).toBeVisible({ timeout: 30_000 });
+        await expect(this.getDataRows().first()).toBeHidden({ timeout: 30_000 });
     }
 }

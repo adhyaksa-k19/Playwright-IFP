@@ -153,31 +153,33 @@ export class ProsesInstalasiPage {
 
     async searchByNpsn(npsn: string) {
         await this.retrySearch(async () => {
+            await expect(this.textbox('NPSN')).toBeVisible({ timeout: 15_000 });
             await this.textbox('NPSN').fill(npsn);
-            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)));
-            await this.button('Cari').click();
+            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)), 10_000);
+            await this.clickSearchButton();
             await response;
-            await this.waitForTableReady(30_000);
-            await expect(this.page.getByRole('table')).toContainText(npsn, { timeout: 10_000 });
-        });
+            await this.waitForTableReady(15_000);
+            await expect(this.page.getByRole('table')).toContainText(npsn, { timeout: 5_000 });
+        }, 3);
     }
 
     async searchNpsnWithoutResults(npsn: string) {
         await this.retrySearch(async () => {
+            await expect(this.textbox('NPSN')).toBeVisible({ timeout: 15_000 });
             await this.textbox('NPSN').fill(npsn);
-            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)));
-            await this.button('Cari').click();
+            const response = this.waitForDataResponse((url) => url.includes(encodeURIComponent(npsn)), 10_000);
+            await this.clickSearchButton();
             await response;
-            await this.waitForTableReady(30_000);
-            await expect(this.emptyState()).toBeVisible({ timeout: 10_000 });
-        });
+            await this.waitForTableReady(15_000);
+            await expect(this.emptyState()).toBeVisible({ timeout: 5_000 });
+        }, 3);
     }
 
     async resetFilters() {
-        const response = this.waitForDataResponse();
-        await this.button('Reset').click();
+        const response = this.waitForDataResponse(() => true, 10_000);
+        await this.page.getByRole('button', { name: /^(Reset)$/ }).click({ timeout: 5_000 });
         await response;
-        await this.waitForTableReady(30_000);
+        await this.waitForTableReady(15_000);
         await this.verifyTableHasData();
     }
 
@@ -204,9 +206,9 @@ export class ProsesInstalasiPage {
     private async waitForDataRowWithRetry() {
         let lastError: unknown;
 
-        for (let attempt = 0; attempt < 3; attempt++) {
+        for (let attempt = 0; attempt < 4; attempt++) {
             try {
-                await this.waitForTableReady(45_000);
+                await this.waitForTableReady(15_000);
                 if (await this.firstDataRow().isVisible().catch(() => false)) return;
             } catch (error) {
                 lastError = error;
@@ -214,9 +216,9 @@ export class ProsesInstalasiPage {
 
             const apiFailed = await this.loadError().isVisible().catch(() => false);
             const loadingStuck = await this.loadingState().isVisible().catch(() => false);
-            if ((!apiFailed && !loadingStuck) || attempt === 2) break;
+            if ((!apiFailed && !loadingStuck) || attempt === 3) break;
 
-            const response = this.waitForDataResponse();
+            const response = this.waitForDataResponse(() => true, 10_000);
             await this.page.reload();
             await response;
             await this.verifyPageLoaded();
@@ -232,7 +234,7 @@ export class ProsesInstalasiPage {
         ).toBeVisible();
     }
 
-    private waitForDataResponse(extra: (url: string) => boolean = () => true) {
+    private waitForDataResponse(extra: (url: string) => boolean = () => true, timeout = 20_000) {
         return this.page.waitForResponse((response) => {
             const url = response.url();
             return response.request().method() === 'GET' &&
@@ -240,7 +242,7 @@ export class ProsesInstalasiPage {
                 /proses[_-]?instalasi|instalasi|installation/i.test(url) &&
                 response.ok() &&
                 extra(url);
-        }, { timeout: 20_000 }).catch(() => null);
+        }, { timeout }).catch(() => null);
     }
 
     private async retrySearch(action: () => Promise<void>, attempts = 3) {
@@ -254,9 +256,10 @@ export class ProsesInstalasiPage {
                 lastError = error;
                 if (attempt === attempts) break;
 
+                const response = this.waitForDataResponse(() => true, 10_000);
                 await this.page.reload();
+                await response;
                 await this.verifyPageLoaded();
-                await this.waitForDataRowWithRetry().catch(() => undefined);
             }
         }
 
@@ -265,16 +268,32 @@ export class ProsesInstalasiPage {
 
     private async waitForTableReady(timeout = 60_000) {
         const loading = this.loadingState();
+        const startedAt = Date.now();
         if (await loading.isVisible().catch(() => false)) {
             await expect(loading).toBeHidden({ timeout });
         }
 
+        const remaining = Math.max(1_000, timeout - (Date.now() - startedAt));
         await expect(
             this.firstDataRow().or(this.emptyState())
-        ).toBeVisible({ timeout });
+        ).toBeVisible({ timeout: remaining });
     }
 
     private loadingState() {
         return this.page.getByText(/^(Loading data\.\.\.|Memuat data\.\.\.)$/);
+    }
+
+    private async clickSearchButton() {
+        const search = this.button('Cari');
+        await expect(search).toBeEnabled({ timeout: 15_000 });
+
+        try {
+            await search.click({ timeout: 5_000 });
+            return;
+        } catch {
+            // Grid repaint/loading can keep MUI buttons unstable; dispatch keeps the retry bounded.
+        }
+
+        await search.dispatchEvent('click');
     }
 }

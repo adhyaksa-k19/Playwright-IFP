@@ -214,7 +214,7 @@ export class KoordinatorPage {
 
     async getVisibleCoordinatorCode(): Promise<string> {
         const code = this.page.getByText(/^KD-\d{4}-\d+$/).first();
-        await expect(code).toBeVisible();
+        await expect(code).toBeVisible({ timeout: 30_000 });
         return (await code.textContent())?.trim() ?? '';
     }
 
@@ -238,11 +238,20 @@ export class KoordinatorPage {
         await this.verifyPageLoaded();
         await this.filterByName(name);
 
-        if (await this.emptyState().isVisible()) {
+        if (await this.emptyState().isVisible().catch(() => false)) {
             return false;
         }
 
-        const code = await this.getVisibleCoordinatorCode();
+        const codeLocator = this.page.getByText(/^KD-\d{4}-\d+$/).first();
+        if (!await codeLocator.isVisible({ timeout: 5_000 }).catch(() => false)) {
+            return false;
+        }
+
+        const code = (await codeLocator.textContent())?.trim() ?? '';
+        if (!code) {
+            return false;
+        }
+
         await this.deleteCoordinatorByCode(code);
         return true;
     }
